@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import { Context } from '../context/ContextProvider'
 
-export default function Coins(props){
+export default function CoinList(props){
     
     const {id, name, api_symbol, symbol, market_cap_rank, thumb, large} = props
     const {getById, idData, clickToggle} = useContext(Context)
@@ -13,7 +13,7 @@ export default function Coins(props){
 
     return(
         <div className="coinsWrap" onClick={click}>
-            <h2>{name}</h2>
+            <h2 className="coins-name">{name}</h2>
             <img src={`${thumb}`}></img>
         </div>
     )

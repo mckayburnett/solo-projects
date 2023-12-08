@@ -9,13 +9,14 @@ export default function ContextProvider(props){
     const [searchData, setSearchData] = useState([])
     async function navSearch(e){
         setCoinToggle(false)
-        setNftToggle(false)
         try{
             const res = await axios.get(`https://api.coingecko.com/api/v3/search?query=${e}`)
             setSearchData(res.data)
+            console.log(searchData)
         }catch(err) {
             console.log(err)
         }
+        console.log("firing")
     }
 
     //crypto
@@ -30,9 +31,24 @@ export default function ContextProvider(props){
     }
     
     const [coinToggle, setCoinToggle] = useState(false)
-    const [nftToggle, setNftToggle] = useState(false)
+    
     function clickToggle(e){
-        e === "coin" ? setCoinToggle(!coinToggle) : setNftToggle(!nftToggle)
+        e === "coin" && setCoinToggle(!coinToggle)
+    }
+    function back(){
+        setCoinToggle(false);
+        setSearchData([])
+        setIdData([])
+        window.location.reload();
+    }
+    //coinspec
+    const [marketToggle, setMarketToggle] = useState(false)
+    function openMarket(){
+        setMarketToggle(true)
+    }
+    function closeMarket(){
+        setMarketToggle(false)
+        setCoinToggle(true)
     }
   
     return(
@@ -44,7 +60,10 @@ export default function ContextProvider(props){
                 getById,
                 clickToggle,
                 coinToggle,
-                nftToggle
+                back,
+                marketToggle,
+                openMarket, 
+                closeMarket
             }}
         >
             {props.children}

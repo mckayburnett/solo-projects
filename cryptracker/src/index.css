@@ -1,5 +1,361 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+}
+.coinSpec-button{
+  border-radius: 15px;
+  box-shadow: 2px 2px green;
+  padding: 8px;
+  background-color: whitesmoke;
+}
+.nav-searchDiv{
+  text-align: center;
+}
+.nav-form{
+  display: inline;
+}
+@media only screen and (max-width: 622.5px){
 html {
   margin: 0;
   background-color: rgb(20, 19, 19);
-  color:chartreuse
+  color:chartreuse;
+  font-family: monospace;
 }
+.navWrap{
+  width: 100vw;
+}
+.nav-titleWrapper{
+  background-color: rgba(0, 27, 0, 0.228); /* Set the background color of the div */
+  filter: drop-shadow(0 0 30px green);
+  border-radius: 100px;
+  margin-bottom: 30px;
+}
+.nav-title{
+  font-family: monospace;
+  font-size: 12vw;
+  text-align: center;
+  text-shadow: 2px 2px rgb(110, 110, 110);
+  padding-top: 0;
+  margin: 15px;
+}
+.nav-form{
+  width: 100vw;
+  text-align: center;
+}
+.nav-search{
+  display: inline-block;
+}
+.nav-input{
+  padding: 8px;
+  margin: 5px;
+  border-radius: 15px;
+  box-shadow: 2px 2px green;
+}
+.nav-button{
+  padding: 8px;
+  margin: 5px;
+  border-radius: 15px;
+  box-shadow: 2px 2px green;
+  width: 60px;
+}
+.nav-backButton{
+  padding: 8px;
+  margin: 5px;
+  border-radius: 15px;
+  box-shadow: 2px 2px green;
+  background-color: whitesmoke;
+}
+.nav-Description{
+  text-align: left;
+  padding: 20px 20px;
+  border: 1px green solid;
+  border-radius: 20px;
+  margin: 100px 20px;
+}
+/*crypto*/
+.cryptoWrap{
+  padding: 0px 0px;
+}
+.crypto-searchResults{
+  text-align: center;
+  text-decoration: underline;
+}
+.coinsWrap{
+  border: 1px solid;
+  padding: 5px;
+  margin: 5px 5px;
+  border-radius: 10px;
+  /* display: inline-block; */
+}
+.coinsWrap :hover{
+  box-shadow: 0 0 30px green;
+
+}
+.crypto-coinsComponent :hover{
+  box-shadow: 0 0 30px green;
+
+}
+/*coinSpec*/
+.coinSpecWrap{
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+}
+.coinSpec-img{
+  border-radius: 20px;
+  max-width: 250px;
+}
+.coinSpec-link{
+  display: block;
+  padding-bottom: 10px;
+  color: green;
+}
+.coinSpec-link :hover{
+  color:aqua
+}
+.coinSpec-description{
+  display: block;
+  left: 50%;
+  margin: auto;
+  padding: 10px;
+  margin: 10px 100px;
+  border: 2px solid green;
+  border-radius: 15px;
+  max-height: 30vh;
+  overflow-y:auto
+}
+.coinSpec-button{
+  display: block;
+  left: 50%;
+  margin: auto;
+  bottom: 0;
+}
+/*market*/
+.coinMarketWrap{
+  width: 100%;
+}
+.coinMarket-valueDiv{
+  width: 100vw;
+  text-align: center;
+  left: 50%;
+  margin: auto;
+}
+.coinMarket-values{
+  display: inline-block;
+  border: 2px green solid;
+  padding: 3px;
+  margin: 3px;
+}
+.coinMarket-thumb{
+  display: inline-block;
+  border-radius: 5px;
+}
+.coinMarket-name{
+  display: inline-block;
+  font-size: 30px;
+  padding: 15px 5px;
+}
+.coinMarket-select{
+  display: block;
+  width: 50%;
+  max-width: 500px;
+  font-size: 15px;
+  border-radius: 15px;
+  left: 50%;
+  margin: auto;
+  padding: 3px;
+  background-color: whitesmoke;
+  box-shadow: 2px 2px green;
+
+}
+.coinMarket-option{
+  font-size: 15px;
+}
+.coinMarket-selectedData{
+  font-size: 15px;
+  text-decoration: underline;
+  padding: 10px;
+}
+.coinMarket-selectedInfo{
+  font-size: 25px;
+}
+}
+
+@media only screen and (min-width: 622.5px){
+  html {
+    margin: 0;
+    max-width: 1170px;
+    margin: auto;
+    background-color: rgb(20, 19, 19);
+    color:chartreuse;
+    font-family: monospace;
+  }
+  button{
+    cursor: pointer;
+  }
+  .navWrap{
+    width: 100%;
+  }
+  .nav-titleWrapper{
+    background-color: rgba(0, 27, 0, 0.228); /* Set the background color of the div */
+    filter: drop-shadow(0 0 30px green);
+    border-radius: 100px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+  }
+  .nav-title{
+    font-family: monospace;
+    font-size: 75px;
+    text-align: center;
+    text-shadow: 2px 2px rgb(110, 110, 110);
+    padding-top: 0;
+  }
+  .nav-form{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .nav-search{
+    display: inline-block;
+  }
+  .nav-input{
+    padding: 8px;
+    margin: 5px;
+    border-radius: 15px;
+    box-shadow: 2px 2px green;
+  }
+  .nav-button{
+    padding: 8px;
+    margin: 5px;
+    border-radius: 15px;
+    box-shadow: 2px 2px green;
+    cursor: pointer;
+    width: 60px;
+    background-color: whitesmoke;
+  }
+  .nav-backButton{
+    padding: 8px;
+    margin: 5px;
+    border-radius: 15px;
+    box-shadow: 2px 2px green;
+    background-color: whitesmoke;
+  }
+  .nav-Description{
+    text-align: center;
+    padding: 40px 20px;
+    border: 1px green solid;
+    border-radius: 20px;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 200px;
+  }
+  /*crypto*/
+  .cryptoWrap{
+    padding: 0px 0px;
+    width: 100%;
+  }
+  .crypto-searchResults{
+    text-align: center;
+    text-decoration: underline;
+  }
+  .coinsWrap{
+    border: 1px solid;
+    padding: 5px;
+    margin: 5px 5px;
+    border-radius: 10px;
+    /* display: inline-block; */
+    cursor: pointer;
+  }
+  .crypto-coinsComponent :hover{
+    box-shadow: 0 0 30px green;
+  
+  }
+  /*coinSpec*/
+  .coinSpecWrap{
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .coinSpec-img{
+    border-radius: 20px;
+    max-width: 250px;
+  }
+  .coinSpec-link{
+    display: block;
+    padding-bottom: 10px;
+    color: green;
+  }
+  .coinSpec-link :hover{
+    color:aqua
+  }
+  .coinSpec-description{
+    display: block;
+    left: 50%;
+    margin: auto;
+    padding: 10px;
+    margin: 10px 100px;
+    border: 2px solid green;
+    border-radius: 15px;
+    max-height: 30vh;
+    overflow-y:auto
+  }
+  .coinSpec-button{
+    display: block;
+    left: 50%;
+    margin: auto;
+    bottom: 0;
+    cursor: pointer;
+  }
+  /*market*/
+  .coinMarket-valueDiv{
+    width: 50vw;
+    display: flexbox;
+    text-align: center;
+    left: 50%;
+    margin: auto;
+  }
+  .coinMarket-values{
+    display: inline-block;
+    border: 2px green solid;
+    padding: 3px;
+    margin: 0px 10px;
+    font-size: large;
+  }
+  .coinMarket-thumb{
+    display: inline-block;
+    border-radius: 5px;
+  }
+  .coinMarket-name{
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 37px;
+    padding: 50px 10px 30px 10px;
+  }
+  .coinMarket-select{
+    display: block;
+    width: 50%;
+    max-width: 370px;
+    font-size: 15px;
+    padding: 10px 0px;
+    border-radius: 15px;
+    left: 50%;
+    margin: auto;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px green;
+
+  }
+  .coinMarket-option{
+    font-size: 15px;
+  }
+  .coinMarket-selectedData{
+    padding: 15px 0px;
+    font-size: 20px;
+    text-decoration: underline;
+  }
+  .coinMarket-selectedInfo{
+    font-size: 25px;
+  }
+  }
+  
