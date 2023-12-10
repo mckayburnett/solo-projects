@@ -1,0 +1,433 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(20,82,14);
+}
+@media only screen and (max-width: 500px){
+.app-wrapper{
+
+}
+.app-name{
+  display:none;
+  text-align: center;
+  color:tan;
+  font-size: 50px;
+  border: 3px solid black;
+  background-image: url(/src/flagImg.png);
+  background-position: center;
+  border-radius: 20px;
+  text-shadow: 3px 3px rgb(0, 0, 0);
+  width: 80%;
+  max-width: 400px;
+  left: 50%;
+  margin: auto;
+  margin-top: 100px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.app-ballistix{
+  width: 40vw;
+  position: absolute;
+  border-radius: 30px;
+  top: 30px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.app-ballistix-two{
+  display: none;
+}
+.app-redirecting{
+  width: 100%;
+  text-align: center;
+  font-size: 7vw;
+  margin-top: 60%;
+}
+.app-redirecting-string{
+  display: inline;
+  color: rgba(0, 0, 0, 0.693);
+}
+.app-redirecting-dots{
+  display: inline;
+  color: rgba(0, 0, 0, 0);
+  --c1: rgba(0, 0, 0, 0.693);
+  --c2: rgba(0, 0, 0, 0.693);
+  --c3: rgba(0, 0, 0, 0.693);
+  --c4: rgba(0, 0, 0, 0.693);
+  /**/
+  font-size: 30px;
+  width: 180px; /* control the size */
+  aspect-ratio: 8/5;
+  --_g: no-repeat radial-gradient(#000 68%,#0000 71%);
+  -webkit-mask: var(--_g),var(--_g),var(--_g);
+  -webkit-mask-size: 25% 40%;
+  background: 
+    conic-gradient(var(--c1) 50%,var(--c2) 0) no-repeat,
+    conic-gradient(var(--c3) 50%,var(--c4) 0) no-repeat;
+  background-size: 200% 50%;
+  animation: 
+    back 4s infinite steps(1),
+    load 2s infinite;
+}
+@keyframes load {
+  0%    {-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 0%  }
+  16.67%{-webkit-mask-position: 0% 100%,50% 0%  ,100% 0%  }
+  33.33%{-webkit-mask-position: 0% 100%,50% 100%,100% 0%  }
+  50%   {-webkit-mask-position: 0% 100%,50% 100%,100% 100%}
+  66.67%{-webkit-mask-position: 0% 0%  ,50% 100%,100% 100%}
+  83.33%{-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 100%}
+  100%  {-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 0%  }
+}
+@keyframes back {
+  0%,
+  100%{background-position: 0%   0%,0%   100%}
+  25% {background-position: 100% 0%,0%   100%}
+  50% {background-position: 100% 0%,100% 100%}
+  75% {background-position: 0%   0%,100% 100%}
+}
+.app-gun{
+  display: none;
+}
+.app-redirect{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 30%;
+}
+.app-redirect-button{
+  border-radius: 12px;
+  padding-top: 4px;
+}
+.app-redirect-img{
+  width: 10vw;
+}
+.app-redirect p{
+  font-size: 5vw;
+  color: tan;
+  text-shadow: 2px 2px black;
+}
+.app-millitary{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px
+}
+}
+@media only screen and (min-width: 501px) and (max-width: 880px){
+.app-name{
+  text-align: center;
+  color:tan;
+  font-size: 80px;
+  border: 3px solid black;
+  background-image: url(/src/flagImg.png);
+  background-position: center;
+  background-size: 1000px;
+  border-radius: 20px;
+  text-shadow: 3px 3px rgb(0, 0, 0);
+  width: 490px;
+  height: 100px;
+  left: 50%;
+  margin: auto;
+  margin-top: 100px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.app-ballistix{
+  display: none;
+}
+.app-ballistix-two{
+  display: none;
+}
+.app-redirecting{
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 150px;
+}
+.app-redirecting-string{
+  display: inline;
+  color: rgba(0, 0, 0, 0.693);
+}
+.app-redirecting-dots{
+  display: inline;
+  color: rgba(0, 0, 0, 0);
+  --c1: rgba(0, 0, 0, 0.693);
+  --c2: rgba(0, 0, 0, 0.693);
+  --c3: rgba(0, 0, 0, 0.693);
+  --c4: rgba(0, 0, 0, 0.693);
+  /**/
+  font-size: 30px;
+  width: 180px; /* control the size */
+  aspect-ratio: 8/5;
+  --_g: no-repeat radial-gradient(#000 68%,#0000 71%);
+  -webkit-mask: var(--_g),var(--_g),var(--_g);
+  -webkit-mask-size: 25% 40%;
+  background: 
+    conic-gradient(var(--c1) 50%,var(--c2) 0) no-repeat,
+    conic-gradient(var(--c3) 50%,var(--c4) 0) no-repeat;
+  background-size: 200% 50%;
+  animation: 
+    back 4s infinite steps(1),
+    load 2s infinite;
+}
+@keyframes load {
+  0%    {-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 0%  }
+  16.67%{-webkit-mask-position: 0% 100%,50% 0%  ,100% 0%  }
+  33.33%{-webkit-mask-position: 0% 100%,50% 100%,100% 0%  }
+  50%   {-webkit-mask-position: 0% 100%,50% 100%,100% 100%}
+  66.67%{-webkit-mask-position: 0% 0%  ,50% 100%,100% 100%}
+  83.33%{-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 100%}
+  100%  {-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 0%  }
+}
+@keyframes back {
+  0%,
+  100%{background-position: 0%   0%,0%   100%}
+  25% {background-position: 100% 0%,0%   100%}
+  50% {background-position: 100% 0%,100% 100%}
+  75% {background-position: 0%   0%,100% 100%}
+}
+.app-gun{
+  position: absolute;
+  left: 25%;
+  width: 50vw;
+}
+.app-redirect{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 50px;
+}
+.app-redirect-button{
+  border-radius: 12px;
+  padding-top: 4px;
+}
+.app-redirect-img{
+  width: 50px;
+}
+.app-redirect p{
+  font-size: medium;
+  color: tan;
+  text-shadow: 2px 2px black;
+}
+.app-millitary{
+  display: none;
+}
+}
+@media only screen and (min-width: 881px) and (max-width: 1200px){
+  .app-name{
+    text-align: center;
+    color:tan;
+    font-size: 80px;
+    border: 3px solid black;
+    background-image: url(/src/flagImg.png);
+    background-position: center;
+    background-size: 1000px;
+    border-radius: 20px;
+    text-shadow: 3px 3px rgb(0, 0, 0);
+    width: 490px;
+    height: 100px;
+    left: 50%;
+    margin: auto;
+    margin-top: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .app-ballistix{
+    width: 100px;
+    border-radius: 30px;
+    display: inline;
+    position: absolute;
+    top: 100px;
+    left: 10vw;
+  }
+  .app-ballistix-two{
+    width: 100px;
+    border-radius: 30px;
+    display: inline;
+    position: absolute;
+    top: 100px;
+    right: 10vw;
+  }
+  .app-redirecting{
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 100px;
+  }
+  .app-redirecting-string{
+    display: inline;
+    color: rgba(0, 0, 0, 0.693);
+  }
+  .app-redirecting-dots{
+    display: inline;
+    color: rgba(0, 0, 0, 0);
+    --c1: rgba(0, 0, 0, 0.693);
+    --c2: rgba(0, 0, 0, 0.693);
+    --c3: rgba(0, 0, 0, 0.693);
+    --c4: rgba(0, 0, 0, 0.693);
+    /**/
+    font-size: 30px;
+    width: 180px; /* control the size */
+    aspect-ratio: 8/5;
+    --_g: no-repeat radial-gradient(#000 68%,#0000 71%);
+    -webkit-mask: var(--_g),var(--_g),var(--_g);
+    -webkit-mask-size: 25% 40%;
+    background: 
+      conic-gradient(var(--c1) 50%,var(--c2) 0) no-repeat,
+      conic-gradient(var(--c3) 50%,var(--c4) 0) no-repeat;
+    background-size: 200% 50%;
+    animation: 
+      back 4s infinite steps(1),
+      load 2s infinite;
+  }
+  @keyframes load {
+    0%    {-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 0%  }
+    16.67%{-webkit-mask-position: 0% 100%,50% 0%  ,100% 0%  }
+    33.33%{-webkit-mask-position: 0% 100%,50% 100%,100% 0%  }
+    50%   {-webkit-mask-position: 0% 100%,50% 100%,100% 100%}
+    66.67%{-webkit-mask-position: 0% 0%  ,50% 100%,100% 100%}
+    83.33%{-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 100%}
+    100%  {-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 0%  }
+  }
+  @keyframes back {
+    0%,
+    100%{background-position: 0%   0%,0%   100%}
+    25% {background-position: 100% 0%,0%   100%}
+    50% {background-position: 100% 0%,100% 100%}
+    75% {background-position: 0%   0%,100% 100%}
+  }
+  .app-gun{
+    position: absolute;
+    left: 25%;
+    width: 50vw;
+  }
+  .app-redirect{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+  }
+  .app-redirect-button{
+    border-radius: 12px;
+    padding-top: 4px;
+  }
+  .app-redirect-img{
+    width: 50px;
+  }
+  .app-redirect p{
+    font-size: medium;
+    color: tan;
+    text-shadow: 2px 2px black;
+  }
+  .app-millitary{
+    display: none;
+  }
+  }
+@media only screen and (min-width: 1201px){
+  .app-name{
+    text-align: center;
+    color:tan;
+    font-size: 150px;
+    border: 3px solid black;
+    background-image: url(/src/flagImg.png);
+    background-position: center;
+    background-size: 1000px;
+    border-radius: 20px;
+    text-shadow: 3px 3px rgb(0, 0, 0);
+    width: 750px;
+    height: 200px;
+    left: 50%;
+    margin: auto;
+    margin-top: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .app-ballistix{
+    width: 200px;
+    border-radius: 30px;
+    display: inline;
+    position: absolute;
+    top: 100px;
+    left: 10px;
+  }
+  .app-ballistix-two{
+    width: 200px;
+    border-radius: 30px;
+    display: inline;
+    position: absolute;
+    top: 100px;
+    right: 10px;
+  }
+  .app-redirecting{
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 100px;
+  }
+  .app-redirecting-string{
+    display: inline;
+    color: rgba(0, 0, 0, 0.693);
+  }
+  .app-redirecting-dots{
+    display: inline;
+    color: rgba(0, 0, 0, 0);
+    --c1: rgba(0, 0, 0, 0.693);
+    --c2: rgba(0, 0, 0, 0.693);
+    --c3: rgba(0, 0, 0, 0.693);
+    --c4: rgba(0, 0, 0, 0.693);
+    /**/
+    font-size: 30px;
+    width: 180px; /* control the size */
+    aspect-ratio: 8/5;
+    --_g: no-repeat radial-gradient(#000 68%,#0000 71%);
+    -webkit-mask: var(--_g),var(--_g),var(--_g);
+    -webkit-mask-size: 25% 40%;
+    background: 
+      conic-gradient(var(--c1) 50%,var(--c2) 0) no-repeat,
+      conic-gradient(var(--c3) 50%,var(--c4) 0) no-repeat;
+    background-size: 200% 50%;
+    animation: 
+      back 4s infinite steps(1),
+      load 2s infinite;
+  }
+  @keyframes load {
+    0%    {-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 0%  }
+    16.67%{-webkit-mask-position: 0% 100%,50% 0%  ,100% 0%  }
+    33.33%{-webkit-mask-position: 0% 100%,50% 100%,100% 0%  }
+    50%   {-webkit-mask-position: 0% 100%,50% 100%,100% 100%}
+    66.67%{-webkit-mask-position: 0% 0%  ,50% 100%,100% 100%}
+    83.33%{-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 100%}
+    100%  {-webkit-mask-position: 0% 0%  ,50% 0%  ,100% 0%  }
+  }
+  @keyframes back {
+    0%,
+    100%{background-position: 0%   0%,0%   100%}
+    25% {background-position: 100% 0%,0%   100%}
+    50% {background-position: 100% 0%,100% 100%}
+    75% {background-position: 0%   0%,100% 100%}
+  }
+  .app-gun{
+    position: absolute;
+    left: 25%;
+    width: 50vw;
+  }
+  .app-redirect{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+  }
+  .app-redirect-button{
+    border-radius: 12px;
+    padding-top: 4px;
+  }
+  .app-redirect-img{
+    width: 50px;
+  }
+  .app-redirect p{
+    font-size: medium;
+    color: tan;
+    text-shadow: 2px 2px black;
+  }
+  .app-millitary{
+    display: none;
+  }
+  }
