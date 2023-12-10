@@ -11,7 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-@media only screen and (max-width: 990px){
+@media only screen and (max-width: 568px){
 .app-imgWrapper{
   width: 100%;
   text-align: center;
@@ -22,6 +22,7 @@ code {
   text-shadow: 5px 5px black;
   margin: 50px 0px;
   filter: drop-shadow(10px 10px 10px black);
+  width: 200px;
 }
 .app-redirecting{
   width: 100%;
@@ -87,7 +88,7 @@ code {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 }
-@media only screen and (min-width: 991px){
+@media only screen and (min-width: 569px){
 .app-imgWrapper{
   width: 100%;
   text-align: center;
@@ -98,11 +99,12 @@ code {
   text-shadow: 5px 5px black;
   margin: 50px 0px;
   filter: drop-shadow(10px 10px 10px black);
+  width: 200px;
 }
 .app-redirecting{
   width: 100%;
   text-align: center;
-  font-size: 70px;
+  font-size: 40px;
 }
 .app-redirecting-string{
   display: inline;
@@ -149,7 +151,7 @@ code {
 .app-redirect{
   width: 100%;
   text-align: center;
-  margin: 150px 0px;
+  margin: 100px 0px;
 }
 .app-redirect-img{
   width: 80px;
