@@ -1,5 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react'
-import Saved from './components/Saved.js'
+import Saved from './Saved.js'
 
 
 export default function Create(props){
@@ -8,7 +8,18 @@ export default function Create(props){
     const encoded = encodeURI(uri)
     console.log(encoded)
 
+    function handleChange(e){
+        console.log(e.targe.value)
+    }
+
     return(
-        <h1>Create</h1>
+        <form>
+            <input
+                name="input"
+                type="text"
+                onChange={handleChange}
+            ></input>
+            <button>Create QR</button>
+        </form>
     )
 }

@@ -16,4 +16,9 @@ async function connectToDB(){
         console.log(err)
     }
 }
+
+app.use('/auth', require('./routes/authRouter.js'))
+app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256']}))
+app.use('/api/code', require('./routes/codeRouter.js'))
+
 connectToDB()
