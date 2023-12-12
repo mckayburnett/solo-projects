@@ -16,9 +16,20 @@ async function connectToDB(){
         console.log(err)
     }
 }
+connectToDB()
 
 app.use('/auth', require('./routes/authRouter.js'))
 app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256']}))
 app.use('/api/code', require('./routes/codeRouter.js'))
 
-connectToDB()
+app.use((err, req, res, next) => {
+    console.log(err)
+    if(err.name === "UnauthorizedError"){
+        res.status(err.status)
+    }
+    return res.send({ errMsg: err.message })
+})
+
+app.listen(4000, () => {
+    console.log('server running on local port 4000')
+})
