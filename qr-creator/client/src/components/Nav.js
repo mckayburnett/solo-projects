@@ -1,4 +1,7 @@
 import React, {useState, useContext} from 'react'
+import Home from './Home.js'
+import Saved from './Saved.js'
+import Create from './Create.js'
 
 export default function Nav(){
 
