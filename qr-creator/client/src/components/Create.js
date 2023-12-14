@@ -9,11 +9,15 @@ export default function Create(props){
     console.log(encoded)
 
     function handleChange(e){
-        console.log(e.targe.value)
+        setUri(e.targe.value)
+    }
+    function handleSubmit(e){
+        e.preventDefault()
+        console.log(uri)
     }
 
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
                 name="input"
                 type="text"

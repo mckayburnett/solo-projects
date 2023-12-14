@@ -13,4 +13,24 @@ codeRouter.get('/', async (req, res, next) => {
     }
 })
 
+//get by user
+// codeRouter.get('/user/userId', async (req, res, next) => {
+//     try{
+//         const user = req.auth._id
+//     }
+// })
+
+//create qr code
+codeRouter.post('/', async (req, res, next) => {
+    try {
+        req.body.user = req.auth._id
+        const newCode = await new Code(req.body)
+        const savedCode = await newCode.save()
+        res.status(201).send(savedCode)
+    } catch (err) {
+        res.status(500)
+        next(err)
+    }
+})
+
 module.exports = codeRouter
