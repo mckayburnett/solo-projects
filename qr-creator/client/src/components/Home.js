@@ -6,7 +6,7 @@ export default function Home(props){
     return(
         <div className="home-wrapper">
             <h1>home</h1>
-            <img class="home-img" src={qrImage}></img>
+            <img className="home-img" src={qrImage}></img>
             <button>Create</button>
         </div>
     )
