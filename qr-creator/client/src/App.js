@@ -13,11 +13,11 @@ export default function App() {
 
   return (
     <div className="app-wrapper">
-      { token && <Nav logout={logout}/>}
+      { token ? <Nav logout={logout} /> : <Nav />}
       <Routes>
         <Route 
           path="/"
-          element={ token ? <Navigate to="/create" /> : <Home /> }
+          element= {<Home /> }
         />
         <Route 
           path="/saved"

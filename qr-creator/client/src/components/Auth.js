@@ -3,7 +3,7 @@ import { Context } from '../context/Context.js'
 
 export default function AuthForm(props){
   
-    const { signup, login, userState } = useContext(Context)
+    const { signup, login, userState, toggle, setToggle } = useContext(Context)
 
     const initInputs = { email: "", password: "" }
     const [inputs, setInputs] = useState(initInputs)

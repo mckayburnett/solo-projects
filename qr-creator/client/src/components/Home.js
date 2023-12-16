@@ -9,10 +9,10 @@ export default function Home(props){
 
     const { toggle, setToggle, token, user } = useContext(Context)
     
-
+console.log(user)
     return(
         <div className="home-wrapper">
-            <Nav />
+            { user.email && <h3 className="home-greeting">Hello-{user.email}-!</h3> }
             { toggle ? 
                 <>
                 <h1>QR Code Creator</h1>

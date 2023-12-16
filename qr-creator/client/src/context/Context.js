@@ -31,6 +31,7 @@ export default function ContextProvider(props){
                 user,
                 token
             }))
+            setToggle(true)
         })
         .catch(err => console.log(err.response.data.errMsg))
     }
@@ -48,7 +49,7 @@ export default function ContextProvider(props){
                 user, 
                 token
             }))
-            
+            setToggle(true)
         })
         .catch(err => console.log(err.response.data.errMsg))
     }
@@ -74,6 +75,7 @@ export default function ContextProvider(props){
             codes: []
         })
         console.log("fired")
+        setToggle(true)
     }
 
     const [toggle, setToggle] = useState(true)
