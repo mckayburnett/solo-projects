@@ -11,13 +11,13 @@ export default function Nav(props){
 
     return(
         <div className="nav-wrapper">
-            <Link to='/' className="nav-home" onClick={() => setToggle(true)}>Home</Link>
+            <Link to='/' className="nav-home" onClick={() => setToggle(true)} classname="nav-home">Home</Link>
             {token ? <Link to='/create' className="nav-create">Create</Link> : <h3 className="nav-create" onClick={() => setToggle(false)}>Create</h3>}
-            <Link to='/saved' className="nav-saved">Saved</Link>
+            {token ? <Link to='/saved' className="nav-saved">Saved</Link> : <h3 className="nav-saved" onClick={() => setToggle(false)}>Saved</h3>}
             { token ? 
             <h3 className="nav-logout" onClick={logout}>Logout</h3>
             :
-            <h3 className="nav-logout" onClick={()=>setToggle(!toggle)}>Signup/Login</h3>
+            <h3 className="nav-login" onClick={()=>setToggle(!toggle)}>Login</h3>
             }
         </div>
     )

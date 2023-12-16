@@ -15,17 +15,17 @@ console.log(user)
             { user.email && <h3 className="home-greeting">Hello-{user.email}-!</h3> }
             { toggle ? 
                 <>
-                <h1>QR Code Creator</h1>
+                <h1 className="home-title">QR Code Creator</h1>
                 <img className="home-img" src={qrImage}></img>
                 </>
             :
                 <Auth />
             }
             { token ?
-                <Link to="/create">Create</Link>
+                <Link to="/create" className="home-create">Create</Link>
             :
                 toggle ?
-                    <h1 onClick={()=>setToggle(false)}>Create</h1>
+                    <h1 onClick={()=>setToggle(false)} className="home-create">Create</h1>
                 :    
                     <></>               
                 
