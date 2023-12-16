@@ -11,8 +11,8 @@ export default function Nav(props){
 
     return(
         <div className="nav-wrapper">
-            <Link to='/' className="nav-home">Home</Link>
-            <Link to='/create' className="nav-create">Create</Link>
+            <Link to='/' className="nav-home" onClick={() => setToggle(true)}>Home</Link>
+            {token ? <Link to='/create' className="nav-create">Create</Link> : <h3 className="nav-create" onClick={() => setToggle(false)}>Create</h3>}
             <Link to='/saved' className="nav-saved">Saved</Link>
             { token ? 
             <h3 className="nav-logout" onClick={logout}>Logout</h3>

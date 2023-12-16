@@ -7,6 +7,16 @@ export default function AuthForm(props){
 
     const initInputs = { email: "", password: "" }
     const [inputs, setInputs] = useState(initInputs)
+    
+    function handleSignup(e){
+        e.preventDefault()
+        signup(inputs)
+      }
+    
+      function handleLogin(e){
+        e.preventDefault()
+        login(inputs)
+      }
 
     function handleChange(e){
       const {name, value} = e.target
@@ -16,45 +26,47 @@ export default function AuthForm(props){
       }))
     }
   
-    function handleSignup(e){
-      e.preventDefault()
-      signup(inputs)
-    }
-  
-    function handleLogin(e){
-      e.preventDefault()
-      login(inputs)
-    }
+    
 
-    const [toggle, setToggle] = useState(false)
-    console.log('auth toggle', toggle)
-
+    const [memberToggle, setMemberToggle] = useState(false)
   
     return (
-        <form onSubmit={toggle ? {handleSignup} : {handleLogin}}>
-            <input 
-                type="text" 
-                value={inputs.email} 
-                name="email" 
-                onChange={handleChange} 
-                placeholder="Email"/>
-            <input 
-                type="password" 
-                value={inputs.password} 
-                name="password" 
-                onChange={handleChange} 
-                placeholder="Password"/>
-            { toggle ? 
-            <>
+        <div className="auth-form">
+        { memberToggle ? 
+            <form onSubmit={handleSignup}>
+                <input 
+                    type="text" 
+                    value={inputs.email} 
+                    name="email" 
+                    onChange={handleChange} 
+                    placeholder="Email"/>
+                <input 
+                    type="password" 
+                    value={inputs.password} 
+                    name="password" 
+                    onChange={handleChange} 
+                    placeholder="Password"/>
                 <button className="signUpIn">Sign Up</button>
-                <h3 onClick={()=>setToggle(!toggle)}>Already a member?</h3>
-            </>
-            :
-            <>
+                <h3 onClick={()=>setMemberToggle(false)}>Already a member?</h3>
+            </form>
+        :
+            <form onSubmit={handleLogin}>
+                <input 
+                    type="text" 
+                    value={inputs.email} 
+                    name="email" 
+                    onChange={handleChange} 
+                    placeholder="Email"/>
+                <input 
+                    type="password" 
+                    value={inputs.password} 
+                    name="password" 
+                    onChange={handleChange} 
+                    placeholder="Password"/>
                 <button className="signUpIn">Sign In</button>
-                <h3 onClick={()=>setToggle(!toggle)}>Not a member?</h3>
-            </>
-            }
-        </form>
+                <h3 onClick={()=>setMemberToggle(true)}>Not a member?</h3>
+            </form>
+        }
+    </div>
     )
 }
