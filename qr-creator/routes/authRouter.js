@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 
 authRouter.post('/signup', async (req, res, next) => {
     try {
-        const existingUser = await User.findOne({ username: req.body.email });
+        const existingUser = await User.findOne({ email: req.body.email });
         if(existingUser){
             res.status(400)
             return next(new Error('That email is already in use'))

@@ -43,7 +43,7 @@ export default function ContextProvider(props){
             localStorage.setItem("user" , JSON.stringify(user))
             console.log(user)
             getUserCodes()
-            setUserCodes(prevUserState => ({
+            setUserState(prevUserState => ({
                 ...prevUserState,
                 user, 
                 token
@@ -51,6 +51,18 @@ export default function ContextProvider(props){
             
         })
         .catch(err => console.log(err.response.data.errMsg))
+    }
+
+    function getUserCodes(){
+        try {
+            const res = userAxios.get('/api/code/user')
+            setUserState(prevState => ({
+                ...prevState,
+                codes: res.data}
+            ))
+        } catch(err) {
+            console.log(err)
+        }
     }
 
     function logout(){
@@ -61,16 +73,22 @@ export default function ContextProvider(props){
             token: "",
             codes: []
         })
+        console.log("fired")
     }
+
+    const [toggle, setToggle] = useState(true)
+
 
     return(
         <Context.Provider
             value={{
-                
+
                 ...userState,
                 signup,
                 login,
-                logout
+                logout,
+                toggle,
+                setToggle
 
             }}
         >

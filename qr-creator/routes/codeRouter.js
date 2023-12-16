@@ -21,8 +21,17 @@ codeRouter.get('/user', async (req, res, next) => {
     } catch(err) {
         res.status(500)
         next(err)
-    }
+    } 
 })
+// codeRouter.get('/user', (req, res, next) => {
+//     Code.find({user:req.auth._id}, (err, codes) =>{
+//         if(err){
+//             res.status(500)
+//             return next(err)
+//         }
+//         return res.status(200).send(codes)
+//     })
+// })
 
 //create qr code
 codeRouter.post('/', async (req, res, next) => {

@@ -10,7 +10,7 @@ app.use(morgan('dev'))
 
 async function connectToDB(){
     try{
-        mongoose.connect('mongodb+srv://mckayburnett:7%40-GM4y.n6Tsrj7@cluster0.b2twtxz.mongodb.net/qrDataBase?retryWrites=true&w=majority')
+        await mongoose.connect('mongodb+srv://mckayburnett:7%40-GM4y.n6Tsrj7@cluster0.b2twtxz.mongodb.net/qrDataBase?retryWrites=true&w=majority')
         console.log('connected to db')
     }catch(err){
         console.log(err)
