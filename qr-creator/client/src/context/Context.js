@@ -61,6 +61,7 @@ export default function ContextProvider(props){
                 ...prevState,
                 codes: res.data}
             ))
+            console.log('firing')
         } catch(err) {
             console.log(err)
         }
@@ -78,6 +79,18 @@ export default function ContextProvider(props){
         setToggle(true)
     }
 
+    function create(newCode){
+        try {
+            const res = userAxios.post('/api/code', newCode)
+            setUserState(prev => ({
+                ...prev,
+                codes: [...prev.codes, res.data]
+            }))
+        } catch(err) {
+            console.log(err)
+        }
+    }
+
     const [toggle, setToggle] = useState(true)
 
 
@@ -86,12 +99,14 @@ export default function ContextProvider(props){
             value={{
 
                 ...userState,
+                userState,
                 signup,
                 login,
                 logout,
                 toggle,
-                setToggle
-
+                setToggle,
+                create,
+                getUserCodes
             }}
         >
             {props.children}

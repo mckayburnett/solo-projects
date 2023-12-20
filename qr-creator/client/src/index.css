@@ -17,7 +17,9 @@ body {
   text-decoration: none;
   color: blue;
   background-color: #FF6B35;
-  border: 3px solid black
+  border: 3px solid black;
+  box-sizing: border-box;
+
 }
 .nav-home{
   text-decoration: none;

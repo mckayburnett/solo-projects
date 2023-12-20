@@ -12,7 +12,7 @@ export default function Home(props){
 console.log(user)
     return(
         <div className="home-wrapper">
-            { user.email && <h3 className="home-greeting">Hello-{user.email}-!</h3> }
+            { user.email && <h3 className="home-greeting">Hello, {user.email}!</h3> }
             { toggle ? 
                 <>
                 <h1 className="home-title">QR Code Creator</h1>
@@ -21,16 +21,6 @@ console.log(user)
             :
                 <Auth />
             }
-            { token ?
-                <Link to="/create" className="home-create">Create</Link>
-            :
-                toggle ?
-                    <h1 onClick={()=>setToggle(false)} className="home-create">Create</h1>
-                :    
-                    <></>               
-                
-            }
-            
         </div>
     )
 }
