@@ -33,22 +33,22 @@ export default function Create(props){
     const { name, url } = inputs
 
     return(
-        <form onSubmit={handleSubmit}>
-            <input
+        <form onSubmit={handleSubmit} className="create-form">
+            <input className="create-form-name"
                 name="name"
                 type="text"
                 value={name}
                 onChange={handleChange}
                 placeholder="Name your code"
             ></input>
-            <input
+            <input className="create-form-url"
                 name="url"
                 type="url"
                 value={url}
                 onChange={handleChange}
                 placeholder="URL"
             ></input>
-            <button>Create QR</button>
+            <button className="create-form-button">Create QR</button>
             { showLast  &&
                 <div className="saved-savedCodes">    
                 <h3 className="saved-codeName">{lastCode?.name && lastCode.name}</h3>
