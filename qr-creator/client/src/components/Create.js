@@ -50,9 +50,9 @@ export default function Create(props){
             ></input>
             <button className="create-form-button">Create QR</button>
             { showLast  &&
-                <div className="saved-savedCodes">    
-                <h3 className="saved-codeName">{lastCode?.name && lastCode.name}</h3>
-                <img className="saved-img" src={`https://api.qrserver.com/v1/create-qr-code/?data=${lastCode?.url && lastCode.url}&size=150x150`} alt="img"/>
+                <div className="create-created">    
+                <h3 className="create-codeName">{lastCode?.name && lastCode.name}</h3>
+                <img className="create-img" src={`https://api.qrserver.com/v1/create-qr-code/?data=${lastCode?.url && lastCode.url}&size=150x150`} alt="img"/>
             </div>
             }
         </form>

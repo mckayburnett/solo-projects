@@ -108,3 +108,33 @@ body {
   margin: 20px 0px;
   height: 40px;
 }
+.create-created{
+width: 100%;
+padding: 0px 20px;
+}
+.create-codeName{
+
+}
+.create-img{
+
+}
+/*saved*/
+.saved-wrapper{
+  padding: 0px 20px;
+}
+.saved-title{
+  color: black;
+  text-align: center;
+}
+.saved-savedCodes{
+
+}
+.saved-codeName{
+
+}
+.save-img{
+
+}
+.saved-button{
+
+}

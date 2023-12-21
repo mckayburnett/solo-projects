@@ -16,7 +16,7 @@ export default function Saved(props){
             <div className="saved-savedCodes">    
                 <h3 className="saved-codeName">{code?.name && code.name}</h3>
                 <img className="saved-img" src={`https://api.qrserver.com/v1/create-qr-code/?data=${code?.url && code.url}&size=150x150`} alt="img"/>
-                <button onClick={() => deleteClicked(code?._id && code._id)}>Delete</button>
+                <button className="saved-button" onClick={() => deleteClicked(code?._id && code._id)}>Delete</button>
             </div>
         )
     })
