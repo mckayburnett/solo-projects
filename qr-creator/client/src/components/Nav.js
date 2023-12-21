@@ -17,7 +17,7 @@ export default function Nav(props){
             { token ? 
             <h3 className="nav-logout" onClick={logout}>Logout</h3>
             :
-            <h3 className="nav-login" onClick={()=>setToggle(!toggle)}>Login</h3>
+            <h3 className="nav-login" onClick={()=>setToggle(false)}>Login</h3>
             }
         </div>
     )

@@ -46,4 +46,14 @@ codeRouter.post('/', async (req, res, next) => {
     }
 })
 
+codeRouter.delete('/:codeId', async (req, res, next) => {
+    try {
+        req.body.user = req.auth._id
+        const deletedCode = await Code.findByIdAndDelete(req.params.codeId)
+        return res.status(200).send(deletedCode)
+    } catch(err) {
+        console.log(err)
+    }
+})
+
 module.exports = codeRouter

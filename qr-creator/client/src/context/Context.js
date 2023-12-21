@@ -89,8 +89,15 @@ export default function ContextProvider(props){
         }
     }
 
-    function delete(codeId){
-        
+    function deleteCode(codeId){
+        try {
+            const res = userAxios.delete(`/api/code/${codeId}`)
+            setUserState(prev => ({
+                ...prev
+            }))
+        } catch(err) {
+            console.log(err)
+        }
     }
 
     const [toggle, setToggle] = useState(true)
@@ -108,7 +115,8 @@ export default function ContextProvider(props){
                 toggle,
                 setToggle,
                 create,
-                getUserCodes
+                getUserCodes,
+                deleteCode
             }}
         >
             {props.children}
