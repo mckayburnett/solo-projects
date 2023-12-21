@@ -5,7 +5,7 @@ import { Context } from '../context/Context.js'
 
 export default function Create(props){
 
-    const { create, userState } = useContext(Context)
+    const { create, userState, showLast, setShowLast } = useContext(Context)
 
     const initInputs = {
         url: encodeURI(""),
@@ -14,6 +14,7 @@ export default function Create(props){
     const [inputs, setInputs] = useState(initInputs)
     const [uri, setUri] = useState("")
     const encoded = encodeURI(uri)
+    const lastCode = userState.codes[userState.codes.length - 1]
 
     function handleChange(e){
         const { name, value } = e.target
@@ -25,6 +26,8 @@ export default function Create(props){
     function handleSubmit(e){
         e.preventDefault()
         create(inputs)
+        setInputs(initInputs)
+        setShowLast(true)
     }
 
     const { name, url } = inputs
@@ -46,6 +49,12 @@ export default function Create(props){
                 placeholder="URL"
             ></input>
             <button>Create QR</button>
+            { showLast  &&
+                <div className="saved-savedCodes">    
+                <h3 className="saved-codeName">{lastCode?.name && lastCode.name}</h3>
+                <img className="saved-img" src={`https://api.qrserver.com/v1/create-qr-code/?data=${lastCode?.url && lastCode.url}&size=150x150`} alt="img"/>
+            </div>
+            }
         </form>
     )
 }

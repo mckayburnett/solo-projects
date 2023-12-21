@@ -101,6 +101,7 @@ export default function ContextProvider(props){
     }
 
     const [toggle, setToggle] = useState(true)
+    const [showLast, setShowLast] = useState(false)
 
 
     return(
@@ -116,7 +117,9 @@ export default function ContextProvider(props){
                 setToggle,
                 create,
                 getUserCodes,
-                deleteCode
+                deleteCode,
+                showLast,
+                setShowLast
             }}
         >
             {props.children}
