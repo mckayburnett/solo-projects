@@ -55,16 +55,14 @@ export default function ContextProvider(props){
     }
 
     function getUserCodes(){
-        try {
-            const res = userAxios.get('/api/code/user')
+        userAxios.get('/api/code/user')
+        .then(res => {
             setUserState(prevState => ({
                 ...prevState,
-                codes: res.data}
-            ))
-            console.log('firing')
-        } catch(err) {
-            console.log(err)
-        }
+                codes: res.data
+            }))
+        })
+        .catch(err => console.log(err))
     }
 
     function logout(){
@@ -89,6 +87,10 @@ export default function ContextProvider(props){
         } catch(err) {
             console.log(err)
         }
+    }
+
+    function delete(codeId){
+        
     }
 
     const [toggle, setToggle] = useState(true)
