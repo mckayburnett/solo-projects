@@ -13,23 +13,23 @@ export default function Saved(props){
 
     const savedCodes = userState?.codes?.map(code => {
         return (
-            <div className="saved-savedCodes">    
-                <h3 className="saved-codeName">{code?.name && code.name}</h3>
+            <div className="saved-savedCodes" key={code._id}>    
                 <img className="saved-img" src={`https://api.qrserver.com/v1/create-qr-code/?data=${code?.url && code.url}&size=150x150`} alt="img"/>
+                <h2 className="saved-codeName">{code?.name && code.name}</h2>
                 <button className="saved-button" onClick={() => deleteClicked(code?._id && code._id)}>Delete</button>
             </div>
         )
     })
-    console.log('test', userState.codes)
     
     useEffect(() => {
         getUserCodes()
+        console.log('firing')
     }, [deleteToggle])
 
     return(
         <div className="saved-wrapper">
             <h1 className="saved-title">Saved QR Codes</h1>
-            <div>{savedCodes}</div>
+            <div className="saved-codePack">{savedCodes}</div>
         </div>
     )
 }

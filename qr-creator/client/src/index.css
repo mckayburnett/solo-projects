@@ -5,6 +5,7 @@ html{
 }
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 /*Nav*/
@@ -109,32 +110,43 @@ body {
   height: 40px;
 }
 .create-created{
-width: 100%;
-padding: 0px 20px;
+  width: 100%;
+  text-align: center;
 }
 .create-codeName{
-
+  color: white;
+  text-shadow: 2px 2px black;
+  text-align: center;
 }
 .create-img{
-
+  text-align: center;
 }
 /*saved*/
 .saved-wrapper{
   padding: 0px 20px;
 }
 .saved-title{
-  color: black;
+  color: #ff865a;
   text-align: center;
+  text-shadow: 2px 2px black
+}
+.saved-codePack{
+  display: flexbox;
+  text-align: ;
 }
 .saved-savedCodes{
-
+  display: inline-block;
+  padding: 10px;
 }
 .saved-codeName{
-
+  color: whitesmoke;
+  text-shadow: 2px 2px black;
+  text-align: center
 }
 .save-img{
-
+  display: ;
 }
 .saved-button{
-
+  align-content: center;
+  border-radius: 5px;
 }

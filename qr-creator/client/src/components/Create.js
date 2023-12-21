@@ -5,7 +5,7 @@ import { Context } from '../context/Context.js'
 
 export default function Create(props){
 
-    const { create, userState, showLast, setShowLast } = useContext(Context)
+    const { create, userState, showLast, setShowLast, lastCode, getUserCodes } = useContext(Context)
 
     const initInputs = {
         url: encodeURI(""),
@@ -14,7 +14,6 @@ export default function Create(props){
     const [inputs, setInputs] = useState(initInputs)
     const [uri, setUri] = useState("")
     const encoded = encodeURI(uri)
-    const lastCode = userState.codes[userState.codes.length - 1]
 
     function handleChange(e){
         const { name, value } = e.target
@@ -26,12 +25,12 @@ export default function Create(props){
     function handleSubmit(e){
         e.preventDefault()
         create(inputs)
+        getUserCodes()
         setInputs(initInputs)
         setShowLast(true)
     }
-
     const { name, url } = inputs
-
+    
     return(
         <form onSubmit={handleSubmit} className="create-form">
             <input className="create-form-name"
@@ -49,10 +48,11 @@ export default function Create(props){
                 placeholder="URL"
             ></input>
             <button className="create-form-button">Create QR</button>
-            { showLast  &&
+            { showLast && 
                 <div className="create-created">    
-                <h3 className="create-codeName">{lastCode?.name && lastCode.name}</h3>
+                <h1 className="create-codeName">{lastCode?.name && lastCode.name}</h1>
                 <img className="create-img" src={`https://api.qrserver.com/v1/create-qr-code/?data=${lastCode?.url && lastCode.url}&size=150x150`} alt="img"/>
+                <h3 className="create-codeName">Code successfully created! Now viewable in Saved section</h3>
             </div>
             }
         </form>

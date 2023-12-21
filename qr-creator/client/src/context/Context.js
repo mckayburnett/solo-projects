@@ -77,9 +77,11 @@ export default function ContextProvider(props){
         setToggle(true)
     }
 
-    function create(newCode){
+    async function create(newCode){
         try {
-            const res = userAxios.post('/api/code', newCode)
+            const res = await userAxios.post('/api/code', newCode)
+            setLastCode(res.data)
+            getUserCodes()
             setUserState(prev => ({
                 ...prev,
                 codes: [...prev.codes, res.data]
@@ -102,6 +104,8 @@ export default function ContextProvider(props){
 
     const [toggle, setToggle] = useState(true)
     const [showLast, setShowLast] = useState(false)
+    const [lastCode, setLastCode] = useState("")
+
 
 
     return(
@@ -119,7 +123,9 @@ export default function ContextProvider(props){
                 getUserCodes,
                 deleteCode,
                 showLast,
-                setShowLast
+                setShowLast,
+                lastCode,
+                setLastCode
             }}
         >
             {props.children}
