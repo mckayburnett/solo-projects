@@ -107,6 +107,9 @@ body {
 .home-greeting{
   
 }
+.home-greeting-user{
+  text-decoration: underline;
+}
 .home-title{
   font-size: 40px;
   margin: 0px 0px 50px;
@@ -168,10 +171,11 @@ body {
 .saved-title{
   color: #ff865a;
   text-align: center;
-  text-shadow: 2px 2px black
+  text-shadow: 2px 2px black;
 }
 .saved-codePack{
   display: flexbox;
+  text-align: center;
 }
 .saved-savedCodes{
   display: inline-block;
@@ -180,12 +184,16 @@ body {
 .saved-codeName{
   color: whitesmoke;
   text-shadow: 2px 2px black;
-  text-align: center
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .save-img{
 
 }
 .saved-button{
   align-content: center;
-  border-radius: 5px;
+  border-radius: 10px;
+  margin-top: 5px; 
+  margin-bottom: 10px;
 }

@@ -12,7 +12,7 @@ export default function Home(props){
 console.log(user)
     return(
         <div className="home-wrapper">
-            { user.email && <h3 className="home-greeting">Hello, {user.email}!</h3> }
+            { user.email && <h3 className="home-greeting">Hello, <span className="home-greeting-user">{user.email}</span>!</h3> }
             { toggle ? 
                 <>
                 <h1 className="home-title">QR Code Creator</h1>
