@@ -42,7 +42,7 @@ export default function Create(props){
             ></input>
             <input className="create-form-url"
                 name="url"
-                type="url"
+                type="text"
                 value={url}
                 onChange={handleChange}
                 placeholder="URL"

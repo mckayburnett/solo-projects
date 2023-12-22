@@ -3,7 +3,7 @@ import { Context } from '../context/Context.js'
 
 export default function AuthForm(props){
   
-    const { signup, login, userState, toggle, setToggle } = useContext(Context)
+    const { signup, login, userState, toggle, setToggle, err, token } = useContext(Context)
 
     const initInputs = { email: "", password: "" }
     const [inputs, setInputs] = useState(initInputs)
@@ -26,7 +26,7 @@ export default function AuthForm(props){
       }))
     }
   
-    
+    console.log(err)
 
     const [memberToggle, setMemberToggle] = useState(false)
   
@@ -47,6 +47,7 @@ export default function AuthForm(props){
                     name="password" 
                     onChange={handleChange} 
                     placeholder="Password"/>
+                {err && <h3>{err}</h3>}    
                 <button className="auth-button">Sign Up</button>
                 <h2 className="auth-member" onClick={()=>setMemberToggle(false)}>Already a member?</h2>
             </form>
@@ -65,6 +66,7 @@ export default function AuthForm(props){
                     name="password" 
                     onChange={handleChange} 
                     placeholder="Password"/>
+                {err && <h3>{err}</h3>}    
                 <button className="auth-button">Sign In</button>
                 <h2 className="auth-member" onClick={()=>setMemberToggle(true)}>Not a member?</h2>
             </form>

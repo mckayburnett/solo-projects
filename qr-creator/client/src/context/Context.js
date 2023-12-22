@@ -19,6 +19,7 @@ export default function ContextProvider(props){
         codes: []
     }
     const [userState, setUserState] = useState(initState)
+    const [err, setErr] = useState("")
 
     function signup(credentials){
         axios.post('/auth/signup', credentials)
@@ -32,8 +33,9 @@ export default function ContextProvider(props){
                 token
             }))
             setToggle(true)
+            setErr("")
         })
-        .catch(err => console.log(err.response.data.errMsg))
+        .catch(err => setErr(err.response.data.errMsg))
     }
 
     function login(credentials){
@@ -50,8 +52,9 @@ export default function ContextProvider(props){
                 token
             }))
             setToggle(true)
+            setErr("")
         })
-        .catch(err => console.log(err.response.data.errMsg))
+        .catch(err => setErr(err.response.data.errMsg))
     }
 
     function getUserCodes(){
@@ -75,6 +78,7 @@ export default function ContextProvider(props){
         })
         console.log("fired")
         setToggle(true)
+        setErr("")
     }
 
     async function create(newCode){
@@ -125,7 +129,8 @@ export default function ContextProvider(props){
                 showLast,
                 setShowLast,
                 lastCode,
-                setLastCode
+                setLastCode, 
+                err
             }}
         >
             {props.children}
