@@ -58,7 +58,47 @@ body {
   cursor: pointer;
   font-weight:bold;
 }
-/*Home wrapper, greeting, title, create, image */
+/*Auth*/
+.auth-wrapper{
+
+}
+.auth-form{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
+}
+.auth-email{
+  align-self: center;
+  border-radius: 20px;
+  margin: 20px 0px;
+  height: 40px;
+  width: 50%;
+  font-size: 20px;
+  text-align: center;
+}
+.auth-password{
+  align-self: center;
+  border-radius: 20px;
+  margin: 20px 0px;
+  height: 40px;
+  width: 50%;
+  font-size: 20px;
+  text-align: center;
+}
+.auth-button{
+  align-self: center;
+  border-radius: 15px;
+  background-color:#ff865a;
+  color: blue;
+  font-weight: bold;
+  margin: 20px 0px;
+  height: 40px;
+}
+.auth-member{
+  cursor: pointer;
+}
+/*Home*/
 .home-wrapper{
   color: #ff865a;
   text-shadow: 2px 2px black;
@@ -132,7 +172,6 @@ body {
 }
 .saved-codePack{
   display: flexbox;
-  text-align: ;
 }
 .saved-savedCodes{
   display: inline-block;
@@ -144,7 +183,7 @@ body {
   text-align: center
 }
 .save-img{
-  display: ;
+
 }
 .saved-button{
   align-content: center;

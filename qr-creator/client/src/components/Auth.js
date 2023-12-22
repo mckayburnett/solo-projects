@@ -31,40 +31,42 @@ export default function AuthForm(props){
     const [memberToggle, setMemberToggle] = useState(false)
   
     return (
-        <div className="auth-form">
+        <div className="auth-wrapper">
         { memberToggle ? 
-            <form onSubmit={handleSignup}>
-                <input 
+            <form onSubmit={handleSignup} className="auth-form">
+                <h4>please signup to continue</h4>
+                <input className="auth-email"
                     type="text" 
                     value={inputs.email} 
                     name="email" 
                     onChange={handleChange} 
                     placeholder="Email"/>
-                <input 
+                <input className="auth-password"
                     type="password" 
                     value={inputs.password} 
                     name="password" 
                     onChange={handleChange} 
                     placeholder="Password"/>
-                <button className="signUpIn">Sign Up</button>
-                <h3 onClick={()=>setMemberToggle(false)}>Already a member?</h3>
+                <button className="auth-button">Sign Up</button>
+                <h2 className="auth-member" onClick={()=>setMemberToggle(false)}>Already a member?</h2>
             </form>
         :
-            <form onSubmit={handleLogin}>
-                <input 
+            <form onSubmit={handleLogin} className="auth-form">
+                <h4>please login to continue</h4>
+                <input className="auth-email"
                     type="text" 
                     value={inputs.email} 
                     name="email" 
                     onChange={handleChange} 
                     placeholder="Email"/>
-                <input 
+                <input className="auth-password"
                     type="password" 
                     value={inputs.password} 
                     name="password" 
                     onChange={handleChange} 
                     placeholder="Password"/>
-                <button className="signUpIn">Sign In</button>
-                <h3 onClick={()=>setMemberToggle(true)}>Not a member?</h3>
+                <button className="auth-button">Sign In</button>
+                <h2 className="auth-member" onClick={()=>setMemberToggle(true)}>Not a member?</h2>
             </form>
         }
     </div>
