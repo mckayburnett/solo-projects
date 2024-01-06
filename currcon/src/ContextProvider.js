@@ -10,7 +10,7 @@ export default function ContextProvider(props){
     return(
         <Context.Provider
             value={{
-                
+                currencies,
             }}
         >
             {props.children}
