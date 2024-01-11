@@ -20,12 +20,38 @@ class Department {
         console.log(this.employees);
     }
 }
-class ITDerpartment extends Department {
+class ITDepartment extends Department {
+    constructor(id, admins) {
+        super(id, 'IT'); //whenever you add a constructor to and inheritor class, you need the super function. *It forwards the inherited constructor with the same properties.
+        this.admins = admins;
+    }
 }
-const accounting = new Department('d1', 'Accounting');
-accounting.addEmployee('Max');
-accounting.addEmployee('Jacob');
-accounting.describe();
-accounting.printEmployeeInformation();
+class AccountingDepartment extends Department {
+    constructor(id, reports) {
+        super(id, 'Acounting');
+        this.reports = reports;
+    }
+    addEmployee(name) {
+        if (name === 'Max') {
+            return;
+        }
+        this.employees.push(name);
+    }
+    addReport(text) {
+        this.reports.push(text);
+    }
+    printReports() {
+        console.log(this.reports);
+    }
+}
+const it = new ITDepartment('d1', ['Max']);
+it.addEmployee('Max');
+it.addEmployee('Jacob');
+it.describe();
+it.printEmployeeInformation();
+console.log(it);
+const accounting = new AccountingDepartment('d2', []);
+accounting.addReport('Something went wrong...');
+accounting.printReports();
 // const accountingCopy = { name: 'DUMMY', describe: accounting.describe}
 // accountingCopy.describe()

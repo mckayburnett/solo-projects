@@ -1,7 +1,7 @@
 class Department {
     // private id: string;
     // private name: string;
-    private employees: string[] = []; //private means "employees" is only accessible within the class Department, you can't add a "employees[2] = 'Sam'" outside of the class below, you have to use the addEmployee() method.
+    protected employees: string[] = []; //private means "employees" is only accessible within the class Department, you can't add a "employees[2] = 'Sam'" outside of the class below, you have to use the addEmployee() method.
 
 
     constructor(private readonly id: string, public name: string){ //readonly only in ts. readonly makes it only initialized once, can't be changed.
@@ -23,18 +23,51 @@ class Department {
     }
 }
 
-class ITDerpartment extends Department { //the ITDepartment will inherit EVERYTHING from the Department class
-
+class ITDepartment extends Department { //the ITDepartment will inherit EVERYTHING from the Department class, except private properties: you can switch to "protected" and that allows for classes that inherits the property
+    admins: string[];
+    constructor(id: string, admins: string[]) {
+        super(id, 'IT'); //whenever you add a constructor to and inheritor class, you need the super function. *It forwards the inherited constructor with the same properties.
+        this.admins = admins
+    }
 }
 
-const accounting = new Department('d1', 'Accounting');
+class AccountingDepartment extends Department {
+    constructor(id: string, private reports: string[]) {
+        super(id, 'Acounting')
+    }
 
-accounting.addEmployee('Max');
-accounting.addEmployee('Jacob');
+    addEmployee(name: string){
+        if (name === 'Max'){
+            return;
+        }
+        this.employees.push(name);
+    }
+
+    addReport(text: string){
+        this.reports.push(text)
+    }
+
+    printReports() {
+        console.log(this.reports)
+    }
+}
+const it = new ITDepartment('d1', ['Max']);
+
+it.addEmployee('Max');
+it.addEmployee('Jacob');
 
 
-accounting.describe();
-accounting.printEmployeeInformation();
+it.describe();
+it.printEmployeeInformation();
+
+console.log(it)
+
+const accounting = new AccountingDepartment('d2', []);
+
+accounting.addReport('Something went wrong...');
+accounting.printReports();
+
+
 
 // const accountingCopy = { name: 'DUMMY', describe: accounting.describe}
 // accountingCopy.describe()
