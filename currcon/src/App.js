@@ -2,6 +2,8 @@ import Form from './Form.js'
 import Results from './Results.js'
 
 function App() {
+
+
   return (
     <div className="app-wrapper">
       <div className="app-titles">
