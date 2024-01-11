@@ -3,20 +3,19 @@ import { Context } from './ContextProvider.js'
 
 export default function Form(){
 
-    const {currencies} = useContext(Context)
+    const {currencies, currency, currencyValue, getConversion} = useContext(Context)
 
-    const [currency, setCurrency] =useState("")
-    const currencyValue = (currencies.map(currency => {
-        return <div><input type="checkbox" value={currency} placeholder={currency} name={currency} onClick={(e) => setCurrency((prev) => [...prev, e.target.value])}></input><label>{currency}</label></div>
-    }))
-    console.log('currencyValue',currencyValue)
-    console.log(currency)
+    function handleSubmit(e){
+        e.preventDefault()
+        getConversion(currency)
+    }
 
     return(
         <div className="form-wrapper">
-            <form className="form-form">
+            <form className="form-form" onSubmit={handleSubmit}>
                 Select Currency(s)
                 {currencyValue}
+                <button>Convert</button>
             </form>
         </div>
     )
