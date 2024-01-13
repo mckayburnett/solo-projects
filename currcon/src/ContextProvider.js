@@ -31,6 +31,7 @@ export default function ContextProvider(props){
             value={{
                 currencies,
                 currency,
+                setCurrency,
                 currencyValue,
                 getConversion, 
                 converted,

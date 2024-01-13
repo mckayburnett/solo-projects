@@ -3,11 +3,17 @@ import { Context } from './ContextProvider.js'
 
 export default function Form(){
 
-    const {currencies, currency, currencyValue, getConversion} = useContext(Context)
+    const {currencies, currency, setCurrency, currencyValue, getConversion, runFunc, setRunFunc} = useContext(Context)
 
     function handleSubmit(e){
         e.preventDefault()
         getConversion(currency)
+        setRunFunc(true)
+    }
+    function handleReset(e){
+        e.preventDefault()
+        setCurrency("")
+        setRunFunc(false)
     }
 
     return(
@@ -15,7 +21,8 @@ export default function Form(){
             <form className="form-form" onSubmit={handleSubmit}>
                 Select Currency(s)
                 {currencyValue}
-                <button>Convert</button>
+                {!runFunc ? <button>Convert</button> : <button onClick={handleReset}>Reset</button>}
+                
             </form>
         </div>
     )
