@@ -26,6 +26,19 @@ export default function ContextProvider(props){
 
     const [runFunc, setRunFunc] = useState(false)
 
+    function handleSubmit(e){
+        e.preventDefault()
+        getConversion(currency)
+        setRunFunc(true)
+    }
+    function handleReset(e){
+        const scrollPosition = window.scrollY || window.pageYOffset;
+        window.location.reload();
+        window.onload = () => {
+            window.scrollTo(0, scrollPosition);
+        }
+    }
+
     return(
         <Context.Provider
             value={{
@@ -36,7 +49,9 @@ export default function ContextProvider(props){
                 getConversion, 
                 converted,
                 runFunc,
-                setRunFunc
+                setRunFunc,
+                handleSubmit,
+                handleReset
             }}
         >
             {props.children}

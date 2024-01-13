@@ -3,18 +3,8 @@ import { Context } from './ContextProvider.js'
 
 export default function Form(){
 
-    const {currencies, currency, setCurrency, currencyValue, getConversion, runFunc, setRunFunc} = useContext(Context)
+    const {currencies, currency, setCurrency, currencyValue, getConversion, runFunc, setRunFunc, handleSubmit, handleReset} = useContext(Context)
 
-    function handleSubmit(e){
-        e.preventDefault()
-        getConversion(currency)
-        setRunFunc(true)
-    }
-    function handleReset(e){
-        e.preventDefault()
-        setCurrency("")
-        setRunFunc(false)
-    }
 
     return(
         <div className="form-wrapper">
