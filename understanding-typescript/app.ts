@@ -1,4 +1,4 @@
-class Department {
+abstract class Department {
     static fiscalYear = 2020
     // private id: string;
     // private name: string;
@@ -10,13 +10,13 @@ class Department {
         //console.log(this.fiscalYear) --- this won't work because fiscalYear is static and not an "instance", would need to do Department.fiscalYear
     }
 
+
     static createEmployee(name: string){ //static allows creation without having to instatiate anything- you don't need to use New...
         return{name: name}
     }
 
-    describe(this: Department){ //when Describe is executed "this" will always reference an instance of Department
-        console.log(`Department: ${this.id}: ${this.name}`) //this refers to the class scope
-    }
+    abstract describe(this: Department): void;
+        // console.log('Accounting Department - ID ' + this.id)
 
     addEmployee(employee: string){
         this.employees.push(employee)
@@ -34,10 +34,15 @@ class ITDepartment extends Department { //the ITDepartment will inherit EVERYTHI
         super(id, 'IT'); //whenever you add a constructor to and inheritor class, you need the super function. *It forwards the inherited constructor with the same properties.
         this.admins = admins
     }
+
+    describe(){
+        console.log('IT Department - ID: ' + this.id)
+    }
 }
 
 class AccountingDepartment extends Department {
     private lastReport: string;
+    private static instance: AccountingDepartment;
 
     get mostRecentReport(){ //getter is where you use a method/function to retrieve a value
         if(this.lastReport){
@@ -54,13 +59,21 @@ class AccountingDepartment extends Department {
     } //setters typically relate to the getter
 
 
-    constructor(id: string, private reports: string[]) {
+    private constructor(id: string, private reports: string[]) {
         super(id, 'Acounting')
         this.lastReport = reports[0]
     }
 
+    static getInstance(){
+        if (AccountingDepartment.instance){
+            return this.instance;
+        }
+        this.instance = new AccountingDepartment('d2', []);
+        return this.instance
+    }
+
     describe(){
-        console.log('Accounting Department - ID ' + this.id)
+        console.log('Accounting Department - ID: ' + this.id)
     }
 
     addEmployee(name: string){
@@ -94,7 +107,8 @@ it.printEmployeeInformation();
 
 console.log(it)
 
-const accounting = new AccountingDepartment('d2', []);
+// const accounting = new AccountingDepartment('d2', []);
+const accounting = AccountingDepartment.getInstance();
 
 accounting.mostRecentReport = 'Year End Report'
 accounting.addReport('Something went wrong...');
