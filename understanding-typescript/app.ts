@@ -1,12 +1,17 @@
 class Department {
+    static fiscalYear = 2020
     // private id: string;
     // private name: string;
     protected employees: string[] = []; //private means "employees" is only accessible within the class Department, you can't add a "employees[2] = 'Sam'" outside of the class below, you have to use the addEmployee() method.
 
-
-    constructor(private readonly id: string, public name: string){ //readonly only in ts. readonly makes it only initialized once, can't be changed.
+    constructor(protected readonly id: string, public name: string){ //readonly only in ts. readonly makes it only initialized once, can't be changed.
         // this.id = id;
         // this.name = n;
+        //console.log(this.fiscalYear) --- this won't work because fiscalYear is static and not an "instance", would need to do Department.fiscalYear
+    }
+
+    static createEmployee(name: string){ //static allows creation without having to instatiate anything- you don't need to use New...
+        return{name: name}
     }
 
     describe(this: Department){ //when Describe is executed "this" will always reference an instance of Department
@@ -54,6 +59,10 @@ class AccountingDepartment extends Department {
         this.lastReport = reports[0]
     }
 
+    describe(){
+        console.log('Accounting Department - ID ' + this.id)
+    }
+
     addEmployee(name: string){
         if (name === 'Max'){
             return;
@@ -70,6 +79,10 @@ class AccountingDepartment extends Department {
         console.log(this.reports)
     }
 }
+
+const employee1 = Department.createEmployee("Max")
+console.log(employee1, Department.fiscalYear)
+
 const it = new ITDepartment('d1', ['Max']);
 
 it.addEmployee('Max');
@@ -86,6 +99,8 @@ const accounting = new AccountingDepartment('d2', []);
 accounting.mostRecentReport = 'Year End Report'
 accounting.addReport('Something went wrong...');
 accounting.printReports();
+
+accounting.describe()
 
 
 
