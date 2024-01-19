@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export const Context = React.createContext()
@@ -29,6 +29,7 @@ export default function ContextProvider(props){
             console.log(err)
         }
     }
+
     
     const [coinToggle, setCoinToggle] = useState(false)
     
