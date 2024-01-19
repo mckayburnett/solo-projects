@@ -41,6 +41,13 @@ class AccountingDepartment extends Department {
         throw new Error('No report found.')
     }
 
+    set mostRecentReport(value: string){
+        if(!value){
+        this.addReport('please add a value')
+        }
+        this.addReport(value)
+    } //setters typically relate to the getter
+
 
     constructor(id: string, private reports: string[]) {
         super(id, 'Acounting')
@@ -76,7 +83,7 @@ console.log(it)
 
 const accounting = new AccountingDepartment('d2', []);
 
-
+accounting.mostRecentReport = 'Year End Report'
 accounting.addReport('Something went wrong...');
 accounting.printReports();
 
