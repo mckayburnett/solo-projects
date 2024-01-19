@@ -1,7 +1,11 @@
 import Form from './Form.js'
 import Results from './Results.js'
+import { Context } from './ContextProvider.js'
+import { useContext } from 'react'
 
 function App() {
+
+  const { runFunc } = useContext(Context)
 
 
   return (
@@ -10,7 +14,7 @@ function App() {
         <h1 className="app-mainTitle">CurrCon</h1>
         <h2 className="app-subTitle">An updated by the minute Currency Converter</h2>
         <Form />
-        <Results />
+        {runFunc && <Results />}
       </div>
     </div>
   );
