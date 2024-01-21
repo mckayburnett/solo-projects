@@ -13,9 +13,9 @@ function App() {
       <div className="app-titles">
         <h1 className="app-mainTitle">CurrCon</h1>
         <h2 className="app-subTitle">An updated by the minute Currency Converter</h2>
-        <Form />
-        {runFunc && <Results />}
-      </div>
+       </div> 
+       <Form />
+      {runFunc && <Results />}
     </div>
   );
 }

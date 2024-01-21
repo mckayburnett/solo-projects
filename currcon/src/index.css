@@ -1,0 +1,44 @@
+html{
+    padding: 10px;
+}
+.app-titles{
+    text-align: center;
+}
+
+/* form */
+.form-selectCurrency{
+    margin-bottom: 5px;
+}
+.form-currencyValue{
+    display: inline-block;
+    margin: 2px;
+}
+.form-currencyValue-selected{
+    background-color: rgba(0, 128, 0, 0.545);
+}
+.form-selectBase{
+    margin-bottom: 5px;
+}
+.form-baseValue{
+
+}
+.form-currencyAbbrev{
+    font-size: small;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-currencyAbbrev:hover{
+    background-color: grey;
+}
+.form-checkbox{
+
+}
+/* results */
+.results-rates-dataGreen{
+    color: green;
+}
+.results-rates-dataRed{
+    color: red;
+}

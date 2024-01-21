@@ -9,12 +9,11 @@ export default function Form(){
     return(
         <div className="form-wrapper">
             <form className="form-form" onSubmit={handleSubmit}>
-                Select Base Currency
+                <h3 className="form-selectBase">Select Base Currency</h3>
                 {baseValue}
-                Select Currency(s)
+                <h3 className="form-selectCurrency">Select Currency(s)</h3>
                 {currencyValue}
                 {!runFunc ? <button>Convert</button> : <button onClick={handleReset}>Reset</button>}
-                
             </form>
         </div>
     )
