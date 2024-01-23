@@ -30,7 +30,17 @@ html{
     cursor: pointer;
 }
 .form-currencyAbbrev:hover{
-    background-color: grey;
+    background-color: blue;
+    color: white;
+}
+.form-currencyAbbrev-blue{
+    font-size: small;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
 }
 .form-checkbox{
 

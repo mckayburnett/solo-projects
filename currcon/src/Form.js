@@ -8,12 +8,12 @@ export default function Form(){
 
     return(
         <div className="form-wrapper">
-            <form className="form-form" onSubmit={handleSubmit}>
+            <form className="form-form">
                 <h3 className="form-selectBase">Select Base Currency</h3>
                 {baseValue}
-                <h3 className="form-selectCurrency">Select Currency(s) -{currency && currency.join( )}-</h3>
+                <h3 className="form-selectCurrency">Select Currency(s) -{currency.length < 2 ? currency : currency.join(', ')}-</h3>
                 {currencyValue}
-                {!runFunc ? <button>Convert</button> : <button onClick={handleReset}>Reset</button>}
+                {!runFunc ? <button type="button" onClick={handleSubmit}>Convert</button> : <button type="button" onClick={handleReset}>Reset</button>}
             </form>
         </div>
     )

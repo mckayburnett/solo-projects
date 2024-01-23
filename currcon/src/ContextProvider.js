@@ -9,14 +9,31 @@ export default function ContextProvider(props){
 
     const [currency, setCurrency] = useState("")
     const [base, setBase] = useState("USD")
+    const [runFunc, setRunFunc] = useState(false)
 
 
-    console.log('test', )
+    console.log('test', runFunc)
 
     const currencyValue = (currencies.map(val => {
-        return <div className="form-currencyValue" key={val}>
-                    <label className="form-currencyAbbrev"key={val + "label"} onClick={(e) => setCurrency((prev) => [...prev, e.target.textContent])}>{val}</label>
-                </div>
+        return (
+            
+            currency.includes(val) ? 
+            <div className="form-currencyValue" key={val}>
+                {runFunc ? 
+                <button type="button"  disabled = {true} className="form-currencyAbbrev-blue"key={val + "label"} onClick={(e) => setCurrency((prev) => [...prev, e.target.textContent])}>{val}</button>
+                :
+                <button type="button"  className="form-currencyAbbrev-blue"key={val + "label"} onClick={(e) => setCurrency((prev) => [...prev, e.target.textContent])}>{val}</button>
+                }
+            </div>
+            :
+            <div className="form-currencyValue" key={val}>
+                {runFunc ? 
+                <button type="button"  disabled = {true} className="form-currencyAbbrev"key={val + "label"} onClick={(e) => setCurrency((prev) => [...prev, e.target.textContent])}>{val}</button>
+                :
+                <button type="button" className="form-currencyAbbrev"key={val + "label"} onClick={(e) => setCurrency((prev) => [...prev, e.target.textContent])}>{val}</button>
+                }           
+            </div>
+        )
     }))
 
 
@@ -43,7 +60,6 @@ export default function ContextProvider(props){
             .catch(err => console.log(err))
     }
 
-    const [runFunc, setRunFunc] = useState(false)
 
     function handleSubmit(e){
         e.preventDefault()
