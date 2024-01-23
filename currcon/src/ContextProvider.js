@@ -15,7 +15,6 @@ export default function ContextProvider(props){
 
     const currencyValue = (currencies.map(val => {
         return <div className="form-currencyValue" key={val}>
-                    {/* <input className="form-checkbox"type="checkbox" key={val} value={val} placeholder={val} name={val} onClick={(e) => setCurrency((prev) => [...prev, e.target.value])}></input> */}
                     <label className="form-currencyAbbrev"key={val + "label"} onClick={(e) => setCurrency((prev) => [...prev, e.target.textContent])}>{val}</label>
                 </div>
     }))

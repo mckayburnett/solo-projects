@@ -11,7 +11,7 @@ export default function Form(){
             <form className="form-form" onSubmit={handleSubmit}>
                 <h3 className="form-selectBase">Select Base Currency</h3>
                 {baseValue}
-                <h3 className="form-selectCurrency">Select Currency(s)</h3>
+                <h3 className="form-selectCurrency">Select Currency(s) -{currency && currency.join( )}-</h3>
                 {currencyValue}
                 {!runFunc ? <button>Convert</button> : <button onClick={handleReset}>Reset</button>}
             </form>
