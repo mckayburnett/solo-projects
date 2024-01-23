@@ -8,7 +8,7 @@ export default function Results(props){
     const rates = runFunc && converted && converted.rates ? (
         Object.values(converted.rates).map((data, i) => (
           <h3 key={currency[i]}>{currency[i]} : {data < 1 ? <span className="results-rates-dataRed">{data}</span>: <span className="results-rates-dataGreen">{data}</span>}</h3>
-        ))
+        )) 
       ) : "... loading";
 
       console.log(converted.rates)

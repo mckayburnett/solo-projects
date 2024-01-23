@@ -65,6 +65,9 @@ export default function ContextProvider(props){
         e.preventDefault()
         getConversion(base, currency)
         setRunFunc(true)
+        window.scrollTo({bottom: 1000,
+            behavior: "smooth",
+        })
     }
     function handleReset(e){
         const scrollPosition = window.scrollY || window.pageYOffset;
