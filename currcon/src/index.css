@@ -1,91 +1,193 @@
-html{
-    padding: 10px;
-    color: white;
-    background-color: rgb(19, 18, 18);
-}
-.app-titles{
-    text-align: center;
-}
-
-/* form */
-.form-selectCurrency{
-    margin-bottom: 5px;
-}
-.form-currencyValue{
-    display: inline-block;
-    margin: 2px;
-}
-.form-currencyValue-selected{
-    background-color: rgba(0, 128, 0, 0.545);
-}
-.form-selectBase{
-    margin-bottom: 5px;
-}
-.form-baseValue{
-
-}
-.form-currencyAbbrev{
-    font-size: small;
-    padding: 2px;
-    border: none;
-    background-color: rgb(236, 236, 236);
-    border-radius: 5px;
-    cursor: pointer;
-}
-.form-currencyAbbrev:hover{
-    background-color: rgba(103, 6, 172, 0.829);
-    color: white;
-    box-shadow: 0 5px 15px rgb(145, 92, 182)
-}
-.form-currencyAbbrev-blue{
-    font-size: small;
-    padding: 2px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: rgba(103, 6, 172, 0.829);
-    color: white;
-}
-.form-checkbox{
-
-}
-.form-button{
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    border-radius: 15px;
-    cursor: pointer;
-}
-.form-button:hover{
-    display: block;
-    margin-top: 10px;
-    border-radius: 15px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgb(145, 92, 182)
-}
-/* results */
-.results-wrapper{
-    text-align: center;
-}
-.results-dates{
-
-}
-.results-base{
-
-}
-.results-rates-container{
-
-}
-.results-rates-currency{
-    display: inline-flex;
-    padding: 5px 10px;
-    border: 2px white solid;
-    margin-bottom: 0px;
-}
-.results-rates-dataGreen{
-    color: green;
-}
-.results-rates-dataRed{
-    color: red;
-}
 /* 650px and below */
+@media only screen and (max-width: 650px){
+    html{
+        padding: 10px;
+        color: white;
+        background-color: rgb(19, 18, 18);
+    }
+    .app-titles{
+        text-align: center;
+    }
+    
+    /* form */
+    .form-selectCurrency{
+        margin-bottom: 5px;
+    }
+    .form-currencyValue{
+        display: inline-block;
+        margin: 2px;
+    }
+    .form-currencyValue-selected{
+        background-color: rgba(0, 128, 0, 0.545);
+    }
+    .form-selectBase{
+        margin-bottom: 5px;
+    }
+    .form-baseValue{
+    
+    }
+    .form-currencyValue{
+        
+    }
+    .form-currencyAbbrev{
+        font-size: small;
+        padding: 2px;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .form-currencyAbbrev:hover{
+        background-color: rgba(103, 6, 172, 0.829);
+        color: white;
+        box-shadow: 0 5px 15px rgb(145, 92, 182)
+    }
+    .form-currencyAbbrev-blue{
+        font-size: small;
+        padding: 2px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: rgba(103, 6, 172, 0.829);
+        color: white;
+    }
+    .form-checkbox{
+    
+    }
+    .form-button{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+    .form-button:hover{
+        display: block;
+        margin-top: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgb(145, 92, 182)
+    }
+    /* results */
+    .results-wrapper{
+        text-align: center;
+    }
+    .results-dates{
+    
+    }
+    .results-base{
+    
+    }
+    .results-rates-container{
+       
+    }
+    .results-rates-currency{
+        padding: 5px 10px;
+        border: 2px white solid;
+        margin-bottom: 0px;
+        font-size: medium;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .results-rates-dataGreen{
+        color: rgb(22, 192, 22);
+    }
+    .results-rates-dataRed{
+        color: red;
+    }
+    
+}
+@media only screen and (min-width: 651px){
+    html{
+        padding: 10px;
+        color: white;
+        background-color: rgb(19, 18, 18);
+    }
+    .app-titles{
+        text-align: center;
+    }
+    
+    /* form */
+    .form-selectCurrency{
+        margin-bottom: 5px;
+    }
+    .form-currencyValue{
+        display: inline-block;
+        margin: 2px;
+    }
+    .form-currencyValue-selected{
+        background-color: rgba(0, 128, 0, 0.545);
+    }
+    .form-selectBase{
+        margin-bottom: 5px;
+    }
+    .form-baseValue{
+    
+    }
+    .form-currencyAbbrev{
+        font-size: small;
+        padding: 2px;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .form-currencyAbbrev:hover{
+        background-color: rgba(103, 6, 172, 0.829);
+        color: white;
+        box-shadow: 0 5px 15px rgb(145, 92, 182)
+    }
+    .form-currencyAbbrev-blue{
+        font-size: small;
+        padding: 2px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: rgba(103, 6, 172, 0.829);
+        color: white;
+    }
+    .form-checkbox{
+    
+    }
+    .form-button{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+    .form-button:hover{
+        display: block;
+        margin-top: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgb(145, 92, 182)
+    }
+    /* results */
+    .results-wrapper{
+        text-align: center;
+    }
+    .results-dates{
+    
+    }
+    .results-base{
+    
+    }
+    .results-rates-container{
+    
+    }
+    .results-rates-currency{
+        display: inline-flex;
+        padding: 5px 10px;
+        border: 2px white solid;
+        margin-bottom: 0px;
+    }
+    .results-rates-dataGreen{
+        color: green;
+    }
+    .results-rates-dataRed{
+        color: red;
+    }
+    
+}
