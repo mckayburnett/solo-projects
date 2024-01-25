@@ -20,9 +20,9 @@ export default function ContextProvider(props){
             currency.includes(val) ? 
             <div className="form-currencyValue" key={val}>
                 {runFunc ? 
-                <button type="button"  disabled = {true} className="form-currencyAbbrev-blue"key={val + "label"} onClick={(e) => setCurrency((prev) => [...prev, e.target.textContent])}>{val}</button>
+                <button type="button"  disabled = {true} className="form-currencyAbbrev-blue"key={val + "label"} onClick={(e) => setCurrency((prev) => currency.includes(!prev) ? [...prev, e.target.textContent] : [...prev])}>{val}</button>
                 :
-                <button type="button"  className="form-currencyAbbrev-blue"key={val + "label"} onClick={(e) => setCurrency((prev) => [...prev, e.target.textContent])}>{val}</button>
+                <button type="button"  className="form-currencyAbbrev-blue"key={val + "label"} onClick={(e) => setCurrency((prev) => currency.includes(!prev) ? [...prev, e.target.textContent] : [...prev])}>{val}</button>
                 }
             </div>
             :
@@ -65,10 +65,9 @@ export default function ContextProvider(props){
         e.preventDefault()
         getConversion(base, currency)
         setRunFunc(true)
-        window.scrollTo({bottom: 1000,
-            behavior: "smooth",
-        })
+        window.scrollTo(0, 1000)    
     }
+
     function handleReset(e){
         const scrollPosition = window.scrollY || window.pageYOffset;
         window.location.reload();
