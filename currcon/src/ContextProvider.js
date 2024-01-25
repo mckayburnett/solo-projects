@@ -20,7 +20,7 @@ export default function ContextProvider(props){
             currency.includes(val) ? 
             <div className="form-currencyValue" key={val}>
                 {runFunc ? 
-                <button type="button"  disabled = {true} className="form-currencyAbbrev-blue"key={val + "label"} onClick={(e) => setCurrency((prev) => currency.includes(!prev) ? [...prev, e.target.textContent] : [...prev])}>{val}</button>
+                <button type="button"  disabled = {true} className="form-currencyAbbrev-blue" key={val + "label"} onClick={(e) => setCurrency((prev) => currency.includes(!prev) ? [...prev, e.target.textContent] : [...prev])}>{val}</button>
                 :
                 <button type="button"  className="form-currencyAbbrev-blue"key={val + "label"} onClick={(e) => setCurrency((prev) => currency.includes(!prev) ? [...prev, e.target.textContent] : [...prev])}>{val}</button>
                 }

@@ -12,7 +12,7 @@ function App() {
     <div className="app-wrapper">
       <div className="app-titles">
         <h1 className="app-mainTitle">Currency Converter</h1>
-        <h2 className="app-subTitle">updated by the minute</h2>
+        <h2 className="app-subTitle">Updated by the Minute</h2>
        </div> 
        <Form />
       {runFunc && <Results />}
