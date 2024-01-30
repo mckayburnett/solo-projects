@@ -1,30 +1,62 @@
+.hamburger{
+  display: none;
+}
 @media only screen and (max-width: 700px){
-  .nav-nav{
-    display: inline-block;
+  .nav-mobile-container{
+    text-align: right;
     position: absolute;
     right: 0;
+    padding: 0px 10px;
   }
-  .nav-home{
+  .nav-mobile-nav{
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    padding: 0px 5px;
+  }
+  .nav-mobile-home{
     cursor: pointer;
   }
-  .nav-yardSales{
+  .nav-mobile-yardSales{
+    cursor: pointer;
+  
+  }
+  .nav-mobile-createSale{
     cursor: pointer;
   
   }
-  .nav-createSale{
+  .nav-mobile-loginSignup{
     cursor: pointer;
   
   }
-  .nav-loginSignup{
+  .nav-mobile-search{
     cursor: pointer;
   
   }
-  .nav-search{
-    cursor: pointer;
-  
+  /* hamburger component */
+  .hamburger{
+    display: fixed;
+    padding-top: 10px;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 10;
+  }
+  .burger{
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+    background-color: black;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
   }
 }
 @media only screen and (min-width: 701px){
+  .nav-container{
+
+  }
   .nav-nav{
     display:  flex;
     justify-content: space-between;
