@@ -1,10 +1,14 @@
+import {useContext} from 'react'
+import { Context } from './ContextProvider.js'
+
 export default function Hamburger(props){
 
-    console.log(props)
+    const { hamClicked, setHamClicked } = useContext(Context)
+    
     return(
         <>
-            { !props.hamClicked ?
-            <div className="hamburger">
+            { !hamClicked ?
+            <div className="hamburger" onClick={() => setHamClicked(true)}>
                 <div className="burger burger1"></div>
                 <div className="burger burger2"></div>
                 <div className="burger burger3"></div>

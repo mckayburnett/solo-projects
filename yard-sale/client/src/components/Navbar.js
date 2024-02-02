@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Hamburger from './Hamburger.js'
+import { Context } from './ContextProvider.js'
 
 export default function Navbar(){
+
+    const { hamClicked, setHamClicked } = useContext(Context)
 
     //window
     const [size, setSize] = useState(window.innerWidth)
@@ -13,13 +16,11 @@ export default function Navbar(){
     window.onresize = resize;
 
     //hamburger
-    const [hamClicked, setHamClicked] = useState(false)
-    console.log(hamClicked)
     return(
         <>
         { size < 701 ? 
-        <nav className="nav-mobile-container" onClick={() => setHamClicked(!hamClicked)}>
-            <Hamburger hamClicked={hamClicked}/>
+        <nav className="nav-mobile-container" >
+            <Hamburger />
             { hamClicked ? 
             <div className="nav-mobile-nav">
                 <h3 className="nav-mobile-home">Home</h3>
@@ -27,7 +28,7 @@ export default function Navbar(){
                 <h3 className="nav-mobile-createSale">Create Sale</h3>
                 <h3 className="nav-mobile-loginSignup">Login/Signup</h3>
                 <h3 className="nav-mobile-search">Search</h3>
-                <div className="nav-mobile-carrot">^</div>
+                <div className="nav-mobile-carrot" onClick={() => setHamClicked(false)}>^</div>
             </div>
             :
             <></>
