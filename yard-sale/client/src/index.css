@@ -3,13 +3,14 @@
 }
 @media only screen and (max-width: 700px){
   .nav-mobile-container{
-    text-align: right;
     position: absolute;
+    text-align: right;
     right: 0;
     padding: 0px 10px;
+    z-index: 1100;
   }
   .nav-mobile-nav{
-    display: inline-block;
+    display: grid;
     text-align: center;
     border: 1px solid black;
     border-radius: 5px;
@@ -17,26 +18,22 @@
   }
   .nav-mobile-home{
     cursor: pointer;
-    padding: 0px 5px;
+    padding: 10px 5px 5px 5px;
+
   }
   .nav-mobile-yardSales{
     cursor: pointer;
-    padding: 0px 5px;
+    padding: 5px 5px;
 
   }
   .nav-mobile-createSale{
     cursor: pointer;
-    padding: 0px 5px;
+    padding: 5px 5px;
 
   }
   .nav-mobile-loginSignup{
     cursor: pointer;
-    padding: 0px 5px;
-
-  }
-  .nav-mobile-search{
-    cursor: pointer;
-    padding: 0px 5px;
+    padding: 5px 5px 10px 5px;
 
   }
   .nav-mobile-carrot{

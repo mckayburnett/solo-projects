@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react'
 import Hamburger from './Hamburger.js'
 import { Context } from './ContextProvider.js'
+import { BrowserRouter as Routes, Route, Link } from 'react-router-dom'
+import Home from './Home.js'
+import CreateSale from './CreateSale.js'
+import LoginSignup from './LoginSignup.js'
+import YardSales from './YardSales.js'
 
 export default function Navbar(){
 
@@ -23,11 +28,10 @@ export default function Navbar(){
             <Hamburger />
             { hamClicked ? 
             <div className="nav-mobile-nav">
-                <h3 className="nav-mobile-home">Home</h3>
-                <h3 className="nav-mobile-yardSales">Yard Sales</h3>
-                <h3 className="nav-mobile-createSale">Create Sale</h3>
-                <h3 className="nav-mobile-loginSignup">Login/Signup</h3>
-                <h3 className="nav-mobile-search">Search</h3>
+                <Link to='/' className="nav-mobile-home" onClick={() => setHamClicked(false)}>Home</Link>
+                <Link to='yardSales' className="nav-mobile-yardSales" onClick={() => setHamClicked(false)}>Yard Sales</Link>
+                {/*token ? */<Link to='createSale' className="nav-mobile-createSale" onClick={() => setHamClicked(false)}>Create Sale</Link>}
+                <Link to='loginSignup' className="nav-mobile-loginSignup" onClick={() => setHamClicked(false)}>Login/Signup</Link>
                 <div className="nav-mobile-carrot" onClick={() => setHamClicked(false)}>^</div>
             </div>
             :
@@ -37,11 +41,10 @@ export default function Navbar(){
         :
         <nav className="nav-container">
             <div className="nav-nav">
-                <h3 className="nav-home">Home</h3>
-                <h3 className="nav-yardSales">Yard Sales</h3>
-                <h3 className="nav-createSale">Create Sale</h3>
-                <h3 className="nav-loginSignup">Login/Signup</h3>
-                <h3 className="nav-search">Search</h3>
+                <Link to='/' className="nav-home">Home</Link>
+                <Link to='/yardSales' className="nav-yardSales">Yard Sales</Link>
+                <Link to='/createSale' className="nav-createSale">Create Sale</Link>
+                <Link to='/loginSignup' className="nav-loginSignup">Login/Signup</Link>
             </div>
         </nav>
         }
