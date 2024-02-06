@@ -1,7 +1,14 @@
 .hamburger{
   display: none;
 }
+
 @media only screen and (max-width: 700px){
+  .app-title{
+    font-family: copperplate;
+    font-style: italic;
+    border-bottom: 5px solid rgb(133, 115, 88);
+    width: 99%;
+  }
   .nav-mobile-container{
     position: absolute;
     text-align: right;
@@ -24,32 +31,32 @@
     cursor: pointer;
     padding: 10px 5px 5px 5px;
     text-decoration: none;
-    color: black;
+    color: gray;
   }
   .nav-mobile-yardSales{
     cursor: pointer;
     padding: 5px 5px;
     text-decoration: none;
-    color: black;
+    color: gray;
   }
   .nav-mobile-createSale{
     cursor: pointer;
     padding: 5px 5px;
     text-decoration: none;
-    color: black;
+    color: gray;
   }
   .nav-mobile-loginSignup{
     cursor: pointer;
     padding: 5px 5px 10px 5px;
     text-decoration: none;
-    color: black;
+    color: gray;
   }
   .nav-mobile-carrot{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     width: 100%;
     border-top: 2px solid rgb(133, 115, 88);
     cursor: pointer;
-    color: black;
+    color: gray;
    }
   /* hamburger component */
   .hamburger{
@@ -98,6 +105,7 @@
     margin-bottom: 5px;
     margin-top: 10px;
     padding: 5px;
+    color: gray;
   }
   .login-form-password{
     width: 15em;
@@ -108,7 +116,7 @@
     margin-bottom: 5px;
     margin-top: 10px;
     padding: 5px;
-
+    color: gray;
   }
   .login-form-button{
     width: 8em;
@@ -122,8 +130,16 @@
   }
 }
 @media only screen and (min-width: 701px){
+  .app-title{
+    font-family: copperplate;
+    font-style: italic;
+    border-bottom: 5px solid rgb(133, 115, 88);
+    margin-top: 0px;
+  }
   .nav-container{
-
+    position: absolute;
+    right: 0;
+    font-size: x-large;
   }
   .nav-nav{
     display:  flex;
@@ -131,17 +147,30 @@
   }
   .nav-home{
     cursor: pointer;
+    padding: 0px 18px;
+    text-decoration: none;
+    color: black;
+
   }
   .nav-yardSales{
     cursor: pointer;
+    padding: 0px 18px;
+    text-decoration: none;
+    color: black;
 
   }
   .nav-createSale{
     cursor: pointer;
+    padding: 0px 18px;
+    text-decoration: none;
+    color: black;
 
   }
   .nav-loginSignup{
     cursor: pointer;
+    padding: 0px 10px 0px 18px;
+    text-decoration: none;
+    color: black;
 
   }
   .nav-search{
@@ -171,6 +200,7 @@
     margin-bottom: 5px;
     margin-top: 10px;
     padding: 5px;
+    color: gray 
   }
   .login-form-password{
     width: 15em;
@@ -181,7 +211,7 @@
     margin-bottom: 5px;
     margin-top: 10px;
     padding: 5px;
-
+    color: gray;
   }
   .login-form-button{
     width: 8em;
@@ -192,5 +222,6 @@
     border: 2px solid rgb(133, 115, 88);
     border-radius: 5px;
     margin-top: 10px;
+    cursor: pointer;
   }
 }

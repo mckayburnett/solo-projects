@@ -9,8 +9,9 @@ import { Routes, Route } from 'react-router-dom'
 function App() {
 
   return (
-    <div>
+    <div className="app-wrapper">
       {/*token ? */<Navbar /*logout={logout}*//>}
+      <h1 className="app-title">Yard Sale</h1>
       <Routes>
         <Route 
           path='/'
