@@ -65,7 +65,11 @@ export default function CreateSale(props){
                     <button type="button" onClick={() => setLocationComplete(true)}>Submit</button>
                 </>}
             </form>
-            {locationComplete && <form className="createSale-form-items">
+            {locationComplete && 
+            <>
+            <p>street city, zipcode state (underlined)</p>
+            <form className="createSale-form-items">
+                <h3>Create Yard Sale Items</h3>
                 <input
                     className="createSale-form-items-name"
                     name="name"
@@ -87,7 +91,9 @@ export default function CreateSale(props){
                     type="file"
                 />
                 <button type="button">Submit Item</button>
-            </form>}
+            </form>
+            </>
+            }
         </div>
     )
 }

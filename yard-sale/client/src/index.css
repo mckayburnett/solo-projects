@@ -45,6 +45,12 @@
     text-decoration: none;
     color: gray;
   }
+  .nav-mobile-mySale{
+    cursor: pointer;
+    padding: 5px 5px;
+    text-decoration: none;
+    color: gray;
+  }
   .nav-mobile-loginSignup{
     cursor: pointer;
     padding: 5px 5px 10px 5px;
@@ -165,6 +171,12 @@
     text-decoration: none;
     color: black;
 
+  }
+  .nav-mySale{
+    cursor: pointer;
+    padding: 0px 18px;
+    text-decoration: none;
+    color: black;
   }
   .nav-loginSignup{
     cursor: pointer;
