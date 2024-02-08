@@ -9,11 +9,13 @@ export default function LoginSignup(props){
                     className="login-form-email"
                     placeholder="Email"
                     type="email"
+                    name="email"
                 />
                 <input 
                     className="login-form-password"
                     placeholder="Password"
                     type="password"
+                    name="password"
                 />
                 {/*token ? */<button className="login-form-button">Login</button> /*: <button className="login-form-button" onClick={() => signup}>Signup</button>*/}
             </form>
