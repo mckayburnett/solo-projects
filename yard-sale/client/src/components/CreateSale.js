@@ -6,6 +6,7 @@ export default function CreateSale(props){
     const [cityClicked, setCityClicked] = useState(true)
     const [streetClicked, setStreetClicked] = useState(true)
     const [zipcodeClicked, setZipcodeClicked] = useState(true)
+    const [locationComplete, setLocationComplete] = useState(false)
 
     return (
         <div className="createSale-wrapper">
@@ -50,21 +51,43 @@ export default function CreateSale(props){
                     name="zipcode"
                     value=""
                     placeholder="Zipcode"
-                    onClick = {() => setZipcodeClicked(false)}
                 />
                  <button type="button" onClick = {() => setZipcodeClicked(false)}>Next</button>
                 </>
                 }
-                {!zipcodeClicked && 
+                {!zipcodeClicked && !locationComplete &&
                 <>
                     <div className="createSale-form-location-info">
                         <h3>state</h3>
                         <h3>city</h3>
                         <h3>street</h3><span></span><h3>zipcode</h3>
                     </div>
-                    <button>Submit</button>
+                    <button type="button" onClick={() => setLocationComplete(true)}>Submit</button>
                 </>}
             </form>
+            {locationComplete && <form className="createSale-form-items">
+                <input
+                    className="createSale-form-items-name"
+                    name="name"
+                    value=""
+                    placeholder="Item Name"
+                />
+                <input
+                    className="createSale-form-items-price"
+                    name="price"
+                    value=""
+                    placeholder="Price"
+                    type="number"
+                />
+                <input
+                    className="createSale-form-items-picture"
+                    name="picture"
+                    value=""
+                    placeholder="Upload Picture"
+                    type="file"
+                />
+                <button type="button">Submit Item</button>
+            </form>}
         </div>
     )
 }
