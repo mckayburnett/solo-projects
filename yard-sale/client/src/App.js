@@ -3,6 +3,7 @@ import Home from './components/Home.js'
 import CreateSale from './components/CreateSale.js'
 import LoginSignup from './components/LoginSignup.js'
 import YardSales from './components/YardSales.js'
+import MySale from './components/MySale.js'
 //import ProtectedRoute from './components/ProtectedRoute.js'
 import { Routes, Route } from 'react-router-dom'
 
@@ -28,8 +29,12 @@ function App() {
           element={ <LoginSignup /> }
         />
         <Route 
-          path='/YardSales'
+          path='/yardSales'
           element={ <YardSales /> }
+        />
+        <Route
+          path='/mySale'
+          element={ <MySale /> }
         />
       </Routes>
     </div>

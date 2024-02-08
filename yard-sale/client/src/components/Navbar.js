@@ -31,6 +31,7 @@ export default function Navbar(){
                 <Link to='/' className="nav-mobile-home" onClick={() => setHamClicked(false)}>Home</Link>
                 <Link to='yardSales' className="nav-mobile-yardSales" onClick={() => setHamClicked(false)}>Yard Sales</Link>
                 {/*token ? */<Link to='createSale' className="nav-mobile-createSale" onClick={() => setHamClicked(false)}>Create Sale</Link>}
+                {/*token ? */<Link to='mySale' className="nav-mobile-mySale" onClick={() => setHamClicked(false)}>My Sale</Link>}
                 <Link to='loginSignup' className="nav-mobile-loginSignup" onClick={() => setHamClicked(false)}>Login/Signup</Link>
                 <div className="nav-mobile-carrot" onClick={() => setHamClicked(false)}>^</div>
             </div>
@@ -44,6 +45,7 @@ export default function Navbar(){
                 <Link to='/' className="nav-home">Home</Link>
                 <Link to='/yardSales' className="nav-yardSales">Yard Sales</Link>
                 <Link to='/createSale' className="nav-createSale">Create Sale</Link>
+                <Link to='/mySale' className="nav-mySale">My Sale</Link>
                 <Link to='/loginSignup' className="nav-loginSignup">Login/Signup</Link>
             </div>
         </nav>
