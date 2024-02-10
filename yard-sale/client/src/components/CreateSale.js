@@ -3,7 +3,15 @@ import { Context } from './ContextProvider.js'
 
 export default function CreateSale(props){
 
-    const { stateClicked, setStateClicked, cityClicked, setCityClicked, streetClicked, setStreetClicked, zipcodeClicked, setZipcodeClicked, locationComplete, setLocationComplete } = useContext(Context)
+    const { stateClicked, setStateClicked, cityClicked, setCityClicked, streetClicked, setStreetClicked, zipcodeClicked, setZipcodeClicked, locationComplete, setLocationComplete, initLocation, location, setLocation } = useContext(Context)
+    console.log(location)
+    function handleChangeLocation(e){
+        const { name, value } = e.target
+        setLocation(prev => ({
+            ...prev,
+            [name]: value
+        }))
+    }
 
     return (
         <div className="createSale-wrapper">
@@ -13,8 +21,9 @@ export default function CreateSale(props){
                 <input 
                     className="createSale-form-location-state"
                     name="state"
-                    value=""
+                    value={location.state}
                     placeholder="State"
+                    onChange={handleChangeLocation}
                 />
                 <button type="button" className="createSale-form-location-state-button" onClick = {() => setStateClicked(false)}>Next</button>
                 </>
@@ -24,8 +33,9 @@ export default function CreateSale(props){
                 <input 
                     className="createSale-form-location-city"
                     name="city"
-                    value=""
+                    value={location.city}
                     placeholder="City"
+                    onChange={handleChangeLocation}
                 />
                 <button type="button" className="createSale-form-location-city-button" onClick = {() => setCityClicked(false)}>Next</button>
                 </>
@@ -35,8 +45,9 @@ export default function CreateSale(props){
                 <input 
                     className="createSale-form-location-street"
                     name="street"
-                    value=""
+                    value={location.street}
                     placeholder="Street"
+                    onChange={handleChangeLocation}
                 />
                 <button type="button" className="createSale-form-location-street-button" onClick = {() => setStreetClicked(false)}>Next</button>
                 </>
@@ -46,8 +57,9 @@ export default function CreateSale(props){
                <input 
                     className="createSale-form-location-zipcode"
                     name="zipcode"
-                    value=""
+                    value={location.zipcode}
                     placeholder="Zipcode"
+                    onChange={handleChangeLocation}
                 />
                  <button type="button" className="createSale-form-location-zipcode-button" onClick = {() => setZipcodeClicked(false)}>Next</button>
                 </>
@@ -55,9 +67,9 @@ export default function CreateSale(props){
                 {!zipcodeClicked && !locationComplete &&
                 <div className="createSale-form-location-info-wrapper">
                     <div className="createSale-form-location-info">
-                        <h3>state</h3>
-                        <h3>city</h3>
-                        <h3>street and zipcode</h3>
+                        <h3>{location.city}, {location.state}</h3>
+                        <h3>{location.street}</h3> 
+                        <h3>{location.zipcode}</h3>
                         <h4>Correct?</h4>
                     </div>
                     <button type="button" className="createSale-form-location-info-button-yes" onClick={() => setLocationComplete(true)}>Yes</button>
@@ -66,7 +78,7 @@ export default function CreateSale(props){
             </form>
             {locationComplete && 
             <>
-            <p>street city, zipcode state (underlined)</p>
+            <p className="createSale-form-items-location">{location.street} {location.city}, {location.state} {location.zipcode}</p>
             <form className="createSale-form-items">
                 <h3>Create Yard Sale Items</h3>
                 <input

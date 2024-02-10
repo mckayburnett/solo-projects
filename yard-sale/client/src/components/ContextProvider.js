@@ -13,7 +13,13 @@ export default function ContextProvider(props){
     const [streetClicked, setStreetClicked] = useState(true)
     const [zipcodeClicked, setZipcodeClicked] = useState(true)
     const [locationComplete, setLocationComplete] = useState(false)
-
+    const initLocation = {
+        state: "",
+        city: "",
+        street: "",
+        zipcode: "",
+    }
+    const [location, setLocation] = useState(initLocation)
 
     return(
         <Context.Provider
@@ -24,7 +30,8 @@ export default function ContextProvider(props){
                 streetClicked, setStreetClicked,
                 zipcodeClicked, setZipcodeClicked,
                 locationComplete, setLocationComplete,
-                
+                initLocation,
+                location, setLocation
             }}
         >
             {props.children}

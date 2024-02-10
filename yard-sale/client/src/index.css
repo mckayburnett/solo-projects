@@ -249,10 +249,16 @@
   }
   .createSale-form-location-info{
     padding-top: 20px;
+    color: black;
+  }
+  .createSale-form-location-info>h3{
+    text-shadow: 1px 1px 2px rgb(133, 115, 88);
   }
   .createSale-form-location-info>h4{
     margin-top: 50px;
     margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgb(133, 115, 88);
+    text-decoration: underline;
   }
   .createSale-form-location-info-button-yes{
     margin: 10px;
@@ -279,6 +285,10 @@
     cursor: pointer;
     margin-left: 2px;
     width: 40px;
+  }
+  .createSale-form-items-location{
+    text-decoration: underline;
+    font-size: medium;
   }
 }
 @media only screen and (min-width: 701px) and (max-width: 829px){
