@@ -19,7 +19,7 @@ export default function CreateSale(props){
                     value=""
                     placeholder="State"
                 />
-                <button type="button" onClick = {() => setStateClicked(false)}>Next</button>
+                <button type="button" className="createSale-form-location-state-button" onClick = {() => setStateClicked(false)}>Next</button>
                 </>
                 }
                 {!stateClicked && cityClicked && 
@@ -30,7 +30,7 @@ export default function CreateSale(props){
                     value=""
                     placeholder="City"
                 />
-                <button type="button" onClick = {() => setCityClicked(false)}>Next</button>
+                <button type="button" className="createSale-form-location-city-button" onClick = {() => setCityClicked(false)}>Next</button>
                 </>
                 }
                 {!cityClicked && streetClicked && 
@@ -41,7 +41,7 @@ export default function CreateSale(props){
                     value=""
                     placeholder="Street"
                 />
-                <button type="button" onClick = {() => setStreetClicked(false)}>Next</button>
+                <button type="button" className="createSale-form-location-street-button" onClick = {() => setStreetClicked(false)}>Next</button>
                 </>
                 }
                {!streetClicked && zipcodeClicked && 
@@ -52,18 +52,20 @@ export default function CreateSale(props){
                     value=""
                     placeholder="Zipcode"
                 />
-                 <button type="button" onClick = {() => setZipcodeClicked(false)}>Next</button>
+                 <button type="button" className="createSale-form-location-zipcode-button" onClick = {() => setZipcodeClicked(false)}>Next</button>
                 </>
                 }
                 {!zipcodeClicked && !locationComplete &&
-                <>
+                <div className="createSale-form-location-info-wrapper">
                     <div className="createSale-form-location-info">
                         <h3>state</h3>
                         <h3>city</h3>
-                        <h3>street</h3><span></span><h3>zipcode</h3>
+                        <h3>street and zipcode</h3>
+                        <h4>Correct?</h4>
                     </div>
-                    <button type="button" onClick={() => setLocationComplete(true)}>Submit</button>
-                </>}
+                    <button type="button" className="createSale-form-location-info-button-yes" onClick={() => setLocationComplete(true)}>Yes</button>
+                    <button type="button" className="createSale-form-location-info-button-no" onClick={() => window.location.reload()}>No</button>
+                </div>}
             </form>
             {locationComplete && 
             <>
