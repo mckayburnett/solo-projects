@@ -1,12 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react'
+import { Context } from './ContextProvider.js'
 
 export default function CreateSale(props){
 
-    const [stateClicked, setStateClicked] = useState(true)
-    const [cityClicked, setCityClicked] = useState(true)
-    const [streetClicked, setStreetClicked] = useState(true)
-    const [zipcodeClicked, setZipcodeClicked] = useState(true)
-    const [locationComplete, setLocationComplete] = useState(false)
+    const { stateClicked, setStateClicked, cityClicked, setCityClicked, streetClicked, setStreetClicked, zipcodeClicked, setZipcodeClicked, locationComplete, setLocationComplete } = useContext(Context)
 
     return (
         <div className="createSale-wrapper">
