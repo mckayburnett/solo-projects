@@ -19,6 +19,12 @@ export default function CreateSale(props){
             [name]: value
         }))
     }
+    function handleChangeFile(e){
+        setItem(prev => ({
+            ...prev,
+            picture: URL.createObjectURL(e.target.files[0])
+        }))
+    }
     //console.log(navigator.mediaDevices)
 
     return (
@@ -115,10 +121,10 @@ export default function CreateSale(props){
                 <input
                     className="createSale-form-items-picture"
                     name="picture"
-                    value={item.picture}
+                    // value={item.picture}
                     placeholder="Upload Picture"
                     type="file"
-                    onChange={handleChange}
+                    onChange={handleChangeFile}
                 />
                 <button type="button">Create Item</button>
                 <Items item={item}/>
