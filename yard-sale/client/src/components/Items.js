@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 
 export default function Items(props){
 
+const {item} = props
     return(
         <div className="items=wrapper">
             <h2>{item.name}</h2>

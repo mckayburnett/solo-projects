@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Context } from './ContextProvider.js'
+import Items from './Items.js'
 
 export default function CreateSale(props){
 
@@ -119,7 +120,8 @@ export default function CreateSale(props){
                     type="file"
                     onChange={handleChange}
                 />
-                <button type="button">Submit Item</button>
+                <button type="button">Create Item</button>
+                <Items item={item}/>
             </form>
             </>
             }
