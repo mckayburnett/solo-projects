@@ -3,15 +3,22 @@ import { Context } from './ContextProvider.js'
 
 export default function CreateSale(props){
 
-    const { stateClicked, setStateClicked, cityClicked, setCityClicked, streetClicked, setStreetClicked, zipcodeClicked, setZipcodeClicked, locationComplete, setLocationComplete, initLocation, location, setLocation } = useContext(Context)
-    console.log(location)
-    function handleChangeLocation(e){
+    const { stateClicked, setStateClicked, cityClicked, setCityClicked, streetClicked, setStreetClicked, zipcodeClicked, setZipcodeClicked, locationComplete, setLocationComplete, initLocation, location, setLocation, initItem, item, setItem } = useContext(Context)
+
+    function handleChange(e){
         const { name, value } = e.target
+        e.target.parentElement.className === "createSale-form-location" ? 
         setLocation(prev => ({
             ...prev,
             [name]: value
         }))
+        :
+        setItem(prev => ({
+            ...prev,
+            [name]: value
+        }))
     }
+    //console.log(navigator.mediaDevices)
 
     return (
         <div className="createSale-wrapper">
@@ -23,7 +30,7 @@ export default function CreateSale(props){
                     name="state"
                     value={location.state}
                     placeholder="State"
-                    onChange={handleChangeLocation}
+                    onChange={handleChange}
                 />
                 <button type="button" className="createSale-form-location-state-button" onClick = {() => setStateClicked(false)}>Next</button>
                 </>
@@ -35,7 +42,7 @@ export default function CreateSale(props){
                     name="city"
                     value={location.city}
                     placeholder="City"
-                    onChange={handleChangeLocation}
+                    onChange={handleChange}
                 />
                 <button type="button" className="createSale-form-location-city-button" onClick = {() => setCityClicked(false)}>Next</button>
                 </>
@@ -47,7 +54,7 @@ export default function CreateSale(props){
                     name="street"
                     value={location.street}
                     placeholder="Street"
-                    onChange={handleChangeLocation}
+                    onChange={handleChange}
                 />
                 <button type="button" className="createSale-form-location-street-button" onClick = {() => setStreetClicked(false)}>Next</button>
                 </>
@@ -59,7 +66,7 @@ export default function CreateSale(props){
                     name="zipcode"
                     value={location.zipcode}
                     placeholder="Zipcode"
-                    onChange={handleChangeLocation}
+                    onChange={handleChange}
                 />
                  <button type="button" className="createSale-form-location-zipcode-button" onClick = {() => setZipcodeClicked(false)}>Next</button>
                 </>
@@ -76,6 +83,7 @@ export default function CreateSale(props){
                     <button type="button" className="createSale-form-location-info-button-no" onClick={() => window.location.reload()}>No</button>
                 </div>}
             </form>
+{/*Add Items*/}
             {locationComplete && 
             <>
             <p className="createSale-form-items-location">{location.street} {location.city}, {location.state} {location.zipcode}</p>
@@ -84,22 +92,32 @@ export default function CreateSale(props){
                 <input
                     className="createSale-form-items-name"
                     name="name"
-                    value=""
+                    value={item.name}
                     placeholder="Item Name"
+                    onChange={handleChange}
+                />
+                <input
+                    className="createSale-form-items-description"
+                    name="description"
+                    value={item.description}
+                    placeholder="Description (optional)"
+                    onChange={handleChange}
                 />
                 <input
                     className="createSale-form-items-price"
                     name="price"
-                    value=""
+                    value={item.price}
                     placeholder="Price"
                     type="number"
+                    onChange={handleChange}
                 />
                 <input
                     className="createSale-form-items-picture"
                     name="picture"
-                    value=""
+                    value={item.picture}
                     placeholder="Upload Picture"
                     type="file"
+                    onChange={handleChange}
                 />
                 <button type="button">Submit Item</button>
             </form>
