@@ -18,10 +18,10 @@ async function connectToDB(){
     }
 }
 connectToDB()
-/*
+
 app.use('/auth', require('./routes/authRouter.js'))
 app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256']}))
-app.use('/api/code', require('./routes/codeRouter.js'))
+app.use('/api/yard', require('./routes/yardRouter.js'))
 
 app.use((err, req, res, next) => {
     console.log(err)
@@ -30,7 +30,7 @@ app.use((err, req, res, next) => {
     }
     return res.send({ errMsg: err.message })
 })
-*/
+
 app.listen(4000, () => {
     console.log('server running on local port 4000')
 })
