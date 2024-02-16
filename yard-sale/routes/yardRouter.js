@@ -3,27 +3,27 @@ const yardRouter = express.Router()
 const Location = require('../models/location')
 const Item = require('../models/item.js')
 
-//get all locations
+//token && get all locations
 
 
-//get locations based on proximity
+//token && user && get locations based on proximity
 
 
-//get items from location id
+//token && get items from location id
 
 
-//token && post location 
+//token && user && post location 
 
 
-//token && post items to location id
+//token && user && post items to location + user id
 
 
-//token && delete location
+//token && user && delete location
 
 
-//token && edit location
+//token && user && edit location
 
 
-//token && edit items of location id
+//token && user && edit items of location + user id
 
 module.exports = yardRouter
