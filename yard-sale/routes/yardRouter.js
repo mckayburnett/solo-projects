@@ -15,9 +15,9 @@ yardRouter.get('/', async (req, res, next) => {
 })
 
 //token && user && get locations based on proximity
-codeRouter.get('/user', async (req, res, next) => {
+yardRouter.get('/user', async (req, res, next) => {
     try {
-        const codes = await Code.find({ user: req.auth._id })
+        const location = await Location.find({ location: req.params._id })
         res.status(200).send(codes)       
     } catch(err) {
         res.status(500)
@@ -29,7 +29,7 @@ codeRouter.get('/user', async (req, res, next) => {
 yardRouter.get('/:locationId', async (req, res, next) => {
     try {
         const location = await Code.find({ location: req.params._id })
-        res.status(200).send(codes)       
+        res.status(200).send(location)       
     } catch(err) {
         res.status(500)
         next(err)
