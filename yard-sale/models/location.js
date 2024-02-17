@@ -22,6 +22,11 @@ const locationSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User",
         required: true
+    },
+    item: {
+        type: Schema.Types.ObjectId,
+        ref: "Location",
+        required: false
     }
 })
 

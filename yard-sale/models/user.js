@@ -19,7 +19,12 @@ const userSchema = new Schema({
     isAdmin: {
         type: Boolean,
         default: false
-    }
+    },
+    location: {
+        type: Schema.Types.ObjectId,
+        ref: "Location",
+        required: false
+    },
 })
 
 userSchema.pre('save', async function(next){

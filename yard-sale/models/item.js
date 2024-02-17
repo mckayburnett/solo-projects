@@ -23,6 +23,11 @@ const itemSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User",
         required: true
+    },
+    location: {
+        type: Schema.Types.ObjectId,
+        ref: "Location",
+        required: true
     }
 })
 
