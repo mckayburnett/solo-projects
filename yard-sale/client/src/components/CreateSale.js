@@ -90,7 +90,7 @@ export default function CreateSale(props){
                     <button type="button" className="createSale-form-location-info-button-no" onClick={() => window.location.reload()}>No</button>
                 </div>}
             </form>
-{/*Add Items*/}
+{/*Add Items--this could possible move to be separate componenet*/}
             {locationComplete && 
             <>
             <p className="createSale-form-items-location">{location.street} {location.city}, {location.state} {location.zipcode}</p>

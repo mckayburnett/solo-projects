@@ -19,6 +19,15 @@ const itemSchema = new Schema({
         type: String,
         required: false
     },
+    category: {
+        type: String, 
+        enum: ['clothing', 'kitchen', 'auto', 'yard', 'furniture', 'baby', 'outdoors', 'sports', 'home', 'electronics'],
+        required: true,
+    },
+    canBeHeld: {
+        type: Boolean,
+        required: true
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: "User",

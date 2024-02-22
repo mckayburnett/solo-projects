@@ -290,6 +290,15 @@
     text-decoration: underline;
     font-size: medium;
   }
+
+  /*items*/
+  .items-wrapper{
+
+
+  }
+  .items-picture{
+    max-width: 150px;
+  }
 }
 @media only screen and (min-width: 701px) and (max-width: 829px){
   .app-title{

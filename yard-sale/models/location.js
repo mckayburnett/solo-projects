@@ -18,6 +18,10 @@ const locationSchema = new Schema({
         type: Number,
         required: true
     },
+    endingDate: {
+        type: Date,
+        required: false
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: "User",

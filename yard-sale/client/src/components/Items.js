@@ -7,10 +7,10 @@ console.log('picture', item.picture)
 // const image = URL.createObjectURL(item.picture)
 
     return(
-        <div className="items=wrapper">
+        <div className="items-wrapper">
             <h2>{item.name}</h2>
             <h4>{item.description}</h4>
-            <img src={item.picture} />
+            <img className="items-picture"src={item.picture} />
             <h2>{item.price}</h2>
         </div>
     )
