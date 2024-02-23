@@ -1,13 +1,85 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, Helvetica, sans-serif;
 }
+/* App */
+.app-wrapper{
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+}
+/* Navbar */
+.nav-wrapper{
+  border-bottom: .1em black solid;
+}
+.nav-container{ 
+  display: flex;
+  height: 8em;
+}
+.nav-container-img{
+  max-width: 8em;
+  border-radius: 10em;
+  padding: 1em;
+}
+.nav-container-title{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  transform: translateY(30%);
+  color: rgb(23, 41, 96);
+  letter-spacing: 1.5vw;
+}
+.nav-container-menus{
+  display: flex;
+  transform: translateY(30%);
+  margin-left: auto;
+}
+.nav-container-menus-courses{
+  padding: 0 2vw;
+  cursor: pointer;
+  transition: all .5s ease-in;
+
+}
+.nav-container-menus-courses:hover{
+  color: white;
+  background-color: rgb(31, 44, 83);
+}
+.nav-container-menus-finance{
+  padding: 0 2vw;
+  cursor: pointer;
+  transition: all .5s ease-in;
+
+}
+.nav-container-menus-finance:hover{
+  color: white;
+  background-color: rgb(31, 44, 83);
+}
+.nav-container-menus-courses > h3{
+  font-weight: 100;
+}
+.nav-container-menus-finance > h3{
+  font-weight: 100;
+}
+/* Navbar Dropdowns */
+/* Dropdown Courses*/
+.dropdownCourses-wrapper{
+  text-align: center;
+  color: white;
+}
+.dropdownCourses-ios{
+
+}
+/* Navbar Dropdowns */
+/* Dropdown Finance*/
+.dropdownFinance-wrapper{
+  text-align: center;
+  color: white;
+}
+.dropdownFinance-pricing{
+
+}
+.dropdownFinance-pricing:hover{
+  
+}
+.dropdownFinance-aid{
+
 }
