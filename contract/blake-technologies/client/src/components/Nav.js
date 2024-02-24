@@ -1,8 +1,8 @@
 import React, {useState, useContext, useEffect} from 'react'
+import Ios from './courses/Ios.js'
 import Logo from '../outside/Logo.png'
-import DdCourses from './dropdowns/DdCourses.js'
-import DdFinance from './dropdowns/DdFinance.js'
 import {Context} from '../context/Context.js'
+import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
 
 
 export default function Navbar(){
@@ -19,15 +19,17 @@ const {dropdownCoursesVisible, setDropdownCoursesVisible, dropdownFinanceVisible
                 />
                 <h1 className="nav-container-title">Blake Technologies</h1>
                 <div className="nav-container-menus">
-                    <div className="nav-container-menus-courses" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        <h3>Courses</h3>
-                        {/*handleMouseEnter set dropdownVisible to true, checks then renders courses component*/}
-                        {dropdownCoursesVisible && <DdCourses />} 
+                    <div className="nav-container-menus-courses">Courses
+                        <ul className="nav-container-menus-courses-dropdown">
+                            <li><Link to="/ios"><a>iOS</a></Link></li>
+                        </ul>
                     </div>
-                    <div className="nav-container-menus-finance" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        <h3>Finance</h3>
-                        {/*handleMouseEnter set dropdownVisible to true, checks then renders finance component*/}
-                        {dropdownFinanceVisible && <DdFinance />} 
+                    <div className="nav-container-menus-finance">Finance
+                        <ul className="nav-container-menus-finance-dropdown">
+                            <li><Link to="/pricing"><a>Pricing</a></Link></li>
+                            <li><Link to="/banking"><a>Banking</a></Link></li>
+                            <li><Link to="/aid"><a>Aid</a></Link></li>
+                        </ul>
                     </div>
                 </div>
             </div>

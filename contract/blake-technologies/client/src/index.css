@@ -30,56 +30,113 @@ body {
 }
 .nav-container-menus{
   display: flex;
-  transform: translateY(30%);
   margin-left: auto;
 }
 .nav-container-menus-courses{
-  padding: 0 2vw;
+  align-self: center;
+  color: rgb(23, 41, 96);
   cursor: pointer;
-  transition: all .5s ease-in;
-
+  line-height: 3em;
+  position: relative;
+  width: 12vw;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1;
+  transform: perspective(1000px);
 }
-.nav-container-menus-courses:hover{
-  color: white;
-  background-color: rgb(31, 44, 83);
+.nav-container-menus-courses-dropdown{
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  text-align: center;
+  top: 0;
+  visibility: hidden;
+  z-index: -99999;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); 
+}
+.nav-container-menus-courses-dropdown li:first-child {
+  cursor: pointer;
+}
+.nav-container-menus-courses-dropdown a {
+  color: #000;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+.nav-container-menus-courses-dropdown a:hover {
+  background: rgb(23, 41, 96);
+  color: #fff;
+}
+.nav-container-menus-courses:hover .nav-container-menus-courses-dropdown {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+  width: 100%;
+  -webkit-transition: all .5s, background, 2s .5s linear;
+  transition: all .5s, background 2s .5s linear;
+}
+.nav-container-menus-courses:hover {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); 
 }
 .nav-container-menus-finance{
-  padding: 0 2vw;
+  align-self: center;
+  color: rgb(23, 41, 96);
   cursor: pointer;
-  transition: all .5s ease-in;
-
-}
-.nav-container-menus-finance:hover{
-  color: white;
-  background-color: rgb(31, 44, 83);
-}
-.nav-container-menus-courses > h3{
-  font-weight: 100;
-}
-.nav-container-menus-finance > h3{
-  font-weight: 100;
-}
-/* Navbar Dropdowns */
-/* Dropdown Courses*/
-.dropdownCourses-wrapper{
+  line-height: 3em;
+  position: relative;
+  width: 12vw;
   text-align: center;
-  color: white;
+  text-decoration: none;
+  z-index: 1;
+  transform: perspective(1000px);
 }
-.dropdownCourses-ios{
-
-}
-/* Navbar Dropdowns */
-/* Dropdown Finance*/
-.dropdownFinance-wrapper{
+.nav-container-menus-finance-dropdown{
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  opacity: 0;
   text-align: center;
-  color: white;
+  top: 0;
+  visibility: hidden;
+  z-index: -99999;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); 
 }
-.dropdownFinance-pricing{
-
+.nav-container-menus-finance-dropdown li:first-child {
+  cursor: pointer;
 }
-.dropdownFinance-pricing:hover{
-  
+.nav-container-menus-finance-dropdown a {
+  color: #000;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
-.dropdownFinance-aid{
-
+.nav-container-menus-finance-dropdown a:hover {
+  background: rgb(23, 41, 96);
+  color: #fff;
+}
+.nav-container-menus-finance:hover .nav-container-menus-finance-dropdown {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+  width: 100%;
+  -webkit-transition: all .5s, background, 2s .5s linear;
+  transition: all .5s, background 2s .5s linear;
+}
+.nav-container-menus-finance:hover {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); 
 }
