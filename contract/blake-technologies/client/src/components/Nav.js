@@ -1,13 +1,13 @@
 import React, {useState, useContext, useEffect} from 'react'
 import Ios from './courses/Ios.js'
 import Logo from '../outside/Logo.png'
-import {Context} from '../context/Context.js'
+import {Functionality} from '../context/Functionality.js'
 import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
 
 
 export default function Navbar(){
 
-const {dropdownCoursesVisible, setDropdownCoursesVisible, dropdownFinanceVisible, setDropdownFinanceVisible, handleMouseEnter, handleMouseLeave} = useContext(Context)
+const {dropdownCoursesVisible, setDropdownCoursesVisible, dropdownFinanceVisible, setDropdownFinanceVisible, handleMouseEnter, handleMouseLeave} = useContext(Functionality)
 
     return(
         <div className="nav-wrapper">
@@ -19,6 +19,7 @@ const {dropdownCoursesVisible, setDropdownCoursesVisible, dropdownFinanceVisible
                 />
                 <h1 className="nav-container-title">Blake Technologies</h1>
                 <div className="nav-container-menus">
+                    <Link to="/" className="nav-container-menus-home">Home</Link>
                     <div className="nav-container-menus-courses">Courses
                         <ul className="nav-container-menus-courses-dropdown">
                             <li><Link to="/ios"><a>iOS</a></Link></li>

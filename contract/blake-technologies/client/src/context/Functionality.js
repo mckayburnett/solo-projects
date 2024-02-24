@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect} from 'react'
 
-export const Context = React.createContext()
+export const Functionality = React.createContext()
 
 export default function ContextProvider(props){
     //-----Navbar-----
@@ -16,7 +16,7 @@ export default function ContextProvider(props){
     }
     //----------------
     return(
-        <Context.Provider
+        <Functionality.Provider
             value={{
                 dropdownCoursesVisible, setDropdownCoursesVisible,
                 dropdownFinanceVisible, setDropdownFinanceVisible,
@@ -25,6 +25,6 @@ export default function ContextProvider(props){
             }}
         >
             {props.children}
-        </Context.Provider>
+        </Functionality.Provider>
     )
 }

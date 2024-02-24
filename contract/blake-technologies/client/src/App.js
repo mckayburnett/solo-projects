@@ -6,6 +6,7 @@ import Ios from './components/courses/Ios.js'
 import Pricing from './components/finance/Pricing.js'
 import Banking from './components/finance/Banking.js'
 import Aid from './components/finance/Aid.js'
+import Courses from './components/Courses.js'
 
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
         <Route
           path="/aid"
           element= {<Aid />}
+        />
+        <Route 
+          path="/courses"
+          element= {<Courses />}
         />
       </Routes>
     </div>

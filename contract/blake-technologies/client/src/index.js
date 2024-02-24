@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom'
-import Context from './context/Context.js'
+import Functionality from './context/Functionality.js'
+import Text from './context/Text.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Context>
-        <App />
-      </Context>
+      <Text>
+        <Functionality>
+          <App />
+        </Functionality>
+      </Text>
     </BrowserRouter>
   </React.StrictMode>
 );
