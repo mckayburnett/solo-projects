@@ -30,7 +30,7 @@ const coursesClick = () => {
                 <h1 className="nav-container-title" onClick={homeClick}>Blake Technologies</h1>
                 <div className="nav-container-menus">
                     <Link to="/" className="nav-container-menus-home">Home</Link>
-                    <div className="nav-container-menus-courses" onClick={coursesClick}>Courses
+                    <div className="nav-container-menus-courses"><div onClick={coursesClick}>Courses</div>
                         <ul className="nav-container-menus-courses-dropdown">
                             <li><Link to="/ios"><a>iOS</a></Link></li>
                             <li><a>Web Dev</a></li>
