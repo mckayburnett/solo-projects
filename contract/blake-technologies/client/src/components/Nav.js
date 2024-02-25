@@ -2,12 +2,21 @@ import React, {useState, useContext, useEffect} from 'react'
 import Ios from './courses/Ios.js'
 import Logo from '../outside/Logo.png'
 import {Functionality} from '../context/Functionality.js'
+import {useNavigate} from 'react-router-dom'
 import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
 
 
 export default function Navbar(){
 
 const {dropdownCoursesVisible, setDropdownCoursesVisible, dropdownFinanceVisible, setDropdownFinanceVisible, handleMouseEnter, handleMouseLeave} = useContext(Functionality)
+
+const navigate = useNavigate(); // Initialize the useNavigate hook
+const homeClick = () => {
+    navigate('/')
+}
+const coursesClick = () => {
+    navigate('/courses')
+}
 
     return(
         <div className="nav-wrapper">
@@ -16,13 +25,15 @@ const {dropdownCoursesVisible, setDropdownCoursesVisible, dropdownFinanceVisible
                     className="nav-container-img"
                     src={Logo}
                     alt="Img loading/No Image Available"
+                    onClick={homeClick}
                 />
-                <h1 className="nav-container-title">Blake Technologies</h1>
+                <h1 className="nav-container-title" onClick={homeClick}>Blake Technologies</h1>
                 <div className="nav-container-menus">
                     <Link to="/" className="nav-container-menus-home">Home</Link>
-                    <div className="nav-container-menus-courses">Courses
+                    <div className="nav-container-menus-courses" onClick={coursesClick}>Courses
                         <ul className="nav-container-menus-courses-dropdown">
                             <li><Link to="/ios"><a>iOS</a></Link></li>
+                            <li><a>Web Dev</a></li>
                         </ul>
                     </div>
                     <div className="nav-container-menus-finance">Finance
