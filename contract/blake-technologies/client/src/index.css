@@ -158,7 +158,9 @@ body {
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); 
 }
+/* --------------------- */
 /* ----- Home Page ----- */
+/* --------------------- */
 .home-wrapper{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -191,6 +193,7 @@ body {
   color: rgb(23, 41, 96);
   background-color: white;
   text-align: center;
+  padding-bottom: 1em;
 }
 .home-whatWeOffer > p{
   text-align: center;
@@ -255,8 +258,54 @@ body {
   z-index: 1;
   position: relative;
 }
-
+.home-video{
+  grid-column: 1/2;
+}
+.home-testimonials{
+  grid-column: 2/4;
+  color: white;
+  background-color: rgb(23, 41, 96);
+}
+.home-testimonials > p{
+  border: 1px solid white;
+  border-radius: 2em;
+  margin: 3vw;
+  background: rgb(23,41,96);
+  background: linear-gradient(90deg, rgba(23,41,96,1) 0%, rgba(33,56,128,1) 50%, rgba(62,89,173,1) 100%);
+  -webkit-box-shadow: 0 2px 2px 0 rgb(255, 255, 255), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 4px 0 rgb(255, 255, 255), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); 
+}
+.home-testimonials-career{
+  font-style: italic;
+}
+.home-testimonials-slide{
+  text-align: center;
+}
+.home-testimonials-slide > #one{
+  padding: 0 .5em;
+  cursor: pointer;
+}
+.home-testimonials-slide > #one:hover{
+  color: red;
+}
+.home-testimonials-slide > #two{
+  padding: 0 .5em;
+  cursor: pointer;
+}
+.home-testimonials-slide > #two:hover{
+  color: red;
+}
+.home-testimonials-slide > #three{
+  padding: 0 .5em;
+  cursor: pointer;
+}
+.home-testimonials-slide > #three:hover{
+  color: red;
+}
+/* ------------------- */
 /* ----- Courses ----- */
+/* ------------------- */
+
 .courses-wrapper{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -312,9 +361,7 @@ body {
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); 
 }
-.courses-button:hover{
-  color: white;
-}
+
 .courses-button:before {
   animation: opacityFallbackOut .5s step-end forwards;
   backface-visibility: hidden;

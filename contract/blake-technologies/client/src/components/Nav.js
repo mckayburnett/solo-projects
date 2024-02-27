@@ -8,7 +8,7 @@ import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
 
 export default function Navbar(){
 
-const {dropdownCoursesVisible, setDropdownCoursesVisible, dropdownFinanceVisible, setDropdownFinanceVisible, handleMouseEnter, handleMouseLeave} = useContext(Functionality)
+const {} = useContext(Functionality)
 
 const navigate = useNavigate(); // Initialize the useNavigate hook
 const homeClick = () => {

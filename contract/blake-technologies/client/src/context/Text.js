@@ -16,6 +16,24 @@ export default function ContextProvider(props){
 
     const web = "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
 
+    const testimonials = [ 
+    <>
+    "I have full confidence in anything Blake does. When I was struggling with employment in the tech world he helped me make adjustments that landed me a coding job in less than 3 months."
+    <br />
+    -McKay Burnett | <span className="home-testimonials-career">Full-Stack Web Developer</span>
+    </>,
+    <>
+    "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
+    <br />
+    -Some Dude | <span className="home-testimonials-career">Software Engineer</span>
+    </>,
+    <>
+    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    <br />
+    -Another Guy | <span className="home-testimonials-career">App Developer</span>
+    </>
+    ]
+
     return(
         <Text.Provider
             value={{
@@ -23,7 +41,8 @@ export default function ContextProvider(props){
                 whatWeOffer,
                 courses,
                 ios,
-                web
+                web,
+                testimonials
             }}
         >
             {props.children}

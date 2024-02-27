@@ -4,24 +4,21 @@ export const Functionality = React.createContext()
 
 export default function ContextProvider(props){
     //-----Navbar-----
-    const [dropdownCoursesVisible, setDropdownCoursesVisible] = useState(false); //variable for courses dropdown menu
-    const [dropdownFinanceVisible, setDropdownFinanceVisible] = useState(false); //variable for finance dropdown menu
-    function handleMouseEnter(e){ //checks which dropdown to affect based off classname
-        e.target.className === "nav-container-menus-courses" && setDropdownCoursesVisible(true);
-        e.target.className === "nav-container-menus-finance" && setDropdownFinanceVisible(true);
-    }
-    function handleMouseLeave(e){ //checks which dropdown to affect based off classname
-        e.target.className === "nav-container-menus-courses" && setDropdownCoursesVisible(false);
-        e.target.className === "nav-container-menus-finance" && setDropdownFinanceVisible(false);
-    }
+    
+    //----------------
+    //-----Home-----
+    const [slideNum, setSlideNum] = useState(0)
+    //--------------
+    //-----Courses-----
+    const [iosButton, setIosButton] = useState(false);
+    const [webButton, setWebButton] = useState(false);
     //----------------
     return(
         <Functionality.Provider
             value={{
-                dropdownCoursesVisible, setDropdownCoursesVisible,
-                dropdownFinanceVisible, setDropdownFinanceVisible,
-                handleMouseEnter,
-                handleMouseLeave
+                slideNum, setSlideNum,
+                iosButton, setIosButton,
+                webButton, setWebButton
             }}
         >
             {props.children}

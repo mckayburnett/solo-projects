@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext} from 'react'
 import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
 import {Text} from '../context/Text.js'
+import {Functionality} from '../context/Functionality.js'
 import { MdOutlinePhoneIphone } from "react-icons/md";
 import { MdComputer } from "react-icons/md";
 
@@ -8,6 +9,8 @@ import { MdComputer } from "react-icons/md";
 export default function Courses(){
 
     const {courses, ios, web} = useContext(Text)
+    const {} = useContext(Functionality)
+
 
     return(
         <div className="courses-wrapper">

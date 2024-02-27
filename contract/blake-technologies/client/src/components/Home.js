@@ -1,10 +1,16 @@
 import { useState, useEffect, useContext} from 'react'
 import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
+import ReactPlayer from 'react-player'
 import {Text} from '../context/Text.js'
+import {Functionality} from '../context/Functionality.js'
+import { FaCircle } from 'react-icons/fa'
 
 export default function Home(){
 
-    const {aboutUs, whatWeOffer} = useContext(Text)
+    const {aboutUs, whatWeOffer, testimonials} = useContext(Text)
+    const {slideNum, setSlideNum} = useContext(Functionality)
+
+    console.log(slideNum)
 
     return(
         <div className="home-wrapper">
@@ -20,6 +26,22 @@ export default function Home(){
                 <h1 className="home-subject-head">What We Offer</h1>
                 <p className="home-subject-body">{whatWeOffer}</p>
                 <Link to="/courses"><button className="home-subject-button" role="button"><span class="text">View Courses</span></button></Link>
+            </div>
+            <ReactPlayer
+                className="home-video"
+                url="https://www.youtube.com/watch?v=jfKfPfyJRdk"
+                width="100%"
+                height="100%"
+                controls
+            />
+            <div className="home-testimonials">
+                <h1 className="home-subject-head">Testimonials</h1>
+                <p className="home-subject-body">{testimonials[slideNum]}</p>
+                <div className="home-testimonials-slide">
+                    <FaCircle id="one" onClick={setSlideNum(0)}/>
+                    <FaCircle id="two" onClick={setSlideNum(1)}/>
+                    <FaCircle id="three" onClick={setSlideNum(2)}/>
+                </div>
             </div>
         </div>
     )
