@@ -7,6 +7,7 @@ import Pricing from './components/finance/Pricing.js'
 import Banking from './components/finance/Banking.js'
 import Aid from './components/finance/Aid.js'
 import Courses from './components/Courses.js'
+import Contact from './components/Contact.js'
 
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
         <Route 
           path="/"
           element= {<Home />}
+        />
+        <Route
+          path="/contact"
+          element= {<Contact />}
         />
         <Route 
           path="/ios"

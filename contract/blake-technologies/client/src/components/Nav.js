@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useState, useContext, useEffect, useRef} from 'react'
 import Ios from './courses/Ios.js'
 import Logo from '../outside/Logo.png'
 import {Functionality} from '../context/Functionality.js'
@@ -17,6 +17,7 @@ const homeClick = () => {
 const coursesClick = () => {
     navigate('/courses')
 }
+
 
     return(
         <div className="nav-wrapper">
@@ -41,6 +42,12 @@ const coursesClick = () => {
                             <li><Link to="/pricing"><a>Pricing</a></Link></li>
                             <li><Link to="/banking"><a>Banking</a></Link></li>
                             <li><Link to="/aid"><a>Aid</a></Link></li>
+                        </ul>
+                    </div>
+                    <div className="nav-container-menus-getStarted">Get Started
+                        <ul className="nav-container-menus-getStarted-dropdown">
+                            <li><Link to="/apply"><a>Apply</a></Link></li>
+                            <li><Link to="/contact"><a>Contact Us</a></Link></li>
                         </ul>
                     </div>
                 </div>

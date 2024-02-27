@@ -1,16 +1,15 @@
-import { useState, useEffect, useContext} from 'react'
+import { useState, useEffect, useContext, useRef} from 'react'
 import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
 import ReactPlayer from 'react-player'
 import {Text} from '../context/Text.js'
 import {Functionality} from '../context/Functionality.js'
 import { FaCircle } from 'react-icons/fa'
+import Contact from './Contact.js'
 
 export default function Home(){
 
     const {aboutUs, whatWeOffer, testimonials} = useContext(Text)
-    const {slideNum, setSlideNum} = useContext(Functionality)
-
-    console.log(slideNum)
+    const {slideNum, setSlideNum, contactClicked, contact} = useContext(Functionality)
 
     return(
         <div className="home-wrapper">
@@ -29,7 +28,7 @@ export default function Home(){
             </div>
             <ReactPlayer
                 className="home-video"
-                url="https://www.youtube.com/watch?v=jfKfPfyJRdk"
+                url={slideNum === 0 ? "https://www.youtube.com/watch?v=jfKfPfyJRdk" : slideNum === 1 ? "https://www.youtube.com/watch?v=iicfmXFALM8" : slideNum === 2 && "https://www.youtube.com/watch?v=4xDzrJKXOOY"}
                 width="100%"
                 height="100%"
                 controls
@@ -38,11 +37,12 @@ export default function Home(){
                 <h1 className="home-subject-head">Testimonials</h1>
                 <p className="home-subject-body">{testimonials[slideNum]}</p>
                 <div className="home-testimonials-slide">
-                    <FaCircle id="one" onClick={setSlideNum(0)}/>
-                    <FaCircle id="two" onClick={setSlideNum(1)}/>
-                    <FaCircle id="three" onClick={setSlideNum(2)}/>
+                    <FaCircle id="one" onClick={() => setSlideNum(0)} style={{ color: slideNum === 0 && "red"}} />
+                    <FaCircle id="two" onClick={() => setSlideNum(1)} style={{ color: slideNum === 1 && "red"}} />
+                    <FaCircle id="three" onClick={() => setSlideNum(2)} style={{ color: slideNum === 2 && "red"}} />
                 </div>
             </div>
+            <Contact />
         </div>
     )
 }

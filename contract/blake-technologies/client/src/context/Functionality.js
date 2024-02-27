@@ -1,13 +1,13 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useState, useContext, useEffect, useRef} from 'react'
 
 export const Functionality = React.createContext()
 
 export default function ContextProvider(props){
     //-----Navbar-----
-    
+       
     //----------------
     //-----Home-----
-    const [slideNum, setSlideNum] = useState(0)
+    const [slideNum, setSlideNum] = useState(0);
     //--------------
     //-----Courses-----
     const [iosButton, setIosButton] = useState(false);
@@ -18,7 +18,7 @@ export default function ContextProvider(props){
             value={{
                 slideNum, setSlideNum,
                 iosButton, setIosButton,
-                webButton, setWebButton
+                webButton, setWebButton,
             }}
         >
             {props.children}
