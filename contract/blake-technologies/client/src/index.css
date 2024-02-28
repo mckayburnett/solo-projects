@@ -363,6 +363,19 @@ body {
 .home-testimonials-slide > #three:hover{
   color: red;
 }
+.home-contact{
+  color: rgb(23, 41, 96);;
+  grid-column: 1/4;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+}
+.home-contact-form{
+  grid-column: 2/5;
+  grid-template-columns: 1fr 1fr;
+}
+.home-contact-form > input{
+  color: rgb(23, 41, 96);
+}
 /* ------------------- */
 /* ----- Courses ----- */
 /* ------------------- */

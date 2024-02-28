@@ -2,21 +2,14 @@ import React, {useState, useContext, useEffect, useRef} from 'react'
 import Ios from './courses/Ios.js'
 import Logo from '../outside/Logo.png'
 import {Functionality} from '../context/Functionality.js'
-import {useNavigate} from 'react-router-dom'
 import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
 
 
 export default function Navbar(){
 
-const {} = useContext(Functionality)
+const {homeClick, coursesClick} = useContext(Functionality)
 
-const navigate = useNavigate(); // Initialize the useNavigate hook
-const homeClick = () => {
-    navigate('/')
-}
-const coursesClick = () => {
-    navigate('/courses')
-}
+
 
 
     return(
