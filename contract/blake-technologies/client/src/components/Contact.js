@@ -6,11 +6,11 @@ export default function Contact(){
     const {inputs, setInputs, handleChange, handleSubmit} = useContext(Functionality)
 
     return(
-        <div className="home-contact" onSubmit={handleSubmit}>
+        <div className="home-contact">
             <h1 className="home-subject-head">Contact Us</h1>
-            <form className="home-contact-form">
+            <form className="home-contact-form" onSubmit={handleSubmit}>
                 <input
-                    className="home-contact-form-firstName"
+                    className="firstName"
                     name="firstName"
                     value={inputs.firstName}
                     placeholder="First Name*"
@@ -19,7 +19,7 @@ export default function Contact(){
                     onChange={handleChange}
                 />
                 <input
-                    className="home-contact-form-lastName"
+                    className="lastName"
                     name="lastName"
                     value={inputs.lastName}
                     placeholder="Last Name*"
@@ -28,7 +28,7 @@ export default function Contact(){
                     onChange={handleChange}
                 />
                 <input
-                    className="home-contact-form-email"
+                    className="email"
                     name="email"
                     value={inputs.email}
                     placeholder="Email*"
@@ -37,7 +37,7 @@ export default function Contact(){
                     onChange={handleChange}
                 />
                 <input
-                    className="home-contact-form-phoneNumber"
+                    className="phoneNumber"
                     name="phoneNumber"
                     value={inputs.phoneNumber}
                     placeholder="Phone Number"
@@ -45,7 +45,7 @@ export default function Contact(){
                     onChange={handleChange}
                 />
                 <input
-                    className="home-contact-form-course"
+                    className="course"
                     name="course"
                     value={inputs.course}
                     placeholder="Course Interested In"
