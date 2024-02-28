@@ -24,7 +24,7 @@ export default function Home(){
             <div className="home-whatWeOffer">
                 <h1 className="home-subject-head">What We Offer</h1>
                 <p className="home-subject-body">{whatWeOffer}</p>
-                <Link to="/courses"><button className="home-subject-button" role="button"><span class="text">View Courses</span></button></Link>
+                <Link to="/courses"><button className="home-subject-button" role="button"><span className="text">View Courses</span></button></Link>
             </div>
             <ReactPlayer
                 className="home-video"

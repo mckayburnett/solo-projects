@@ -3,10 +3,10 @@ import { Functionality } from '../context/Functionality'
 
 export default function Contact(){
 
-    const {inputs, setInputs, handleChange} = useContext(Functionality)
+    const {inputs, setInputs, handleChange, handleSubmit} = useContext(Functionality)
 
     return(
-        <div className="home-contact">
+        <div className="home-contact" onSubmit={handleSubmit}>
             <h1 className="home-subject-head">Contact Us</h1>
             <form className="home-contact-form">
                 <input
@@ -52,6 +52,7 @@ export default function Contact(){
                     type="dropdown"
                     onChange={handleChange}
                 />
+                <button>Submit</button>
             </form>
         </div>
     )

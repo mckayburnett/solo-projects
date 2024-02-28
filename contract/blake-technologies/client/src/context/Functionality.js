@@ -34,6 +34,12 @@ export default function ContextProvider(props){
             [name] : value
         }))
     }
+    function handleSubmit(e){
+        e.preventDefault();
+        //post request right here
+        console.log(inputs)
+        setInputs(initInputs)
+    }
     //-----------------
 
     //-----Courses-----
@@ -49,7 +55,8 @@ export default function ContextProvider(props){
                 iosButton, setIosButton,
                 webButton, setWebButton,
                 inputs, setInputs,
-                handleChange
+                handleChange,
+                handleSubmit
             }}
         >
             {props.children}
