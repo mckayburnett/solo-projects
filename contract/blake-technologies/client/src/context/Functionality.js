@@ -40,7 +40,8 @@ export default function ContextProvider(props){
         lastName: "",
         email: "",
         phoneNumber: "",
-        course: ""
+        course: "",
+        message: ""
     }
     const [inputs, setInputs] = useState(initInputs)
     function handleChange(e){

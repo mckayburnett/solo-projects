@@ -5,6 +5,7 @@ import {Text} from '../context/Text.js'
 import {Functionality} from '../context/Functionality.js'
 import { FaCircle } from 'react-icons/fa'
 import Contact from './Contact.js'
+import BottomNav from './BottomNav.js'
 
 export default function Home(){
 
@@ -46,6 +47,7 @@ export default function Home(){
                 </div>
             </div>
             <Contact />
+            <BottomNav />
         </div>
     )
 }

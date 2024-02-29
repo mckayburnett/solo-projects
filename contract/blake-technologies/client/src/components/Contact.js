@@ -60,6 +60,14 @@ export default function Contact(){
                     <option id="option-two" value="ios">iOS</option>
                     <option id="option-three" value="web">Web Development</option>
                 </select>
+                <textarea
+                    id="message"
+                    name="message"
+                    value={inputs.message}
+                    placeholder="Anything you'd like us to know?"
+                    type="textarea"
+                    onChange={handleChange}
+                />
                 <button className={sendClicked ? "home-contact-form-button-clicked" : "home-contact-form-button"} onClick={() => setSendClicked(true)}>
                     <GoPaperAirplane style = {{transform: 'rotate(-45deg)' }} className="send2" aria-hidden="true" />
                     <p>Send</p>
