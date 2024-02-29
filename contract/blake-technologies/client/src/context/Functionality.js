@@ -40,6 +40,15 @@ export default function ContextProvider(props){
         console.log(inputs)
         setInputs(initInputs)
     }
+    const [sendClicked, setSendClicked] = useState(false)
+    const [message, setMessage] = useState("Send")
+    function changeMessage(){
+        setTimeout(setMessage("Sent"))
+    }
+    useEffect(() => {
+        sendClicked && setTimeout(changeMessage, 1000)
+    },[sendClicked])
+    
     //-----------------
 
     //-----Courses-----
@@ -56,7 +65,9 @@ export default function ContextProvider(props){
                 webButton, setWebButton,
                 inputs, setInputs,
                 handleChange,
-                handleSubmit
+                handleSubmit,
+                sendClicked, setSendClicked,
+                message, setMessage
             }}
         >
             {props.children}

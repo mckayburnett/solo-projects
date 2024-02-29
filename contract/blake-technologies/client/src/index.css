@@ -473,6 +473,34 @@ body {
   top: 15px;
   color: white;
 }
+.home-contact-form-button-clicked{
+  grid-column: 2/4;
+  margin-left: auto;
+  margin-right: auto;
+  appearance: none;
+  border-width: 0;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 0em 1em;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); 
+}
+.home-contact-form-button-clicked p{
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(23,41,96);
+  font-weight: 900;
+  font-size: 20px;
+  margin-left: 30px;
+  transition: all 0.5s ease;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+}
 .home-contact-form-button-clicked:hover{
  background: rgb(23,41,96);
  transition: all 0.5s ease;
