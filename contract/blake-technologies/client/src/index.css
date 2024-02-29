@@ -376,7 +376,7 @@ body {
 
 }
 .home-contact-form{
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   display: grid;
 }
 .home-contact-form > input{
@@ -391,31 +391,135 @@ body {
   padding: .3em;
   text-align: center;
   cursor: text;
+  max-width: 20em;
+}
+.home-contact-form > #firstName{
+  grid-column: 2/3;
+}
+.home-contact-form > #lastName{
+  grid-column: 3/4;
+}
+.home-contact-form > #email{
+  grid-column: 2/3;
+}
+.home-contact-form > #phone{
+  grid-column: 3/4;
+}
+.home-contact-form > #course{
+  grid-column: 2/4;
+  color: white;
+  background: rgb(23,41,96);
+  background: linear-gradient(90deg, rgba(23,41,96,1) 0%, rgba(33,56,128,1) 50%, rgba(62,89,173,1) 100%); 
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 2em;
+  border: none;
+  margin: 1em;
+  padding: .3em;
+  text-align: center;
+  cursor: text;
+  max-width: 20em;
+  font: .5;
+  margin-left: auto;
+  margin-right: auto;
+  height: 2.5em;
+  cursor: pointer;
+}
+.home-contact-form-button{
+  grid-column: 2/4;
+  margin-left: auto;
+  margin-right: auto;
+  appearance: none;
+  border-width: 0;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 0em 1em;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); 
+}
+.home-contact-form-button p{
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(23,41,96);
+  font-weight: 900;
+  font-size: 20px;
+  margin-left: 30px;
+  transition: all 0.5s ease;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+}
+.send2{
+ left: 1em;
+ margin-top: auto;
+ margin-bottom: auto;
+ color: rgb(23,41,96);
+ font-size: 2em;
+ transition: all 0.5s ease;
+}
+.home-contact-form-button:hover{
+  background: rgb(23,41,96);
+
+}
+.home-contact-form-button:hover p{
+  color: white;
+
+}
+.home-contact-form-button:hover .send2{
+  top: 15px;
+  color: white;
+}
+.home-contact-form-button-clicked:hover{
+ background: rgb(23,41,96);
+ transition: all 0.5s ease;
+}
+
+.home-contact-form-button-clicked:hover p{
+ color: white;
+ transition: all 0.5s ease;
+ animation: move 1s linear 1s forwards;
+}
+.home-contact-form-button-clicked:hover .send2{
+ top: 15px;
+ color: white;
+ transition: all 0.5s ease;
+ animation: sending 1s linear 1s forwards;
+}
+@keyframes sending{
+ 0%{
+   transform: translateY(0);
+   transform: rotate(-45deg)
+
+ }
+ 100%{
+   transform: translate(40px, -60px);
+ }
+}
+@keyframes move{
+ 0%{
+   transform: translateX(0);
+ }
+ 100%{
+   transform: translateX(-25px);
+ }
+}
+.home-contact-form > button {
+  grid-column: 2/4;
+  max-width: 10em;
+  margin-left: auto;
+  margin-right: auto;
 }
 ::placeholder {
   color: white;
-  opacity: 1; /* Firefox */
+  opacity: .5; /* Firefox */
 }
 ::-ms-input-placeholder { /* Edge 12 -18 */
   color: white;
-}
-.home-contact-form > .firstName{
-  grid-column: 1/2;
-}
-.home-contact-form > .lastName{
-  grid-column: 2/3;
-}
-.home-contact-form > .email{
-  grid-column: 1/2;
-}
-.home-contact-form > .phone{
-  grid-column: 2/3;
-}
-.home-contact-form > .course{
-  grid-column: 1/3;
-}
-.home-contact-form > button{
-  grid-column: 1/3;
+  opacity: .5;
 }
 /* ------------------- */
 /* ----- Courses ----- */

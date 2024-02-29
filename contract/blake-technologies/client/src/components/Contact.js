@@ -1,5 +1,7 @@
 import React, {useState, useContext, useEffect, useRef} from 'react'
 import { Functionality } from '../context/Functionality'
+import { GoPaperAirplane } from "react-icons/go";
+
 
 export default function Contact(){
 
@@ -10,7 +12,7 @@ export default function Contact(){
             <h1 className="home-subject-head">Contact Us</h1>
             <form className="home-contact-form" onSubmit={handleSubmit}>
                 <input
-                    className="firstName"
+                    id="firstName"
                     name="firstName"
                     value={inputs.firstName}
                     placeholder="First Name*"
@@ -19,7 +21,7 @@ export default function Contact(){
                     onChange={handleChange}
                 />
                 <input
-                    className="lastName"
+                    id="lastName"
                     name="lastName"
                     value={inputs.lastName}
                     placeholder="Last Name*"
@@ -28,7 +30,7 @@ export default function Contact(){
                     onChange={handleChange}
                 />
                 <input
-                    className="email"
+                    id="email"
                     name="email"
                     value={inputs.email}
                     placeholder="Email*"
@@ -37,22 +39,28 @@ export default function Contact(){
                     onChange={handleChange}
                 />
                 <input
-                    className="phoneNumber"
+                    id="phoneNumber"
                     name="phoneNumber"
                     value={inputs.phoneNumber}
                     placeholder="Phone Number"
                     type="phone"
                     onChange={handleChange}
                 />
-                <input
-                    className="course"
+                <select
+                    id="course"
                     name="course"
                     value={inputs.course}
-                    placeholder="Course Interested In"
                     type="dropdown"
                     onChange={handleChange}
-                />
-                <button>Submit</button>
+                >
+                    <option id="option-one" value="">Course Interested In</option>
+                    <option id="option-two" value="">iOS</option>
+                    <option id="option-three" value="">Web Development</option>
+                </select>
+                <div className="home-contact-form-button">
+                    <GoPaperAirplane style = {{transform: 'rotate(-45deg)' }} className="send2" aria-hidden="true" />
+                    <p>Send</p>
+                </div>
             </form>
         </div>
     )
