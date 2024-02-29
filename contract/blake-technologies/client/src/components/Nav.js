@@ -3,6 +3,8 @@ import Ios from './courses/Ios.js'
 import Logo from '../outside/Logo.png'
 import {Functionality} from '../context/Functionality.js'
 import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
+import { FaRegArrowAltCircleUp } from "react-icons/fa";
+
 
 
 export default function Navbar(){
@@ -43,7 +45,7 @@ const {homeClick, coursesClick, scrollToTop, showButton} = useContext(Functional
                     </div>
                 </div>
             </div>
-           {showButton && <button className="scroll-button" onClick={scrollToTop}>Scroll to Top</button>}
+           {showButton && <FaRegArrowAltCircleUp className="scroll-button"onClick={scrollToTop}/>}
         </div>
     )
 }

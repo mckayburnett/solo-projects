@@ -219,6 +219,14 @@ body {
   position: fixed;
   right: 10px;
   bottom: 10px;
+  font-size: 3em;
+  opacity: .5;
+  color: grey(114, 0, 0);
+  cursor: pointer;
+}
+.scroll-button:hover{
+  color: red;
+  opacity: 1;
 }
 /* --------------------- */
 /* ----- Home Page ----- */
@@ -378,12 +386,23 @@ body {
   display: grid;
 }
 .home-contact > h1{
-
+  padding-bottom: 0;
+}
+.home-contact > p{
+  padding-top: 0;
+  text-align: center;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 .home-contact-form{
   grid-template-columns: 1fr 1fr 1fr 1fr;
   display: grid;
-}
+  border: 1px solid black;
+  width: fill;
+  margin-left: 15em;
+  margin-right: 15em;
+  }
 .home-contact-form > input{
   color: white;
   background: rgb(23,41,96);

@@ -9,6 +9,9 @@ export default function ContextProvider(props){
 
     const whatWeOffer = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."
 
+    // ----- Contact Us -----
+    const contactUs = "Ut non odio pulvinar turpis fermentum viverra. Aenean vehicula orci et varius mattis. Proin eleifend, tellus vitae varius euismod, purus massa ornare metus, in blandit est ipsum at mauris. Sed non tincidunt tortor. "
+
     // ----- Courses -----
     const courses = "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
 
@@ -39,6 +42,7 @@ export default function ContextProvider(props){
             value={{
                 aboutUs,
                 whatWeOffer,
+                contactUs,
                 courses,
                 ios,
                 web,

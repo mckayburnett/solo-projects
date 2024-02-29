@@ -22,7 +22,6 @@ export default function ContextProvider(props){
       useEffect(() => {
         const handleScroll = () => {
             window.scrollY > 25 ? setShowButton(true) : setShowButton(false);
-            console.log(showButton, window.scrollY > 25)
         };
             window.addEventListener('scroll', handleScroll);
             return () => {
@@ -55,6 +54,7 @@ export default function ContextProvider(props){
         e.preventDefault();
         //post request right here
         console.log(inputs)
+        window.alert(`Thank you, ${inputs.firstName}, for sending us your information! You should hear back from us soon!`)
         setInputs(initInputs)
     }
     const [sendClicked, setSendClicked] = useState(false);

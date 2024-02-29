@@ -1,15 +1,18 @@
 import React, {useState, useContext, useEffect, useRef} from 'react'
 import { Functionality } from '../context/Functionality'
+import { Text } from '../context/Text'
 import { GoPaperAirplane } from "react-icons/go";
 
 
 export default function Contact(){
 
     const {inputs, setInputs, handleChange, handleSubmit, sendClicked, setSendClicked} = useContext(Functionality)
+    const {contactUs} = useContext(Text)
 
     return(
         <div className="home-contact">
             <h1 className="home-subject-head">Contact Us</h1>
+            <p className="home-subject-body">{contactUs}</p>
             <form className="home-contact-form" onSubmit={handleSubmit}>
                 <input
                     id="firstName"
