@@ -12,13 +12,12 @@ export default function ContextProvider(props){
     const coursesClick = () => {
         navigate('/courses')
     }
-    const topRef = useRef(null)
-    const scrollToRef = (target) => {
-        window.scrollTo({ 
-          top: target.current.offsetTop, 
-          behavior: "smooth" 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-      }
+    };
     const [showButton, setShowButton] = useState(false);
       useEffect(() => {
         const handleScroll = () => {
@@ -68,8 +67,7 @@ export default function ContextProvider(props){
     return(
         <Functionality.Provider
             value={{
-                topRef,
-                scrollToRef,
+                scrollToTop,
                 showButton, setShowButton,
                 homeClick,
                 coursesClick,

@@ -7,11 +7,11 @@ import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
 
 export default function Navbar(){
 
-const {homeClick, coursesClick, topRef, showButton} = useContext(Functionality)
+const {homeClick, coursesClick, scrollToTop, showButton} = useContext(Functionality)
 
 
     return(
-        <div className="nav-wrapper" ref={topRef}>
+        <div className="nav-wrapper">
             <div className="nav-container">
                 <img 
                     className="nav-container-img"
@@ -43,7 +43,7 @@ const {homeClick, coursesClick, topRef, showButton} = useContext(Functionality)
                     </div>
                 </div>
             </div>
-           {showButton && <button className="scroll-button">Scroll to Top</button>}
+           {showButton && <button className="scroll-button" onClick={scrollToTop}>Scroll to Top</button>}
         </div>
     )
 }
