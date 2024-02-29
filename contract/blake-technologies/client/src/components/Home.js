@@ -11,6 +11,9 @@ export default function Home(){
     const {aboutUs, whatWeOffer, testimonials} = useContext(Text)
     const {slideNum, setSlideNum, contactClicked, contact} = useContext(Functionality)
 
+    console.log(window.scrollY
+        )
+
     return(
         <div className="home-wrapper">
             <div className="home-aboutUs">

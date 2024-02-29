@@ -12,6 +12,24 @@ export default function ContextProvider(props){
     const coursesClick = () => {
         navigate('/courses')
     }
+    const topRef = useRef(null)
+    const scrollToRef = (target) => {
+        window.scrollTo({ 
+          top: target.current.offsetTop, 
+          behavior: "smooth" 
+        });
+      }
+    const [showButton, setShowButton] = useState(false);
+      useEffect(() => {
+        const handleScroll = () => {
+            window.scrollY > 25 ? setShowButton(true) : setShowButton(false);
+            console.log(showButton, window.scrollY > 25)
+        };
+            window.addEventListener('scroll', handleScroll);
+            return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     //----------------
 
     //-----Home-----
@@ -40,15 +58,7 @@ export default function ContextProvider(props){
         console.log(inputs)
         setInputs(initInputs)
     }
-    const [sendClicked, setSendClicked] = useState(false)
-    const [message, setMessage] = useState("Send")
-    function changeMessage(){
-        setTimeout(setMessage("Sent"))
-    }
-    useEffect(() => {
-        sendClicked && setTimeout(changeMessage, 1000)
-    },[sendClicked])
-    
+    const [sendClicked, setSendClicked] = useState(false);
     //-----------------
 
     //-----Courses-----
@@ -58,6 +68,9 @@ export default function ContextProvider(props){
     return(
         <Functionality.Provider
             value={{
+                topRef,
+                scrollToRef,
+                showButton, setShowButton,
                 homeClick,
                 coursesClick,
                 slideNum, setSlideNum,
@@ -67,7 +80,7 @@ export default function ContextProvider(props){
                 handleChange,
                 handleSubmit,
                 sendClicked, setSendClicked,
-                message, setMessage
+                
             }}
         >
             {props.children}

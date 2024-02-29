@@ -5,7 +5,7 @@ import { GoPaperAirplane } from "react-icons/go";
 
 export default function Contact(){
 
-    const {inputs, setInputs, handleChange, handleSubmit, sendClicked, setSendClicked, message, setMessage} = useContext(Functionality)
+    const {inputs, setInputs, handleChange, handleSubmit, sendClicked, setSendClicked} = useContext(Functionality)
 
     return(
         <div className="home-contact">
@@ -54,12 +54,12 @@ export default function Contact(){
                     onChange={handleChange}
                 >
                     <option id="option-one" value="">Course Interested In</option>
-                    <option id="option-two" value="">iOS</option>
-                    <option id="option-three" value="">Web Development</option>
+                    <option id="option-two" value="ios">iOS</option>
+                    <option id="option-three" value="web">Web Development</option>
                 </select>
                 <button className={sendClicked ? "home-contact-form-button-clicked" : "home-contact-form-button"} onClick={() => setSendClicked(true)}>
                     <GoPaperAirplane style = {{transform: 'rotate(-45deg)' }} className="send2" aria-hidden="true" />
-                    <p>{message}</p>
+                    <p>Send</p>
                 </button>
             </form>
         </div>
