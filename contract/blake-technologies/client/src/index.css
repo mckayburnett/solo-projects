@@ -403,9 +403,8 @@ body {
   grid-template-rows: 1fr 1fr 1fr 1fr;
   display: grid;
   border: 1px solid black;
-  width: fill;
-  margin-left: 15em;
-  margin-right: 15em;
+  margin-left: auto;
+  margin-right: auto;
   }
 .home-contact-form > input{
   color: white;
@@ -726,4 +725,6 @@ body {
 .bottomNav-wrapper{
   color: white;
   background-color: black;
+  grid-column: 1/4;
+  text-align: center;
 }

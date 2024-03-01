@@ -49,6 +49,9 @@ export default function Contact(){
                     type="phone"
                     onChange={handleChange}
                 />
+                <input 
+                    id="contactTime"
+                />
                 <select
                     id="course"
                     name="course"
