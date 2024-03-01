@@ -18,6 +18,8 @@ async function connectToDB(){
 }
 connectToDB()
 
+app.use('/auth', require('./routes/authRouter.js'))
+app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256']}))
 
 
 app.use((err, req, res, next) => {

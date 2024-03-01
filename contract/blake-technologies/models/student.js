@@ -11,6 +11,11 @@ const studentSchema = new Schema({
         type: String,
         required: false
     },
+    uncontacted: {
+        type: Boolean,
+        default: true,
+        required: true
+    },
     contacted: {
         type: Boolean,
         default: false,
