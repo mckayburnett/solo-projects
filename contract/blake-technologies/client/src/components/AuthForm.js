@@ -3,26 +3,29 @@ import {Functionality} from '../context/Functionality.js'
 
 export default function AuthForm(){
 
-    const {handleChange} = useContext(Functionality)
+    const {auth, handleChangeAuth, handleAuthSubmit, token, logout} = useContext(Functionality)
     
     return(
         <div className="authForm-wrapper">
-            <form className="authForm-form">
-            <input
-                className="authForm-form-email"
-                type="text"
-                value={auth.email}
-                onChange={handleChange}
-                placeholder="Email"
-            />
-            <input
-                className="authForm-form-password"
-                type="password"
-                value={auth.password}
-                onChange={handleChange}
-                placeholder="Password"
-            />
-            <button>Login</button>
+            <h4 className="authForm-title">{token ? `Employee Portal Logout`:`Employee Portal Login`}</h4>
+            <form className="authForm-form" onSubmit={token ? logout : handleAuthSubmit}>
+                {!token && <input
+                    className="authForm-form-email"
+                    name="email"
+                    type="text"
+                    value={auth.email}
+                    onChange={handleChangeAuth}
+                    placeholder="Email"
+                />}
+                {!token && <input
+                    className="authForm-form-password"
+                    type="password"
+                    name="password"
+                    value={auth.password}
+                    onChange={handleChangeAuth}
+                    placeholder="Password"
+                />}
+                <button>{token ? `Logout`:`Submit`}</button>
             </form>
         </div>
     )

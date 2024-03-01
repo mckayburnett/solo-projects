@@ -4,6 +4,7 @@ import Logo from '../outside/Logo.png'
 import {Functionality} from '../context/Functionality.js'
 import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
 import { FaRegArrowAltCircleUp } from "react-icons/fa";
+import AuthForm from './AuthForm.js'
 
 
 
@@ -14,6 +15,7 @@ const {homeClick, coursesClick, scrollToTop, showButton} = useContext(Functional
 
     return(
         <div className="nav-wrapper">
+            <AuthForm />
             <div className="nav-container">
                 <img 
                     className="nav-container-img"

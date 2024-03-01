@@ -4,18 +4,19 @@ import ReactPlayer from 'react-player'
 import {Text} from '../context/Text.js'
 import {Functionality} from '../context/Functionality.js'
 import { FaCircle } from 'react-icons/fa'
+import EmployeePortal from './EmployeePortal.js'
 import Contact from './Contact.js'
 import BottomNav from './BottomNav.js'
 
 export default function Home(){
 
     const {aboutUs, whatWeOffer, testimonials} = useContext(Text)
-    const {slideNum, setSlideNum, contactClicked, contact} = useContext(Functionality)
-
-    console.log(window.scrollY
-        )
+    const {slideNum, setSlideNum, contactClicked, contact, token} = useContext(Functionality)
 
     return(
+        <>
+        { token ? <EmployeePortal />
+        :
         <div className="home-wrapper">
             <div className="home-aboutUs">
                 <h1 className="home-subject-head">About Us</h1>
@@ -46,8 +47,11 @@ export default function Home(){
                     <FaCircle id="three" onClick={() => setSlideNum(2)} style={{ color: slideNum === 2 && "red"}} />
                 </div>
             </div>
+            
             <Contact />
             <BottomNav />
         </div>
+        }
+        </>
     )
 }

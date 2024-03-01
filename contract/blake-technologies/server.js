@@ -20,7 +20,7 @@ connectToDB()
 
 app.use('/auth', require('./routes/authRouter.js'))
 app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256']}))
-
+//app.use('/api/student', require('./routes/studentRouter.js'))
 
 app.use((err, req, res, next) => {
     console.log(err)

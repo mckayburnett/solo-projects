@@ -9,7 +9,40 @@ body {
 }
 /* ----- App ----- */
 .app-wrapper{
-
+  font-size: small;
+}
+/* ----- AuthForm ----- */
+.authForm-wrapper{
+  position: absolute;
+  color: white;
+  right: 0;
+  top: 0;
+  background-color: var(--mainColor);
+  display: flex;
+  padding: .2em;
+  height: 1.7em;
+}
+.authForm-title{
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: 100;
+}
+.authForm-form{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.authForm-form > input{
+  width: 7em;
+  font-size: small;
+  line-height: .7em;
+}
+.authForm-form-email{
+  margin: 0 .3em;
+}
+.authForm-form > button{
+  font-size: x-small;
+  margin: 0 .3em;
+  cursor: pointer;
 }
 /* ----- Navbar ----- */
 .nav-wrapper{

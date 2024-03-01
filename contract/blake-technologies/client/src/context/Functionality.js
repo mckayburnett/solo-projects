@@ -12,13 +12,29 @@ userAxios.interceptors.request.use(config => {
 })
 
 export default function ContextProvider(props){
-    //-----Epmloyee userAxios state-----
+    //-----Epmloyee userAxios state AuthForm-----
     const initState = {
         user: JSON.parse(localStorage.getItem("user")) || {},
         token: localStorage.getItem("token") || "",
     }
     const [userState, setUserState] = useState(initState)
     const [err, setErr] = useState("")
+    const initAuth = {email: "", password: ""}
+    const [auth, setAuth] = useState(initAuth)
+    function handleChangeAuth(e){
+        const {name, value} = e.target
+        setAuth(prev => ({
+            ...prev,
+            [name] : value
+        }))
+        console.log(auth)
+    }
+    function handleAuthSubmit(e){
+        e.preventDefault();
+        console.log(auth)
+        login(auth);
+        setAuth(initAuth)
+    }
     function login(credentials){
         axios.post('/auth/login', credentials)
             .then(res => {
@@ -26,8 +42,21 @@ export default function ContextProvider(props){
                 localStorage.setItem("token", token)
                 localStorage.setItem("user", JSON.stringify(user))
                 console.log(user)
+                setUserState(prev => ({
+                    ...prev,
+                    user,
+                    token
+                }))
             })
             .catch(err => setErr(err.response.data.errMsg))
+    }
+    function logout(){
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        setUserState({
+            user: {},
+            token: "",
+        })
     }
     const [students, setStudents] = useState([])
     function getAllStudents(){
@@ -105,6 +134,11 @@ export default function ContextProvider(props){
     return(
         <Functionality.Provider
             value={{
+                ...userState,
+                auth, setAuth,
+                handleChangeAuth,
+                handleAuthSubmit,
+                logout,
                 students, setStudents,
                 getAllStudents,
                 scrollToTop,
