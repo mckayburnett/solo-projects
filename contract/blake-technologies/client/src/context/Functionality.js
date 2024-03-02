@@ -12,7 +12,7 @@ userAxios.interceptors.request.use(config => {
 })
 
 export default function ContextProvider(props){
-    //-----Employee AuthForm-----
+    //-----AuthForm-----
     const initState = {
         user: JSON.parse(localStorage.getItem("user")) || {},
         token: localStorage.getItem("token") || "",
@@ -27,11 +27,9 @@ export default function ContextProvider(props){
             ...prev,
             [name] : value
         }))
-        console.log(auth)
     }
     function handleAuthSubmit(e){
         e.preventDefault();
-        console.log(auth)
         login(auth);
         setAuth(initAuth)
     }
@@ -41,12 +39,12 @@ export default function ContextProvider(props){
                 const {user, token} = res.data
                 localStorage.setItem("token", token)
                 localStorage.setItem("user", JSON.stringify(user))
-                console.log(user)
                 setUserState(prev => ({
                     ...prev,
                     user,
                     token
                 }))
+                getAllStudents();
             })
             .catch(err => setErr(err.response.data.errMsg))
     }
@@ -58,16 +56,18 @@ export default function ContextProvider(props){
             token: "",
         })
     }
+    //-----Employee Portal-----
     const [students, setStudents] = useState([])
-    function getAllStudents(){
-        userAxios.get('/api/student')
-        .then(res => {
+    async function getAllStudents(){
+        try{
+            const res = await userAxios.get('/api/student')
             setStudents(prev => ({
                 ...prev,
                 students: res.data
             }))
-        })
-        .catch(err => console.log(err.response.data.errMsg))
+        }catch(err){
+            console.log(err.response.data)
+        }
     }
 
     //-----Navbar-----
@@ -128,7 +128,7 @@ export default function ContextProvider(props){
         try{
             const res = await axios.post('/')
         }catch(err){
-            
+
         }
     }
 
@@ -147,6 +147,7 @@ export default function ContextProvider(props){
                 handleChangeAuth,
                 handleAuthSubmit,
                 logout,
+                getAllStudents,
                 students, setStudents,
                 getAllStudents,
                 scrollToTop,
