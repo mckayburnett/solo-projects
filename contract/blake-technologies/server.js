@@ -4,6 +4,8 @@ require('dotenv').config()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const { expressjwt } = require('express-jwt')
+const Student = require('./models/student.js')
+
 
 app.use(express.json())
 app.use(morgan('dev'))
@@ -18,9 +20,21 @@ async function connectToDB(){
 }
 connectToDB()
 
+//This is the only student request that doesn't require '/api' because it is receiving the post from the 'Contact Us' section of the client-side.
+app.post('/student', async (req, res, next) => {
+    try{
+        const newStudent = await new Student(req.body)
+        const savedStudent = await newStudent.save()
+        res.status(201).send(savedStudent)
+    }catch(err){
+        res.status(500)
+        next(err)
+    }
+})
+
 app.use('/auth', require('./routes/authRouter.js'))
 app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256']}))
-//app.use('/api/student', require('./routes/studentRouter.js'))
+app.use('/api/student', require('./routes/studentRouter.js'))
 
 app.use((err, req, res, next) => {
     console.log(err)
