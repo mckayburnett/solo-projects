@@ -782,6 +782,7 @@ body {
   color: var(--mainColor);
   margin-bottom: auto;
   font-weight: 100;
+  min-width: 165px;
 }
 .employeePortal-buttons{
   
@@ -792,30 +793,54 @@ body {
 .employeePortal-studentList{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  border: 1px solid var(--mainColor);
+  grid-auto-flow: column;
   margin-top: 0;
 }
 /* ----- Students ----- */
+.students-form{
+  display: flex;
+  justify-content: space-between;
+}
+.students-form > label{
+
+}
 .students-wrapper-uncontacted{
   grid-column: 1/2;
   border: 1px solid var(--mainColor);
   padding: .5em;
-  color: var(--mainColor)
+  color: var(--mainColor);
+  min-width: 152px;
+  
 }
 .students-wrapper-processing{
   grid-column: 2/3;
+  border: 1px solid var(--mainColor);
+  padding: .5em;
+  color: var(--mainColor);
+  min-width: 152px;
 }
 .students-wrapper-accepted{
   grid-column: 3/4;
+  border: 1px solid var(--mainColor);
+  padding: .5em;
+  color: var(--mainColor);
+  min-width: 152px;
 
 }
 .students-wrapper-enrolled{
   grid-column: 4/5;
+  border: 1px solid var(--mainColor);
+  padding: .5em;
+  color: var(--mainColor);
+  min-width: 152px;
 
 }
 .students-wrapper-declined{
   grid-column: 5/6;
-
+  border: 1px solid var(--mainColor);
+  padding: .5em;
+  color: var(--mainColor);
+  min-width: 152px;
 }
 .students-wrapper-namesCourse{
   margin-top: 0;
@@ -837,7 +862,9 @@ body {
   font-weight: 100;
 
 }
-
+.students-delete{
+  cursor: pointer;
+}
 /* ----- Bottom Nav ----- */
 .bottomNav-wrapper{
   color: white;

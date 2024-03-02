@@ -13,30 +13,44 @@ export default function Students(props){
             <h4 className="students-wrapper-phone">{phoneNumber}</h4>
             <h4 className="students-wrapper-message">{message}</h4>
             <h4 className="students-wrapper-date">{date}</h4>
-            <form>
-                <input
+            <form className="students-form">
+                <div>
+                   <label>Un
+                    <input
                     type="radio"
                     name="uncontacted"
                     value={student.uncontacted}
                     checked={student.uncontacted}
                     onChange={handleChange}
-                />
-                <input
+                    />
+                </label> 
+                </div>
+                <div>
+                    <label>Pro
+                    <input
                     type="radio"
                     name="processing"
                     value={student.processing}
                     checked={student.processing}
                     onChange={handleChange}
                 />
-                <input
+                </label>
+                </div>
+                <div>
+                    <label>Acc
+                   <input
                     type="radio"
                     name="accepted"
                     value={student.accepted}
                     checked={student.accepted}
                     onChange={handleChange}
 
-                />
-                <input
+                /> 
+                </label>
+                </div>
+                <div>
+                  <label>En
+                    <input
                     type="radio"
                     name="enrolled"
                     value={student.enrolled}
@@ -44,7 +58,11 @@ export default function Students(props){
                     onChange={handleChange}
 
                 />
-                <input
+                </label>  
+                </div>
+                <div>
+                    <label>De
+                    <input
                     type="radio"
                     name="declined"
                     value={student.declined}
@@ -52,8 +70,10 @@ export default function Students(props){
                     onChange={handleChange}
 
                 />
+                </label>
+                </div>
             </form>
-            <button onClick={() => handleDelete(_id)}>Delete</button>
+            <button className="students-delete" onClick={() => handleDelete(_id)}>Delete</button>
         </div>
     )
 }
