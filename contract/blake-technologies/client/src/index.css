@@ -801,7 +801,7 @@ body {
   display: flex;
   justify-content: space-between;
   border: 1px solid var(--mainColor);
-  width: 15em;
+  min-width: 150px;
   margin: auto;
 }
 .students-form > label{
@@ -830,7 +830,6 @@ body {
   padding: .5em;
   color: var(--mainColor);
   min-width: 152px;
-
 }
 .students-wrapper-enrolled{
   grid-column: 4/5;
@@ -838,7 +837,6 @@ body {
   padding: .5em;
   color: var(--mainColor);
   min-width: 152px;
-
 }
 .students-wrapper-declined{
   grid-column: 5/6;
@@ -869,7 +867,6 @@ body {
 }
 .students-delete{
   cursor: pointer;
-  
   color: var(--mainColor);
   background-color: white;
   border: none;

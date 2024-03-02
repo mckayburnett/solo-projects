@@ -5,7 +5,7 @@ export default function Students(props){
     const {student} = props
     const {accepted, declined, enrolled, processing, uncontacted, data, _id} = student
     const {firstName, lastName, course, email, phoneNumber, date, message} = data
-    const {handleDelete, handleChange} = useContext(Functionality)
+    const {handleDelete, radio, editStudent, handleChangeRadio} = useContext(Functionality)
     return(
         <div className={uncontacted ? "students-wrapper-uncontacted" : processing ? "students-wrapper-processing" : accepted ? "students-wrapper-accepted" : enrolled ? "students-wrapper-enrolled" : declined && "students-wrapper-declined"}>
             <h3 className="students-wrapper-namesCourse">{firstName} {lastName} ({course})</h3>
@@ -19,9 +19,9 @@ export default function Students(props){
                     <input
                     type="radio"
                     name="uncontacted"
-                    value={student.uncontacted}
+                    value={true}
                     checked={student.uncontacted}
-                    onChange={handleChange}
+                    onChange={handleChangeRadio}
                     />
                 </label> 
                 </div>
@@ -30,9 +30,9 @@ export default function Students(props){
                     <input
                     type="radio"
                     name="processing"
-                    value={student.processing}
+                    value={true}
                     checked={student.processing}
-                    onChange={handleChange}
+                    onChange={handleChangeRadio}
                 />
                 </label>
                 </div>
@@ -41,10 +41,9 @@ export default function Students(props){
                    <input
                     type="radio"
                     name="accepted"
-                    value={student.accepted}
+                    value={true}
                     checked={student.accepted}
-                    onChange={handleChange}
-
+                    onChange={handleChangeRadio}
                 /> 
                 </label>
                 </div>
@@ -53,10 +52,9 @@ export default function Students(props){
                     <input
                     type="radio"
                     name="enrolled"
-                    value={student.enrolled}
+                    value={true}
                     checked={student.enrolled}
-                    onChange={handleChange}
-
+                    onChange={handleChangeRadio}
                 />
                 </label>  
                 </div>
@@ -65,10 +63,9 @@ export default function Students(props){
                     <input
                     type="radio"
                     name="declined"
-                    value={student.declined}
+                    value={true}
                     checked={student.declined}
-                    onChange={handleChange}
-
+                    onChange={handleChangeRadio}
                 />
                 </label>
                 </div>
