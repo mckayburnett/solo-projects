@@ -15,11 +15,6 @@ const studentSchema = new Schema({
         default: true,
         required: true
     },
-    contacted: {
-        type: Boolean,
-        default: false,
-        required: true
-    },
     accepted: {
         type: Boolean,
         default: false,

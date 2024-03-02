@@ -773,10 +773,25 @@ body {
   margin-top: 0;
 }
 .employeePortal-studentList{
-  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 /* ----- Students ----- */
+.students-wrapper-uncontacted{
 
+}
+.students-wrapper-processing{
+
+}
+.students-wrapper-accepted{
+
+}
+.students-wrapper-enrolled{
+
+}
+.students-wrapper-declined{
+  
+}
 /* ----- Bottom Nav ----- */
 .bottomNav-wrapper{
   color: white;

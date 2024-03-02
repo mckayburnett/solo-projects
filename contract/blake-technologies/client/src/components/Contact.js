@@ -50,7 +50,11 @@ export default function Contact(){
                     onChange={handleChange}
                 />
                 <input 
-                    id="contactTime"
+                    id="date"
+                    name="date"
+                    value={inputs.date}
+                    type="date"
+                    onChange={handleChange}
                 />
                 <select
                     id="course"
