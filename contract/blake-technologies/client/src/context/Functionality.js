@@ -69,7 +69,20 @@ export default function ContextProvider(props){
             console.log(err.response.data)
         }
     }
-
+    async function deleteStudent(id){
+        try{
+            const res = userAxios.delete(`/api/student/${id}`)
+            setStudents(prev => ({
+                ...prev
+            }))
+        }catch(err){
+            console.log(err)
+        }
+    }
+    function handleDelete(id){
+        deleteStudent(id)
+        getAllStudents()
+    }
     //-----Navbar-----
     const navigate = useNavigate(); // Initialize the useNavigate hook
     const homeClick = () => {
@@ -107,6 +120,7 @@ export default function ContextProvider(props){
         email: "",
         phoneNumber: "",
         course: "",
+        date: "",
         message: ""
     }
     const [inputs, setInputs] = useState(initInputs)
@@ -119,16 +133,20 @@ export default function ContextProvider(props){
     }
     function handleSubmit(e){
         e.preventDefault();
-        //post addStudent right here
+        addStudent(inputs)
         console.log(inputs)
         setInputs(initInputs)
     }
     const [sendClicked, setSendClicked] = useState(false);
     async function addStudent(newStudent){
         try{
-            const res = await axios.post('/')
+            const res = await axios.post('/student', {data: newStudent})
+            setStudents(prev => ({
+                ...prev,
+                students: res.data
+            }))
         }catch(err){
-
+            console.log(err)
         }
     }
 
@@ -148,8 +166,10 @@ export default function ContextProvider(props){
                 handleAuthSubmit,
                 logout,
                 getAllStudents,
+                deleteStudent,
+                handleDelete,
                 students, setStudents,
-                getAllStudents,
+                addStudent,
                 scrollToTop,
                 showButton, setShowButton,
                 homeClick,

@@ -772,25 +772,34 @@ body {
   letter-spacing: .3vw;
   margin-top: 0;
 }
+.employeePortal-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+}
 .employeePortal-studentList{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 /* ----- Students ----- */
 .students-wrapper-uncontacted{
-
+  grid-column: 1/2;
 }
 .students-wrapper-processing{
+  grid-column: 2/3;
 
 }
 .students-wrapper-accepted{
+  grid-column: 3/4;
 
 }
 .students-wrapper-enrolled{
+  grid-column: 4/5;
 
 }
 .students-wrapper-declined{
-  
+  grid-column: 5/6;
+
 }
 /* ----- Bottom Nav ----- */
 .bottomNav-wrapper{

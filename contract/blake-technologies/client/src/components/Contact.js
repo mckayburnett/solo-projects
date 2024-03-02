@@ -6,7 +6,7 @@ import { GoPaperAirplane } from "react-icons/go";
 
 export default function Contact(){
 
-    const {inputs, setInputs, handleChange, handleSubmit, sendClicked, setSendClicked} = useContext(Functionality)
+    const {inputs, setInputs, handleChange, addStudent, handleSubmit, sendClicked, setSendClicked} = useContext(Functionality)
     const {contactUs} = useContext(Text)
 
     return(
@@ -54,6 +54,7 @@ export default function Contact(){
                     name="date"
                     value={inputs.date}
                     type="date"
+                    required
                     onChange={handleChange}
                 />
                 <select
@@ -61,6 +62,7 @@ export default function Contact(){
                     name="course"
                     value={inputs.course}
                     type="dropdown"
+                    required
                     onChange={handleChange}
                 >
                     <option id="option-one" value="">Course Interested In</option>

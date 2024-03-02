@@ -23,7 +23,7 @@ connectToDB()
 //This is the only student request that doesn't require '/api' because it is receiving the post from the 'Contact Us' section of the client-side.
 app.post('/student', async (req, res, next) => {
     try{
-        const newStudent = await new Student(req.body)
+        const newStudent = new Student(req.body)
         const savedStudent = await newStudent.save()
         res.status(201).send(savedStudent)
     }catch(err){
