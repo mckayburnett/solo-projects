@@ -27,7 +27,6 @@ export default function Students(props){
                     value={student.processing}
                     checked={student.processing}
                     onChange={handleChange}
-
                 />
                 <input
                     type="radio"

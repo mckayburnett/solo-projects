@@ -587,13 +587,13 @@ body {
 .home-contact-form-button-clicked:hover p{
  color: white;
  transition: all 0.5s ease;
- animation: move 1s linear 1s forwards;
+ animation: move .5s linear .5s forwards;
 }
 .home-contact-form-button-clicked:hover .send2{
  top: 15px;
  color: white;
  transition: all 0.5s ease;
- animation: sending 1s linear 1s forwards;
+ animation: sending .5s linear .5s forwards;
 }
 @keyframes sending{
  0%{
@@ -781,6 +781,7 @@ body {
   border: 1px solid black;
   color: var(--mainColor);
   margin-bottom: auto;
+  font-weight: 100;
 }
 .employeePortal-buttons{
   
@@ -791,18 +792,18 @@ body {
 .employeePortal-studentList{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  border: 1px solid black;
+  border: 1px solid var(--mainColor);
   margin-top: 0;
 }
 /* ----- Students ----- */
 .students-wrapper-uncontacted{
   grid-column: 1/2;
-  border: 1px solid black;
+  border: 1px solid var(--mainColor);
   padding: .5em;
+  color: var(--mainColor)
 }
 .students-wrapper-processing{
   grid-column: 2/3;
-
 }
 .students-wrapper-accepted{
   grid-column: 3/4;
@@ -819,14 +820,21 @@ body {
 .students-wrapper-namesCourse{
   margin-top: 0;
   text-decoration: underline;
+  font-weight: 100;
 }
 .students-wrapper-email{
+  font-weight: 100;
 
 }
 .students-wrapper-phone{
+  font-weight: 100;
 
 }
 .students-wrapper-phone{
+  font-weight: 100;
+}
+.students-wrapper-message{
+  font-weight: 100;
 
 }
 
