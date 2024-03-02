@@ -12,7 +12,7 @@ userAxios.interceptors.request.use(config => {
 })
 
 export default function ContextProvider(props){
-    //-----Epmloyee userAxios state AuthForm-----
+    //-----Employee AuthForm-----
     const initState = {
         user: JSON.parse(localStorage.getItem("user")) || {},
         token: localStorage.getItem("token") || "",
@@ -119,12 +119,20 @@ export default function ContextProvider(props){
     }
     function handleSubmit(e){
         e.preventDefault();
-        //post request right here
+        //post addStudent right here
         console.log(inputs)
-        window.alert(`Thank you, ${inputs.firstName}, for sending us your information! You should hear back from us soon!`)
         setInputs(initInputs)
     }
     const [sendClicked, setSendClicked] = useState(false);
+    async function addStudent(newStudent){
+        try{
+            const res = await axios.post('/')
+        }catch(err){
+            
+        }
+    }
+
+    
     //-----------------
 
     //-----Courses-----

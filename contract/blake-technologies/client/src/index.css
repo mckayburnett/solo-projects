@@ -26,6 +26,7 @@ body {
   margin-top: auto;
   margin-bottom: auto;
   font-weight: 100;
+  font-size: 1vw;
 }
 .authForm-form{
   margin-top: auto;
@@ -753,7 +754,24 @@ body {
   color: white;
   background-color: var(--mainColor);
 }
+/* ----- Employee Portal ----- */
+.employeePortal-wrapper{
 
+}
+.employeePortal-welcome{
+  color: var(--mainColor);
+  font-weight: 100;
+  text-align: center;
+  letter-spacing: 0;
+  margin-bottom: 0;
+}
+.employeePortal-title{
+  color: var(--mainColor);
+  font-weight: 100;
+  text-align: center;
+  letter-spacing: .3vw;
+  margin-top: 0;
+}
 /* ----- Bottom Nav ----- */
 .bottomNav-wrapper{
   color: white;

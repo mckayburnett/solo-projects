@@ -3,11 +3,13 @@ import { Functionality } from '../context/Functionality'
 
 export default function EmployeePortal(){
 
-    const {students, setStudents} = useContext(Functionality)
+    const {students, setStudents, userState, user} = useContext(Functionality)
 
+    const{firstName, lastName, isAdmin} = user
     return(
         <div className="employeePortal-wrapper">
-            <h1>Employee Portal</h1>
+            <p className="employeePortal-welcome">{`Welcome, ${firstName} ${lastName} (${isAdmin && "Admin"}), to the`}</p>
+            <h1 className="employeePortal-title">Employee Portal</h1>
         </div>
     )
 }
