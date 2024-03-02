@@ -11,13 +11,12 @@ export default function EmployeePortal(){
         
     },[])
 
-    const student = (students?.students?.map(student => student))
-    const uncontactedNum = student?.filter(student=> student.uncontacted === true).length  
-    const processingNum = student?.filter(student => student.processing === true).length  
-    const acceptedNum = student?.filter(student => student.accepted === true).length 
-    const enrolledNum = student?.filter(student => student.enrolled === true).length
-    const declinedNum = student?.filter(student => student.declined === true).length  
- 
+    const student = Array.isArray(students?.students) ? students.students.map(student => student) : [];
+    const uncontactedNum = (students?.students?.filter(student => student.uncontacted === true) || []).length;
+    const processingNum = (students?.students?.filter(student => student.processing === true) || []).length;
+    const acceptedNum = (students?.students?.filter(student => student.accepted === true) || []).length;
+    const enrolledNum = (students?.students?.filter(student => student.enrolled === true) || []).length;
+    const declinedNum = (students?.students?.filter(student => student.declined === true) || []).length;
 
     return(
         <div className="employeePortal-wrapper">

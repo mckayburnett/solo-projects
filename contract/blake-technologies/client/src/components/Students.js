@@ -9,9 +9,9 @@ export default function Students(props){
     return(
         <div className={uncontacted ? "students-wrapper-uncontacted" : processing ? "students-wrapper-processing" : accepted ? "students-wrapper-accepted" : enrolled ? "students-wrapper-enrolled" : declined && "students-wrapper-declined"}>
             <h3 className="students-wrapper-namesCourse">{firstName} {lastName} ({course})</h3>
-            <h4 className="students-wrapper-email">{email}</h4>
-            <h4 className="students-wrapper-phone">{phoneNumber}</h4>
-            <h4 className="students-wrapper-message">{message}</h4>
+            <h4 className="students-wrapper-email">Email: {email}</h4>
+            <h4 className="students-wrapper-phone">Phone #: {phoneNumber}</h4>
+            <h4 className="students-wrapper-message">Message: {message}</h4>
             <h4 className="students-wrapper-date">{date}</h4>
             <form className="students-form">
                 <div>
@@ -73,7 +73,7 @@ export default function Students(props){
                 </label>
                 </div>
             </form>
-            <button className="students-delete" onClick={() => handleDelete(_id)}>Delete</button>
+            <button className="students-delete" onClick={() => handleDelete(_id)}>Remove Student</button>
         </div>
     )
 }

@@ -800,9 +800,15 @@ body {
 .students-form{
   display: flex;
   justify-content: space-between;
+  border: 1px solid var(--mainColor);
+  width: 15em;
+  margin: auto;
 }
 .students-form > label{
 
+}
+.students-form > div > label > input{
+  cursor: pointer;
 }
 .students-wrapper-uncontacted{
   grid-column: 1/2;
@@ -810,7 +816,6 @@ body {
   padding: .5em;
   color: var(--mainColor);
   min-width: 152px;
-  
 }
 .students-wrapper-processing{
   grid-column: 2/3;
@@ -864,6 +869,16 @@ body {
 }
 .students-delete{
   cursor: pointer;
+  
+  color: var(--mainColor);
+  background-color: white;
+  border: none;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); 
+}
+.students-delete:hover{
+  color: white;
+  background-color: var(--mainColor);
 }
 /* ----- Bottom Nav ----- */
 .bottomNav-wrapper{

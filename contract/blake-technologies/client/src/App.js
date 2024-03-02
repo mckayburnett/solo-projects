@@ -24,7 +24,7 @@ function App() {
         <Route
           path="/employeePortal"
           element={
-            <ProtectedRoute token={token} redirectTo="/employeePortal">
+            <ProtectedRoute token={token} redirectTo="/">
               <EmployeePortal />
             </ProtectedRoute>
           }
