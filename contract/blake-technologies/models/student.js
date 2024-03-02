@@ -12,7 +12,7 @@ const studentSchema = new Schema({
     },
     uncontacted: {
         type: Boolean,
-        default: true,
+        default: false,
         required: true
     },
     accepted: {

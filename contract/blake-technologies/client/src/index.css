@@ -777,13 +777,28 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   text-align: center;
 }
+.employeePortal-grid > h2 {
+  border: 1px solid black;
+  color: var(--mainColor);
+  margin-bottom: auto;
+}
+.employeePortal-buttons{
+  
+}
+.employeePortal-buttons-viewStudents{
+  cursor: pointer;
+}
 .employeePortal-studentList{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  border: 1px solid black;
+  margin-top: 0;
 }
 /* ----- Students ----- */
 .students-wrapper-uncontacted{
   grid-column: 1/2;
+  border: 1px solid black;
+  padding: .5em;
 }
 .students-wrapper-processing{
   grid-column: 2/3;
@@ -801,6 +816,20 @@ body {
   grid-column: 5/6;
 
 }
+.students-wrapper-namesCourse{
+  margin-top: 0;
+  text-decoration: underline;
+}
+.students-wrapper-email{
+
+}
+.students-wrapper-phone{
+
+}
+.students-wrapper-phone{
+
+}
+
 /* ----- Bottom Nav ----- */
 .bottomNav-wrapper{
   color: white;

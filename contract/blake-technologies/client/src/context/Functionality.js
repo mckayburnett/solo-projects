@@ -83,6 +83,10 @@ export default function ContextProvider(props){
         deleteStudent(id)
         getAllStudents()
     }
+    const [viewStudentList, setViewStudentList] = useState(false)
+    function handleRadio(){
+
+    }
     //-----Navbar-----
     const navigate = useNavigate(); // Initialize the useNavigate hook
     const homeClick = () => {
@@ -140,7 +144,7 @@ export default function ContextProvider(props){
     const [sendClicked, setSendClicked] = useState(false);
     async function addStudent(newStudent){
         try{
-            const res = await axios.post('/student', {data: newStudent})
+            const res = await axios.post('/student', {data: newStudent, uncontacted: true})
             setStudents(prev => ({
                 ...prev,
                 students: res.data
@@ -165,6 +169,7 @@ export default function ContextProvider(props){
                 handleChangeAuth,
                 handleAuthSubmit,
                 logout,
+                viewStudentList, setViewStudentList,
                 getAllStudents,
                 deleteStudent,
                 handleDelete,
