@@ -93,20 +93,10 @@ export default function ContextProvider(props){
             ...prev,
             students: updatedStudent
           }));
+          
         } catch (err) {
           console.log(err);
         }
-      }
-    const initRadio = {
-        uncontacted: false,
-        processing: false,
-        accepted: false,
-        enrolled: false,
-        declined: false,
-    };
-    const [radio, setRadio] = useState(initRadio)
-    function handleChangeRadio(e){
-        console.log(e)
     }
     //-----Navbar-----
     const navigate = useNavigate(); // Initialize the useNavigate hook
@@ -192,8 +182,8 @@ export default function ContextProvider(props){
                 logout,
                 viewStudentList, setViewStudentList,
                 getAllStudents,
-                radio,
-                handleChangeRadio,
+                // radio,
+                // handleChangeRadio,
                 editStudent,
                 deleteStudent,
                 handleDelete,

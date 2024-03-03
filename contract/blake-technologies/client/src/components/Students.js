@@ -5,7 +5,27 @@ export default function Students(props){
     const {student} = props
     const {accepted, declined, enrolled, processing, uncontacted, data, _id} = student
     const {firstName, lastName, course, email, phoneNumber, date, message} = data
-    const {handleDelete, radio, editStudent, handleChangeRadio} = useContext(Functionality)
+    const {handleDelete, editStudent} = useContext(Functionality)
+    
+
+const initRadio = {
+    uncontacted: false,
+    processing: false,
+    accepted: false,
+    enrolled: false,
+    declined: false,
+};
+const [radio, setRadio] = useState(initRadio)
+function handleChangeRadio(e){
+    const {name, value} = e.target
+    setRadio(prev => ({
+        ...initRadio,
+        [name]: value
+    }))
+    
+    console.log(radio)
+}
+    
     return(
         <div className={uncontacted ? "students-wrapper-uncontacted" : processing ? "students-wrapper-processing" : accepted ? "students-wrapper-accepted" : enrolled ? "students-wrapper-enrolled" : declined && "students-wrapper-declined"}>
             <h3 className="students-wrapper-namesCourse">{firstName} {lastName} ({course})</h3>
@@ -70,6 +90,7 @@ export default function Students(props){
                 </label>
                 </div>
             </form>
+            <button className="students-delete" onClick={() => editStudent(_id, radio)}>Transfer Student</button>
             <button className="students-delete" onClick={() => handleDelete(_id)}>Remove Student</button>
         </div>
     )

@@ -21,5 +21,18 @@ studentRouter.delete('/:studentId', async (req, res, next) => {
         console.log(err)
     }
 })
+studentRouter.put('/:studentId', async (req,res, next) => {
+    try{
+        req.body.user = req.auth_id
+        const updatedStudent = await Student.findOneAndUpdate(
+            {_id: req.params.studentId},
+            req.body,
+            {new: true}
+        ).exec();
+        res.status(201).send(updatedStudent)
+    }catch(err){
+        console.log(err)
+    }
+})
 
 module.exports = studentRouter
