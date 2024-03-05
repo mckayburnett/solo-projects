@@ -37,6 +37,70 @@ export default function ContextProvider(props){
     </div>
     ]
 
+    const description = `The iOS programming course will take you from no programming
+    experience to having the skills necessary to create and deploy your own
+    projects publicly available on the Apple App Store. `
+
+    const objectives = `• ➔ Variables,
+    • ➔ Constants,
+    • ➔ Operators,
+    • ➔ Data Types,
+    • ➔ Proper naming
+    conventions,
+    • ➔ Conditionals,
+    • ➔ Control Flow,
+    • ➔ Functions,
+    • ➔ Parameters,
+    • ➔ Results,
+    • ➔ MVC,
+    • ➔ Design Patterns, 
+    • ➔ MVVM,
+    • ➔ Communication
+    ➔ ProtocolandDelegate, ➔ Loops,
+    ➔ Class,
+    ➔ Struct,
+    ➔ Optionals,
+    ➔ UIViewController, ➔ AppleHIG,
+    ➔ GitHub,
+    ➔ VersionControl, ➔ UITableView,
+    ➔ Singleton,
+    ➔ Segues,
+    ➔ LocalPersistence, ➔ JSON,
+    ➔ UIAlertController,
+    ➔ Notification and Listener,
+    ➔ JSONSerialization, ➔ Postman,
+    ➔ API Documentation, ➔ URLSession,
+    ➔ Closure,
+    ➔ Concurrency,
+    ➔ GCD,
+    ➔ Codable,
+    ➔ Enum,
+    ➔ Memory Management, ➔ ARC,
+    ➔ Dictionaries,
+    ➔ Arrays,
+    ➔ Extensions,
+    Patterns,
+    • ➔ Result Type, 
+    • ➔ Capture Lists,
+    • ➔ URL Requests,
+    • ➔ Abstraction && Single
+    Responsibility,
+    • ➔ Async and Await,
+    • ➔ Pagination,
+    • ➔ Google Firebase,
+    ➔ Google Firestore,
+    ➔ HTTP Methods,
+    ➔ App Planning,
+    ➔ Story mapping,
+    ➔ AGILE Methodologies, ➔ Interface Builder,
+    ➔ Introduction to BigO Notation,
+    ➔ Introduction to Data structures and
+    Algorithms,
+    ➔ Objective - C,
+    ➔ Core Data,
+    ➔ iOS Interview process, ➔ Introduction to UI/Unit
+    testing. `
+
     return(
         <Text.Provider
             value={{
@@ -46,7 +110,9 @@ export default function ContextProvider(props){
                 courses,
                 ios,
                 web,
-                testimonials
+                testimonials,
+                description,
+                objectives
             }}
         >
             {props.children}
