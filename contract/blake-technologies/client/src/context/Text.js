@@ -55,7 +55,7 @@ export default function ContextProvider(props){
     • ➔ MVC,
     • ➔ Design Patterns, 
     • ➔ MVVM,
-    • ➔ Communication
+    • ➔ Communication,
     ➔ ProtocolandDelegate, ➔ Loops,
     ➔ Class,
     ➔ Struct,
@@ -101,6 +101,16 @@ export default function ContextProvider(props){
     ➔ iOS Interview process, ➔ Introduction to UI/Unit
     testing. `
 
+    const arrObjectives = objectives.split(",")
+    const mappedArr = arrObjectives.map((item, index) => (
+        <div key={index} className="ios-obj-item">
+          <h4>{item}</h4>
+        </div>
+      ));
+    const iosSubTitle = `Upon successful completion of the iOS Programming Course, you will
+    feel confident in the following`
+    
+
     return(
         <Text.Provider
             value={{
@@ -112,7 +122,10 @@ export default function ContextProvider(props){
                 web,
                 testimonials,
                 description,
-                objectives
+                objectives,
+                mappedArr,
+                iosSubTitle,
+
             }}
         >
             {props.children}

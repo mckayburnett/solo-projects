@@ -172,6 +172,11 @@ export default function ContextProvider(props){
     const [iosButton, setIosButton] = useState(false);
     const [webButton, setWebButton] = useState(false);
     //----------------
+
+    //-----iOS-----
+    const [viewObj, setViewObj] = useState(false);
+
+    //-------------
     return(
         <Functionality.Provider
             value={{
@@ -200,6 +205,7 @@ export default function ContextProvider(props){
                 handleChange,
                 handleSubmit,
                 sendClicked, setSendClicked,
+                viewObj, setViewObj
             }}
         >
             {props.children}
