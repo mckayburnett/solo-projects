@@ -887,12 +887,14 @@ body {
   background: linear-gradient(90deg, rgba(23,41,96,1) 0%, rgba(33,56,128,1) 50%, rgba(62,89,173,1) 100%);
 }
 .ios-top-content{
-
+  
   }
 .ios-title{
   font-weight: 100;
   text-align: center;
   letter-spacing: .3vw; 
+  padding-top: 2em;
+  
 }
 .ios-description{
   font-weight: 100;
@@ -900,7 +902,7 @@ body {
   text-align: center;
   letter-spacing: .3vw; 
   padding: 0;
-  width: 60vw;
+  width: 70vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -987,6 +989,33 @@ body {
   width: 40vw;
   border-radius: 3em;
   box-shadow: -15px 15px 0 white;
+}
+.ios-daily{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(1fr);
+  padding-left: 2em;
+}
+.ios-daily > h1{
+  grid-row: 1/2;
+  font-weight: 100;
+  letter-spacing: .3vw; 
+}
+.ios-daily > #friday{
+  padding-left: 1em;
+}
+.ios-daily > h3 > span{
+  border: 1px solid white;
+}
+.ios-daily > h3{
+  grid-column: 1/2;
+  font-weight: 100;
+  border-right: solid 1px white;
+}
+.ios-daily > #optional{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  padding-left: 2em;
 }
 /* ----- Bottom Nav ----- */
 .bottomNav-wrapper{

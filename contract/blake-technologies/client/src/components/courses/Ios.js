@@ -7,7 +7,7 @@ import pic2 from '../../outside/ios-pic2.jpg'
 
 export default function Ios(){
 
-    const {description, mappedArr, iosSubTitle} = useContext(Text)
+    const {description, mappedArr, iosSubTitle, daily} = useContext(Text)
     const {viewObj, setViewObj} = useContext(Functionality)
 
     return(
@@ -29,6 +29,7 @@ export default function Ios(){
                     {viewObj && <div className="ios-obj-body-wrapper">{mappedArr}</div>}
                 </div>
             <div className="ios-midBottom-content">
+                {daily}
                 <div className="ios-pic2-box">
                     <img src={pic2} className="ios-pic2" />
                 </div>

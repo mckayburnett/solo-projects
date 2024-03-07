@@ -109,7 +109,21 @@ export default function ContextProvider(props){
       ));
     const iosSubTitle = `Upon successful completion of the iOS Programming Course, you will
     feel confident in the following`
-    
+
+    const daily = 
+        <div className="ios-daily">
+            <h1>Monday - Thursday</h1>
+            <h3><span>9:00am - 9:30am: </span>Coffee Chat /n Connect with your teammates and the team lead to discuss the previous day</h3>
+            <h3><span>9:30am - 10:30am: </span>Formal Lecture /n Using a slide deck we will go over in-depth topics</h3>
+            <h3><span>10:30am - 11:00am: </span>Break</h3>
+            <h3><span>11:00am - 1:00pm: </span>Live Coding Lecture /n Interactive lecture where you code along with your instructor</h3>
+            <h3><span>1:00pm - 2:00pm: </span>Lunch /n I'm thnking Chipotle</h3>
+            <h3><span>2:00pm - 3:00pm: </span>Pair Programming - Support Closed /n Paired Programming without instructor support. It's imoportant to learn how to learn on your own and use external  resources.</h3>
+            <h3><span>3:00pm - 5:00pm: </span>Pair Programming - Support Open /n Instructors are live and on-call to support you. We will answer any questions you may have</h3>
+            <h3><span>5:00pm - 7:00pm: </span>Review Pre-Class Materials /n Prepare for the next day by getting an introduction to what we will learn the following day</h3>
+            <h1 id="friday">Friday</h1>
+            <h3 id="optional">OPTIONAL!</h3>
+        </div>
 
     return(
         <Text.Provider
@@ -125,7 +139,7 @@ export default function ContextProvider(props){
                 objectives,
                 mappedArr,
                 iosSubTitle,
-
+                daily
             }}
         >
             {props.children}
