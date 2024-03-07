@@ -122,7 +122,7 @@ export default function ContextProvider(props){
             <h3><span>3:00pm - 5:00pm: </span>Pair Programming - Support Open /n Instructors are live and on-call to support you. We will answer any questions you may have</h3>
             <h3><span>5:00pm - 7:00pm: </span>Review Pre-Class Materials /n Prepare for the next day by getting an introduction to what we will learn the following day</h3>
             <h1 id="friday">Friday</h1>
-            <h3 id="optional">OPTIONAL!</h3>
+            <h3 id="optional"><span>9:00am - 7:00pm: </span>OPTIONAL!</h3>
         </div>
 
     return(
