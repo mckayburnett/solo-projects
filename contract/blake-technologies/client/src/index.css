@@ -882,8 +882,6 @@ body {
 /* ----- Course iOS ----- */
 .ios-wrapper{
   color: white;
-  margin-top: -20px;
-  padding-top: -10px;
   height: 100%;
   background: rgb(23,41,96);
   background: linear-gradient(90deg, rgba(23,41,96,1) 0%, rgba(33,56,128,1) 50%, rgba(62,89,173,1) 100%);
@@ -895,16 +893,16 @@ body {
   font-weight: 100;
   text-align: center;
   letter-spacing: .3vw; 
-  padding-top: 2em;
-  
+  font-size: 7em;
+  padding: 0;
+  margin: 0;
 }
 .ios-description{
   font-weight: 100;
-  font-size: larger;
+  font-size: 2em;
   text-align: center;
   letter-spacing: .3vw; 
-  padding: 0;
-  width: 70vw;
+  padding: 0 2em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -920,12 +918,13 @@ body {
 .ios-mid-content{
   display: flex;
   margin-top: 5em;
+  padding-left: 2em;
 }
 .ios-pic1-box{
   padding: 0 0 30px 30px;
 }
 .ios-pic1{
-  width: 20vw;
+  width: 20em;
   border-radius: 3em;
   margin-left: auto;
   box-shadow: -15px 15px 0 white;
@@ -934,22 +933,16 @@ body {
   font-weight: 100;
   text-align: left;
   letter-spacing: .3vw; 
-  padding-left: 1vw;
 }
 .ios-obj-subTitle{
   font-weight: 100;
   text-align: left;
   letter-spacing: .3vw; 
   padding-left: 1vw;
+  padding-right: 20em;
 }
 .ios-obj-subTitle-container-center{
   text-align: center;
-}
-.ios-mid-button{
-  color: var(--mainColor);
-  background-color: white;
-  cursor: pointer;
-  margin-left: 1vw;
 }
 .ios-obj-body-wrapper {
   display: grid;
@@ -959,8 +952,14 @@ body {
   margin-right: 2em;
   height: 20em;
   overflow-y: scroll;
-  box-shadow: black 5px 5px;
+  border-top: .8em solid black;
+  border-right: .8em solid black;
+  border-left: .8em solid black;
+  border-bottom: 3em solid black;
   border-radius: 2em;
+  width: 14em;
+  min-width: 14em;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.155);
  }
 
 .ios-obj-item {
@@ -987,7 +986,7 @@ body {
   margin-top: -10em;
 }
 .ios-pic2{
-  width: 40vw;
+  width: 40em;
   border-radius: 3em;
   box-shadow: -15px 15px 0 white;
 }
@@ -1030,7 +1029,6 @@ body {
   background-color: black;
   grid-column: 1/4;
   text-align: center;
-  margin-top: 2em;
   padding-top: 2em;
 }
 .bottomNav-logo{

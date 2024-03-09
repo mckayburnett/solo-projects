@@ -18,22 +18,21 @@ export default function Ios(){
                 <p className="ios-description">{description}</p>
             </div>
             <div className="ios-mid-content">
-                    <div className="ios-pic1-box">
-                        <img src={pic1} className="ios-pic1"/>
-                    </div>
-                    <h2 className="ios-obj-title">Course Objectives: </h2>
-                    <div className={viewObj && "ios-obj-subTitle-container-center"}>
+                <h2 className="ios-obj-title">Course Objectives: </h2>
+                <div className="ios-obj-subTitle-container-center">
                     <h3 className="ios-obj-subTitle">{iosSubTitle}</h3>
-                    <button className="ios-mid-button" onClick={() => setViewObj(!viewObj)}>Click to {viewObj ? `Close` : `View`}</button>
-                    </div>
-                    {viewObj && <div className="ios-obj-body-wrapper">{mappedArr}</div>}
+                    <div className="ios-obj-body-wrapper">{mappedArr}</div>
                 </div>
+            </div>
             <div className="ios-midBottom-content">
                 {daily}
                 <div className="ios-pic2-box">
                     <img src={pic2} className="ios-pic2" />
                 </div>
             </div>
+            <div className="ios-pic1-box">
+                    <img src={pic1} className="ios-pic1"/>
+                </div>
         </div>
     )
 }

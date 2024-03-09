@@ -41,66 +41,65 @@ export default function ContextProvider(props){
     experience to having the skills necessary to create and deploy your own
     projects publicly available on the Apple App Store. `
 
-    const objectives = `• ➔ Variables,
-    • ➔ Constants,
-    • ➔ Operators,
-    • ➔ Data Types,
-    • ➔ Proper naming
+    const objectives = `Variables,
+    Constants,
+    Operators,
+    Data Types,
+    Proper naming
     conventions,
-    • ➔ Conditionals,
-    • ➔ Control Flow,
-    • ➔ Functions,
-    • ➔ Parameters,
-    • ➔ Results,
-    • ➔ MVC,
-    • ➔ Design Patterns, 
-    • ➔ MVVM,
-    • ➔ Communication,
-    ➔ ProtocolandDelegate, ➔ Loops,
-    ➔ Class,
-    ➔ Struct,
-    ➔ Optionals,
-    ➔ UIViewController, ➔ AppleHIG,
-    ➔ GitHub,
-    ➔ VersionControl, ➔ UITableView,
-    ➔ Singleton,
-    ➔ Segues,
-    ➔ LocalPersistence, ➔ JSON,
-    ➔ UIAlertController,
-    ➔ Notification and Listener,
-    ➔ JSONSerialization, ➔ Postman,
-    ➔ API Documentation, ➔ URLSession,
-    ➔ Closure,
-    ➔ Concurrency,
-    ➔ GCD,
-    ➔ Codable,
-    ➔ Enum,
-    ➔ Memory Management, ➔ ARC,
-    ➔ Dictionaries,
-    ➔ Arrays,
-    ➔ Extensions,
+    Conditionals,
+    Control Flow,
+    Functions,
+    Parameters,
+    Results,
+    MVC,
+    Design Patterns, 
+    MVVM,
+    Communication,
+    ProtocolandDelegate, Loops,
+    Class,
+    Struct,
+    Optionals,
+    UIViewController, AppleHIG,
+    GitHub,
+    VersionControl, UITableView,
+    Singleton,
+    Segues,
+    LocalPersistence, JSON,
+    UIAlertController,
+    Notification and Listener,
+    JSONSerialization, Postman,
+    API Documentation, URLSession,
+    Closure,
+    Concurrency,
+    GCD,
+    Codable,
+    Enum,
+    Memory Management, ARC,
+    Dictionaries,
+    Arrays,
+    Extensions,
     Patterns,
-    • ➔ Result Type, 
-    • ➔ Capture Lists,
-    • ➔ URL Requests,
-    • ➔ Abstraction && Single
+    Result Type, 
+    Capture Lists,
+    URL Requests,
+    Abstraction && Single
     Responsibility,
-    • ➔ Async and Await,
-    • ➔ Pagination,
-    • ➔ Google Firebase,
-    ➔ Google Firestore,
-    ➔ HTTP Methods,
-    ➔ App Planning,
-    ➔ Story mapping,
-    ➔ AGILE Methodologies, ➔ Interface Builder,
-    ➔ Introduction to BigO Notation,
-    ➔ Introduction to Data structures and
+    Async and Await,
+    Pagination,
+    Google Firebase,
+    Google Firestore,
+    HTTP Methods,
+    App Planning,
+    Story mapping,
+    AGILE Methodologies, Interface Builder,
+    Introduction to BigO Notation,
+    Introduction to Data structures and
     Algorithms,
-    ➔ Objective - C,
-    ➔ Core Data,
-    ➔ iOS Interview process, ➔ Introduction to UI/Unit
+    Objective - C,
+    Core Data,
+    iOS Interview process, Introduction to UI/Unit
     testing. `
-
     const arrObjectives = objectives.split(",")
     const mappedArr = arrObjectives.map((item, index) => (
         <div key={index} className="ios-obj-item">
@@ -113,14 +112,14 @@ export default function ContextProvider(props){
     const daily = 
         <div className="ios-daily">
             <h1>Monday - Thursday</h1>
-            <h3><span>9:00am - 9:30am: </span>Coffee Chat /n Connect with your teammates and the team lead to discuss the previous day</h3>
-            <h3><span>9:30am - 10:30am: </span>Formal Lecture /n Using a slide deck we will go over in-depth topics</h3>
+            <h3><span>9:00am - 9:30am: </span>Coffee Chat <br /> Connect with your teammates and the team lead to discuss the previous day</h3>
+            <h3><span>9:30am - 10:30am: </span>Formal Lecture <br /> Using a slide deck we will go over in-depth topics</h3>
             <h3><span>10:30am - 11:00am: </span>Break</h3>
-            <h3><span>11:00am - 1:00pm: </span>Live Coding Lecture /n Interactive lecture where you code along with your instructor</h3>
-            <h3><span>1:00pm - 2:00pm: </span>Lunch /n I'm thnking Chipotle</h3>
-            <h3><span>2:00pm - 3:00pm: </span>Pair Programming - Support Closed /n Paired Programming without instructor support. It's imoportant to learn how to learn on your own and use external  resources.</h3>
-            <h3><span>3:00pm - 5:00pm: </span>Pair Programming - Support Open /n Instructors are live and on-call to support you. We will answer any questions you may have</h3>
-            <h3><span>5:00pm - 7:00pm: </span>Review Pre-Class Materials /n Prepare for the next day by getting an introduction to what we will learn the following day</h3>
+            <h3><span>11:00am - 1:00pm: </span>Live Coding Lecture <br /> Interactive lecture where you code along with your instructor</h3>
+            <h3><span>1:00pm - 2:00pm: </span>Lunch <br /> I'm thnking Chipotle</h3>
+            <h3><span>2:00pm - 3:00pm: </span>Pair Programming - Support Closed <br /> Paired Programming without instructor support. It's imoportant to learn how to learn on your own and use external  resources.</h3>
+            <h3><span>3:00pm - 5:00pm: </span>Pair Programming - Support Open <br /> Instructors are live and on-call to support you. We will answer any questions you may have</h3>
+            <h3><span>5:00pm - 7:00pm: </span>Review Pre-Class Materials <br /> Prepare for the next day by getting an introduction to what we will learn the following day</h3>
             <h1 id="friday">Friday</h1>
             <h3 id="optional"><span>9:00am - 7:00pm: </span>OPTIONAL!</h3>
         </div>
