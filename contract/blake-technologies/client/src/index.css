@@ -497,10 +497,12 @@ body {
   color: rgb(23,41,96);
   margin: 0 3em;
 }
+#contact-button{
+  grid-column: 3/4;
+}
 .home-contact-form-button{
   margin: auto;
   grid-row: 4/5;
-  grid-column: 2/3;
   appearance: none;
   border-width: 0;
   box-sizing: border-box;
@@ -1028,4 +1030,60 @@ body {
   background-color: black;
   grid-column: 1/4;
   text-align: center;
+  margin-top: 2em;
+  padding-top: 2em;
+}
+.bottomNav-logo{
+  width: 5em;
+  padding: 1em;
+  border-radius: 5em;
+  position: absolute;
+  left: 0;
+}
+.bottomNav-line{
+  width: 80vw;
+  padding-top: 5em;
+  border-bottom: 1px solid white;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bottomNav-links{
+  display: grid;
+  color: white;
+  text-align: center;
+  letter-spacing: .3vw;
+}
+.bottomNav-company{
+  grid-column: 1/2;
+}
+.bottomNav-company > h3{
+  text-decoration: underline;
+  font-weight: 100;
+}
+.bottomNav-company > a{
+  text-decoration: none;
+  color: white;
+}
+.bottomNav-finances{
+  grid-column: 2/3;
+}
+.bottomNav-finances > h3{
+  text-decoration: underline;
+  font-weight: 100;
+}
+.bottomNav-finances > a{
+  text-decoration: none;
+  color: white;
+}
+.bottomNav-connect{
+  grid-column: 3/4;
+}
+.bottomNav-connect > h3{
+  text-decoration: underline;
+  font-weight: 100;
+}
+.bottomNav-connect > a{
+  text-decoration: none;
+  color: white;
 }

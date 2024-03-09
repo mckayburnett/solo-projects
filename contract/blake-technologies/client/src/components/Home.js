@@ -47,9 +47,7 @@ export default function Home(){
                     <FaCircle id="three" onClick={() => setSlideNum(2)} style={{ color: slideNum === 2 && "red"}} />
                 </div>
             </div>
-            
             <Contact />
-            <BottomNav />
         </div>
         }
         </>

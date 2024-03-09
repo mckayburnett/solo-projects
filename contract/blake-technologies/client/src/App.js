@@ -10,6 +10,7 @@ import Banking from './components/finance/Banking.js'
 import Aid from './components/finance/Aid.js'
 import Courses from './components/Courses.js'
 import Contact from './components/Contact.js'
+import BottomNav from './components/BottomNav.js'
 import { Functionality } from './context/Functionality.js'
 
 
@@ -58,6 +59,7 @@ function App() {
           element= {<Courses />}
         />
       </Routes>
+      <BottomNav />
     </div>
   );
 }

@@ -69,6 +69,7 @@ export default function Contact(){
                     <option id="option-two" value="ios">iOS</option>
                     <option id="option-three" value="web">Web Development</option>
                 </select>
+                Anything you'd like us to know?
                 <textarea
                     id="message"
                     name="message"
@@ -77,7 +78,7 @@ export default function Contact(){
                     type="textarea"
                     onChange={handleChange}
                 />
-                <button className={sendClicked ? "home-contact-form-button-clicked" : "home-contact-form-button"} onClick={() => setSendClicked(true)}>
+                <button className={sendClicked ? "home-contact-form-button-clicked" : "home-contact-form-button"} id="contact-button" onClick={() => setSendClicked(true)}>
                     <GoPaperAirplane style = {{transform: 'rotate(-45deg)' }} className="send2" aria-hidden="true" />
                     <p>Send</p>
                 </button>
