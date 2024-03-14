@@ -19,20 +19,20 @@ export default function Ios(){
             </div>
             <div className="ios-mid-content">
                 <h2 className="ios-obj-title">Course Objectives: </h2>
-                <div className="ios-obj-subTitle-container-center">
-                    <h3 className="ios-obj-subTitle">{iosSubTitle}</h3>
-                    <div className="ios-obj-body-wrapper">{mappedArr}</div>
-                </div>
+                <h3 className="ios-obj-subTitle">{iosSubTitle}</h3>
+                <div className="ios-obj-body-wrapper">{mappedArr}</div>
             </div>
             <div className="ios-midBottom-content">
                 {daily}
-                <div className="ios-pic2-box">
-                    <img src={pic2} className="ios-pic2" />
-                </div>
+                <h2 className="ios-midBottom-title">Daily Schedule: </h2>
+                <h3 className="ios-midBottom-subTitle">A run down of what the day to day will be like. There is no school over the weekends and Fridays are optionsl!</h3>
             </div>
-            <div className="ios-pic1-box">
+            {/* <div className="ios-pic2-box">
+                    <img src={pic2} className="ios-pic2" />
+                </div> */}
+            {/* <div className="ios-pic1-box">
                     <img src={pic1} className="ios-pic1"/>
-                </div>
+                </div> */}
         </div>
     )
 }

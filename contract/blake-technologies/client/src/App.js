@@ -3,6 +3,8 @@ import {Routes, Route, Navigate} from 'react-router-dom'
 import Navbar from './components/Nav.js'
 import ProtectedRoute from './components/ProtectedRoute.js'
 import EmployeePortal from './components/EmployeePortal.js'
+import StudentList from './components/StudentList.js'
+import BlogPost from './components/BlogPost.js'
 import Home from './components/Home.js'
 import Ios from './components/courses/Ios.js'
 import Pricing from './components/finance/Pricing.js'
@@ -27,6 +29,22 @@ function App() {
           element={
             <ProtectedRoute token={token} redirectTo="/">
               <EmployeePortal />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/studentList"
+          element= {
+            <ProtectedRoute token={token} redirectTo="/">  
+              <StudentList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/blogPost"
+          element= {
+            <ProtectedRoute token={token} redirectTo="/">  
+              <BlogPost />
             </ProtectedRoute>
           }
         />

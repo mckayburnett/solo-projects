@@ -1,9 +1,8 @@
-import React, {useState, useEffect, useContext} from 'react'
-import { Functionality } from '../context/Functionality'
+import React, {useContext, useState, useEffect} from 'react'
+import { Functionality } from '../context/Functionality.js'
 import StudentCard from './StudentCard.js'
-import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
 
-export default function EmployeePortal(){
+export default function StudentList(props){
 
     const {students, setStudents, userState, user, viewStudentList, setViewStudentList, getAllStudents} = useContext(Functionality)
 
@@ -20,21 +19,15 @@ export default function EmployeePortal(){
     const declinedNum = (students?.students?.filter(student => student.declined === true) || []).length;
 
     return(
-        <div className="employeePortal-wrapper">
-            <p className="employeePortal-welcome">{`Welcome, ${user.firstName} ${user.lastName} (${user.isAdmin && "Admin"}), to the`}</p>
-            <h1 className="employeePortal-title">Employee Portal</h1>
-            <div className="employeePortal-links">
-                <Link to="/studentList">Student List</Link>
-                <Link to="/blogPost">Create Blog Post</Link>
-            </div>
-            {/* {viewStudentList && <div className="employeePortal-grid">
+        <div className="studentList-wrapper">
+            <div className="employeePortal-grid">
                 <h2 className="employeePortal-grid-uncontacted">Uncontacted({uncontactedNum})</h2><h2 className="employeePortal-grid-processing">Processing ({processingNum})</h2><h2 className="employeePortal-grid-accepted">Accepted ({acceptedNum})</h2><h2 className="employeePortal-grid-enrolled">Enrolled ({enrolledNum})</h2><h2 className="employeePortal-grid-declined">Declined ({declinedNum})</h2>
-            </div>}
-                {viewStudentList && <div className="employeePortal-studentList">
-                    {student && student?.map(student => 
-                        <StudentCard student={student} key={student._id}/>    
-                    )}
-                </div>} */}
+            </div>
+            <div className="employeePortal-studentList">
+                {student && student?.map(student => 
+                    <StudentCard student={student} key={student._id}/>    
+                )}
+            </div>
         </div>
     )
 }
