@@ -98,6 +98,27 @@ export default function ContextProvider(props){
           console.log(err);
         }
     }
+    //-----Employee Blog-----
+    const initBlog = {
+        title: "",
+        subtitle: "",
+        author: "",
+        date: "",
+        content: "",
+        img1: "",
+        img2: "",
+        img3: ""
+    }
+    const [blogInputs, setBlogInputs] = useState(initBlog)
+
+    function handleBlogChange(e){
+       const {name, value} = e.target
+        setBlogInputs(prev => ({
+            ...prev,
+            [name] : value
+        }))
+    }
+    //-----------------------
     //-----Navbar-----
     const navigate = useNavigate(); // Initialize the useNavigate hook
     const homeClick = () => {
@@ -194,6 +215,8 @@ export default function ContextProvider(props){
                 handleDelete,
                 students, setStudents,
                 addStudent,
+                blogInputs, setBlogInputs,
+                handleBlogChange,
                 scrollToTop,
                 showButton, setShowButton,
                 homeClick,

@@ -1,8 +1,8 @@
 import React, {useContext, useState, useEffect} from 'react'
 import { Functionality } from '../context/Functionality.js'
-import StudentCard from './StudentCard.js'
+import StudentCard from './EmployeeStudentCard.js'
 
-export default function StudentList(props){
+export default function EmployeeStudentList(props){
 
     const {students, setStudents, userState, user, viewStudentList, setViewStudentList, getAllStudents} = useContext(Functionality)
 

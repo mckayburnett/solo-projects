@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react'
 import {Functionality} from '../context/Functionality'
 
-export default function StudentCard(props){
+export default function EmployeeStudentCard(props){
 
     const {student} = props
     const {accepted, declined, enrolled, processing, uncontacted, data, _id} = student

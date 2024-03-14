@@ -18,8 +18,21 @@ const blogSchema = new Schema({
         type: String,
         required: false
     },
-    img: {
-        type: 
+    content: {
+        type: String,
+        required: true
+    },
+    img1: {
+        type: String,
+        required: false
+    },
+    img2: {
+        type: String,
+        required: false
+    },
+    img3: {
+        type: String,
+        required: false
     }
 })
 

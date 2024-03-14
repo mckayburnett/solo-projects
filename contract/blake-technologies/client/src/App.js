@@ -3,8 +3,8 @@ import {Routes, Route, Navigate} from 'react-router-dom'
 import Navbar from './components/Nav.js'
 import ProtectedRoute from './components/ProtectedRoute.js'
 import EmployeePortal from './components/EmployeePortal.js'
-import StudentList from './components/StudentList.js'
-import BlogPost from './components/BlogPost.js'
+import StudentList from './components/EmployeeStudentList.js'
+import BlogPost from './components/EmployeeBlog.js'
 import Home from './components/Home.js'
 import Ios from './components/courses/Ios.js'
 import Pricing from './components/finance/Pricing.js'
@@ -23,6 +23,7 @@ function App() {
   return (
     <div className="app-wrapper">
       <Navbar />
+      {token && <EmployeePortal />}
       <Routes>
         <Route
           path="/employeePortal"
