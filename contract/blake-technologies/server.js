@@ -12,7 +12,7 @@ app.use(morgan('dev'))
 
 async function connectToDB(){
     try{
-        await mongoose.connect('mongodb+srv://blakekvarfordt:cakvaw-tavcuB-5miwsy@cluster0.05cexxb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+        await mongoose.connect(`mongodb+srv://blakekvarfordt:${process.env.PASSWORD}@cluster0.05cexxb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
         console.log('connected to db')
     }catch(err){
         console.log(err)
@@ -35,6 +35,7 @@ app.post('/student', async (req, res, next) => {
 app.use('/auth', require('./routes/authRouter.js'))
 app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256']}))
 app.use('/api/student', require('./routes/studentRouter.js'))
+app.use('/api/blog', require('./routes/blogRouter.js'))
 
 app.use((err, req, res, next) => {
     console.log(err)

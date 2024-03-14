@@ -798,7 +798,7 @@ body {
   grid-auto-flow: column;
   margin-top: 0;
 }
-/* ----- Students ----- */
+/* ----- Employee Student List ----- */
 .students-form{
   display: flex;
   justify-content: space-between;
@@ -879,6 +879,43 @@ body {
   color: white;
   background-color: var(--mainColor);
 }
+/* ----- Employee Blog -----*/
+.employeeBlog-wrapper{
+
+}
+.employeeBlog-preview-wrapper{
+  margin: 5em 5em;
+  border: 2px solid black;
+  display: flexbox;
+  text-align: center;
+  .employeeBlog-preview-title{
+    
+  }
+  .employeeBlog-preview-subtitle{
+    
+  }
+  .employeeBlog-preview-author{
+    display: inline;
+  }
+  .employeeBlog-preview-date{
+    display: inline;
+  }
+  .employeeBlog-preview-content{
+    text-align: left;
+  }
+  .employeeBlog-preview-img1{
+    max-height: 20em;
+  }
+  .employeeBlog-preview-img2{
+    max-height: 500px;
+
+  }
+  .employeeBlog-preview-img3{
+    max-height: 500px;
+
+  }
+}
+
 /* ----- Course iOS ----- */
 .ios-wrapper{
   color: white;
