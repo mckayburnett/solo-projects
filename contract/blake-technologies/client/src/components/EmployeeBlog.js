@@ -143,7 +143,7 @@ export default function EmployeeBlog(props){
             <img className="employeeBlog-preview-img1" src={blogInputs.img1} style={styleImg1}/>
                 <h1 className="employeeBlog-preview-title" style={styleTitle}>{blogInputs.title}</h1>
                 <h2 className="employeeBlog-preview-subtitle" style={styleSubtitle}>{blogInputs.subtitle}</h2>
-                <h4 className="employeeBlog-preview-author">Written by {blogInputs.author}</h4><h4 className="employeeBlog-preview-date"> | {blogInputs.date}</h4>
+                <h4 className="employeeBlog-preview-author">{blogInputs.auther && `Written by`} {blogInputs.author}</h4><h4 className="employeeBlog-preview-date"> | {blogInputs.date}</h4>
                 <p className="employeeBlog-preview-content" style={styleContent}>{blogInputs.content}</p>
                 <img className="employeeBlog-preview-img2" src={blogInputs.img2} style={styleImg2}/>
                 <img className="employeeBlog-preview-img3" src={blogInputs.img3} style={styleImg3}/>
