@@ -100,14 +100,21 @@ export default function ContextProvider(props){
     }
     //-----Employee Blog-----
     const initBlog = {
+        stylePage: "",
         title: "",
+        styleTitle: "",
         subtitle: "",
+        styleSubtitle: "",
         author: "",
         date: "",
         content: "",
+        styleContent: "",
         img1: "",
+        styleImg1: "",
         img2: "",
-        img3: ""
+        styleImg2: "",
+        img3: "",
+        styleImg3: ""
     }
     const [blogInputs, setBlogInputs] = useState(initBlog)
 
