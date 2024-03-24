@@ -1,21 +1,18 @@
 import React, {useState, useEffect, useContext} from 'react'
 import {Functionality} from '../context/Functionality'
 
-export default function EmployeeStudentCard(props){
+export default function EmployeeBusinessCard(props){
 
-    const {student} = props
-    const {accepted, declined, enrolled, processing, uncontacted, data, _id} = student
-    const {firstName, lastName, course, email, phoneNumber, date, message} = data
-    const {handleDelete, editStudent} = useContext(Functionality)
-
-    console.log(student)
+    const {business} = props
+    const {declined, underContract, processing, uncontacted, data, _id} = business
+    const {name, email, phoneNumber, date, message} = data
+    const {handleBusDelete, editBusiness} = useContext(Functionality)
     
 
 const initRadio = {
     uncontacted: false,
     processing: false,
-    accepted: false,
-    enrolled: false,
+    underContract: false,
     declined: false,
 };
 const [radio, setRadio] = useState(initRadio)
@@ -30,8 +27,8 @@ function handleChangeRadio(e){
 }
     
     return(
-        <div className={uncontacted ? "students-wrapper-uncontacted" : processing ? "students-wrapper-processing" : accepted ? "students-wrapper-accepted" : enrolled ? "students-wrapper-enrolled" : declined && "students-wrapper-declined"}>
-            <h3 className="students-wrapper-namesCourse">{firstName} {lastName} ({course})</h3>
+        <div className={uncontacted ? "students-wrapper-uncontacted" : processing ? "students-wrapper-processing" : underContract ? "students-wrapper-enrolled" : declined && "students-wrapper-declined"}>
+            <h3 className="students-wrapper-namesCourse">{name}</h3>
             <h4 className="students-wrapper-email">Email: {email}</h4>
             <h4 className="students-wrapper-phone">Phone #: {phoneNumber}</h4>
             <h4 className="students-wrapper-message">Message: {message}</h4>
@@ -43,7 +40,7 @@ function handleChangeRadio(e){
                     type="radio"
                     name="uncontacted"
                     value={true}
-                    checked={student.uncontacted}
+                    checked={business.uncontacted}
                     onChange={handleChangeRadio}
                     />
                 </label> 
@@ -54,32 +51,21 @@ function handleChangeRadio(e){
                     type="radio"
                     name="processing"
                     value={true}
-                    checked={student.processing}
+                    checked={business.processing}
                     onChange={handleChangeRadio}
                 />
                 </label>
                 </div>
                 <div>
-                    <label>Acc
+                    <label>UndCon
                    <input
                     type="radio"
-                    name="accepted"
+                    name="underContract"
                     value={true}
-                    checked={student.accepted}
+                    checked={business.underContract}
                     onChange={handleChangeRadio}
                 /> 
                 </label>
-                </div>
-                <div>
-                  <label>En
-                    <input
-                    type="radio"
-                    name="enrolled"
-                    value={true}
-                    checked={student.enrolled}
-                    onChange={handleChangeRadio}
-                />
-                </label>  
                 </div>
                 <div>
                     <label>De
@@ -87,14 +73,14 @@ function handleChangeRadio(e){
                     type="radio"
                     name="declined"
                     value={true}
-                    checked={student.declined}
+                    checked={business.declined}
                     onChange={handleChangeRadio}
                 />
                 </label>
                 </div>
             </form>
-            <button className="students-delete" onClick={() => editStudent(_id, radio)}>Transfer Student</button>
-            <button className="students-delete" onClick={() => handleDelete(_id)}>Remove Student</button>
+            <button className="students-delete" onClick={() => editBusiness(_id, radio)}>Transfer Business</button>
+            <button className="students-delete" onClick={() => handleBusDelete(_id)}>Remove Business</button>
         </div>
     )
 }

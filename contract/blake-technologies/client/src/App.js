@@ -4,6 +4,7 @@ import Navbar from './components/Nav.js'
 import ProtectedRoute from './components/ProtectedRoute.js'
 import EmployeePortal from './components/EmployeePortal.js'
 import StudentList from './components/EmployeeStudentList.js'
+import BusinessList from './components/EmployeeBusinessList.js'
 import BlogPost from './components/EmployeeBlog.js'
 import Home from './components/Home.js'
 import Ios from './components/courses/Ios.js'
@@ -38,6 +39,14 @@ function App() {
           element= {
             <ProtectedRoute token={token} redirectTo="/">  
               <StudentList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/businessList"
+          element= {
+            <ProtectedRoute token={token} redirectTo="/">  
+              <BusinessList />
             </ProtectedRoute>
           }
         />

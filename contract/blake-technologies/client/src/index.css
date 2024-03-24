@@ -432,6 +432,12 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.home-contact-toggles-business{
+
+}
+.home-contact-toggles-student{
+
+}
 .home-contact-form{
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -496,6 +502,10 @@ body {
   grid-row: 3/4;
   color: rgb(23,41,96);
   margin: 0 3em;
+}
+.placeholder{
+  position: relative;
+  top: 100%;
 }
 #contact-button{
   grid-column: 3/4;
@@ -884,51 +894,86 @@ body {
 
 }
 .employeeBlog-form{
-  
+  padding: 2em 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  > input{
+    max-width: 20em;
+  }
   .employeeBlog-form-stylePage{
-  
+    grid-column: 2/3;
+    margin-left: auto;
+    margin-right: auto;
   }
   .employeeBlog-form-title{
-  
+    grid-column: 2/3;
+    margin-left: auto;
+    margin-right: auto;
   }
   .employeeBlog-form-styleTitle{
-  
+    grid-column: 3/4;
+    margin-right: auto;
   }
   .employeeBlog-form-subtitle{
-  
+    grid-column: 2/3;
+    margin-left: auto;
+    margin-right: auto;
   }
   .employeeBlog-form-styleSubtitle{
-  
+    grid-column: 3/4;
+    margin-right: auto;
   }
   .employeeBlog-form-author{
-  
+    grid-column: 2/3;
+    margin-left: auto;
+    margin-right: auto;
   }
   .employeeBlog-form-date{
-  
+    grid-column: 2/3;
+    margin-left: auto;
+    margin-right: auto;
   }
   .employeeBlog-form-content{
-  
+    grid-column: 2/3;
+    margin-left: auto;
+    margin-right: auto;
   }
   .employeeBlog-form-styleContent{
-  
+    grid-column: 3/4;
+    margin-right: auto;
   }
   .employeeBlog-form-img1{
-  
+    grid-column: 2/3;
+    margin-left: auto;
+    margin-right: auto;
   }
   .employeeBlog-form-styleImg1{
-  
+    grid-column: 3/4;
+    margin-right: auto;
   }
   .employeeBlog-form-img2{
-  
+    grid-column: 2/3;
+    margin-left: auto;
+    margin-right: auto;
   }
   .employeeBlog-form-styleImg2{
-  
+    grid-column: 3/4;
+    margin-right: auto;
   }
   .employeeBlog-form-img3{
-  
+    grid-column: 2/3;
+    margin-left: auto;
+    margin-right: auto;
   }
   .employeeBlog-form-styleImg3{
-  
+    grid-column: 3/4;
+    margin-right: auto;
+  }
+  > button{
+    grid-column: 2/3;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

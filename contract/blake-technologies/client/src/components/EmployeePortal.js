@@ -5,11 +5,11 @@ import {BrowserRouter as Routes, Route, Link} from 'react-router-dom'
 
 export default function EmployeePortal(){
 
-    const {students, setStudents, userState, user, viewStudentList, setViewStudentList, getAllStudents} = useContext(Functionality)
+    const {students, setStudents, userState, user, viewStudentList, setViewStudentList, getAllStudents, getAllBusinesses} = useContext(Functionality)
 
     useEffect(() => {
         getAllStudents()
-        
+        getAllBusinesses()
     },[])
 
     return(
@@ -18,6 +18,7 @@ export default function EmployeePortal(){
             <h1 className="employeePortal-title">Employee Portal</h1>
             <div className="employeePortal-links">
                 <Link to="/studentList">Student List</Link>
+                <Link to="/businessList">Business List</Link>
                 <Link to="/blogPost">Create Blog Post</Link>
             </div>
         </div>

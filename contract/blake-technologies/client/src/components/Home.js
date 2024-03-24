@@ -19,7 +19,7 @@ export default function Home(){
         :
         <div className="home-wrapper">
             <div className="home-aboutUs">
-                <h1 className="home-subject-head">About Us</h1>
+                <h1 className="home-subject-head">About Us</h1> {/* This is going to be a What We Do page-- going zero to hero building apps for local businesses real world experience. Extend this to bottom of the screen. Do you have a small business?-> take to contact form. Do you want to learn iOS -> takes to iOS course tab*/}
                 <p className="home-subject-body">{aboutUs}</p>
             </div>
             <img

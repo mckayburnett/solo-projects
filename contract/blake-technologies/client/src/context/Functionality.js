@@ -98,6 +98,47 @@ export default function ContextProvider(props){
           console.log(err);
         }
     }
+    const [businesses, setBusinesses] = useState([]);
+    async function getAllBusinesses(e){
+        try{
+            const res = await userAxios.get('/api/business')
+            setBusinesses(prev => ({
+                ...prev,
+                businesses: res.data
+            }))
+        }catch(err){
+            console.log(err.response.data)
+        }
+    }
+    async function deleteBusiness(id){
+        try{
+            const res = userAxios.delete(`/api/business/${id}`)
+            setBusinesses(prev => ({
+                ...prev
+            }))
+        }catch(err){
+            console.log(err)
+        }
+    }
+    function handleBusDelete(id){
+        deleteBusiness(id)
+        getAllBusinesses()
+    }
+    const [viewBusinessList, setViewBusinessList] = useState(false)
+    async function editBusiness(id, updates) {
+        try {
+          console.log(updates); // Log the updates parameter
+          const res = userAxios.put(`/api/business/${id}`, updates);
+          const updatedBusiness = res.data;
+          setBusinesses((prev) => ({
+            ...prev,
+            businesses: updatedBusiness
+          }));
+          
+        } catch (err) {
+          console.log(err);
+        }
+    }
     //-----Employee Blog-----
     const initBlog = {
         stylePage: "",
@@ -117,7 +158,6 @@ export default function ContextProvider(props){
         styleImg3: ""
     }
     const [blogInputs, setBlogInputs] = useState(initBlog)
-
     function handleBlogChange(e){
        const {name, value} = e.target
         setBlogInputs(prev => ({
@@ -125,6 +165,7 @@ export default function ContextProvider(props){
             [name] : value
         }))
     }
+    const [toggleStyle, setToggleStyle] = useState(false)
     //-----------------------
     //-----Navbar-----
     const navigate = useNavigate(); // Initialize the useNavigate hook
@@ -157,6 +198,15 @@ export default function ContextProvider(props){
     //--------------
 
     //-----Contact-----
+    const initBusInputs = {
+        name: "",
+        email: "",
+        phoneNumber: "",
+        date: "",
+        message: "Tell us a little about your business and expectations.",
+        notes: ""
+    }
+    const [busInputs, setBusInputs] = useState(initBusInputs)
     const initInputs = {
         firstName: "",
         lastName: "",
@@ -164,7 +214,31 @@ export default function ContextProvider(props){
         phoneNumber: "",
         course: "",
         date: "",
-        message: ""
+        message: "Anything you'd like us to know?"
+    }
+    function handleBusChange(e){
+        const {name, value} = e.target
+        setBusInputs(prev => ({
+            ...prev,
+            [name] : value
+        }))
+        console.log(busInputs)
+    }
+    function handleBusSubmit(e){
+        e.preventDefault();
+        addBusiness(busInputs);
+        setBusInputs(initBusInputs);
+    }
+    async function addBusiness(newBusiness){
+        try{
+            const res = await axios.post('/business', {data: newBusiness, uncontacted: true})
+            setBusinesses(prev => ({
+                ...prev,
+                businesses: res.data
+            }))
+        }catch(err){
+            console.log(err)
+        }
     }
     const [inputs, setInputs] = useState(initInputs)
     function handleChange(e){
@@ -222,8 +296,18 @@ export default function ContextProvider(props){
                 handleDelete,
                 students, setStudents,
                 addStudent,
+                viewBusinessList, setViewBusinessList,
+                getAllBusinesses,
+                editBusiness,
+                deleteBusiness,
+                handleBusDelete,
+                businesses, setBusinesses,
+                addBusiness,
+                handleBusChange,
+                handleBusSubmit,
                 blogInputs, setBlogInputs,
                 handleBlogChange,
+                toggleStyle, setToggleStyle,
                 scrollToTop,
                 showButton, setShowButton,
                 homeClick,
@@ -232,6 +316,7 @@ export default function ContextProvider(props){
                 iosButton, setIosButton,
                 webButton, setWebButton,
                 inputs, setInputs,
+                busInputs, setBusInputs,
                 handleChange,
                 handleSubmit,
                 sendClicked, setSendClicked,

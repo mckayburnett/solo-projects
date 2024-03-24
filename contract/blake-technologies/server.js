@@ -5,6 +5,7 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 const { expressjwt } = require('express-jwt')
 const Student = require('./models/student.js')
+const Business = require('./models/business.js')
 
 
 app.use(express.json())
@@ -20,7 +21,7 @@ async function connectToDB(){
 }
 connectToDB()
 
-//This is the only student request that doesn't require '/api' because it is receiving the post from the 'Contact Us' section of the client-side.
+//These are the only student and business requests that don't require '/api' because we're receiving the post from the 'Contact Us' section of the client-side.
 app.post('/student', async (req, res, next) => {
     try{
         const newStudent = new Student(req.body)
@@ -31,10 +32,21 @@ app.post('/student', async (req, res, next) => {
         next(err)
     }
 })
+app.post('/business', async (req, res, next) => {
+    try{
+        const newBusiness = new Business(req.body)
+        const savedBusiness = await newBusiness.save()
+        res.status(201).send(savedBusiness)
+    }catch(err){
+        res.status(500)
+        next(err)
+    }
+})
 
 app.use('/auth', require('./routes/authRouter.js'))
 app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256']}))
 app.use('/api/student', require('./routes/studentRouter.js'))
+app.use('/api/business', require('./routes/businessRouter.js'))
 app.use('/api/blog', require('./routes/blogRouter.js'))
 
 app.use((err, req, res, next) => {

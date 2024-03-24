@@ -6,13 +6,65 @@ import { GoPaperAirplane } from "react-icons/go";
 
 export default function Contact(){
 
-    const {inputs, setInputs, handleChange, addStudent, handleSubmit, sendClicked, setSendClicked} = useContext(Functionality)
+    const {inputs, busInputs, setInputs, setBusInputs, handleChange, handleBusChange, addStudent, addBusiness, handleSubmit, handleBusSubmit, sendClicked, setSendClicked} = useContext(Functionality)
     const {contactUs} = useContext(Text)
+
+    const [showBusiness, setShowBusiness] = useState(false);
 
     return(
         <div className="home-contact">
             <h1 className="home-subject-head">Contact Us</h1>
             <p className="home-subject-body">{contactUs}</p>
+            <div className="home-contact-toggles">
+                <button className="home-contact-toggles-business" onClick={()=>setShowBusiness(true)}>Business</button>
+                <button className="home-contact-toggles-student" onClick={()=>setShowBusiness(false)}>Student</button>
+            </div>
+            {showBusiness && 
+            <form className="home-contact-form" onSubmit={handleBusSubmit}>
+                <input
+                    id="name"                     
+                    name="name"
+                    value={busInputs.name}
+                    placeholder="Name of Business*"
+                    type="text"
+                    required
+                    onChange={handleBusChange}
+                />
+                <input
+                    id="email"                     
+                    name="email"
+                    value={busInputs.email}
+                    placeholder="Email*"
+                    type="email"
+                    required
+                    onChange={handleBusChange}
+                />
+                <input
+                    id="phoneNumber"                   
+                    name="phoneNumber"
+                    value={busInputs.phoneNumber}
+                    placeholder="Phone Number*"
+                    type="phone"
+                    required
+                    onChange={handleBusChange}
+                />
+                <input
+                    id="date"                     
+                    name="date"
+                    value={busInputs.date}
+                    type="date"
+                    required
+                    onChange={handleBusChange}
+                />
+                {/* <p className="placeholder">Tell us a little about your business and expectations</p> */}
+                <textarea id="message" name="message" placeholder="What would you like us to know?" type="textarea" value={busInputs.message} onChange={handleBusChange}></textarea>
+                 <button className={sendClicked ? "home-contact-form-button-clicked" : "home-contact-form-button"} id="contact-button" onClick={() => setSendClicked(true)}>
+                    <GoPaperAirplane style = {{transform: 'rotate(-45deg)' }} className="send2" aria-hidden="true" />
+                    <p>Send</p>
+                </button>
+            </form>
+            }
+            {!showBusiness &&
             <form className="home-contact-form" onSubmit={handleSubmit}>
                 <input
                     id="firstName"
@@ -57,7 +109,7 @@ export default function Contact(){
                     required
                     onChange={handleChange}
                 />
-                <select
+                {/* <select
                     id="course"
                     name="course"
                     value={inputs.course}
@@ -68,21 +120,15 @@ export default function Contact(){
                     <option id="option-one" value="">Course Interested In</option>
                     <option id="option-two" value="ios">iOS</option>
                     <option id="option-three" value="web">Web Development</option>
-                </select>
-                Anything you'd like us to know?
-                <textarea
-                    id="message"
-                    name="message"
-                    value={inputs.message}
-                    placeholder="Anything you'd like us to know?"
-                    type="textarea"
-                    onChange={handleChange}
-                />
+                </select> */}
+                {/* <p className="placeholder">Anything you'd like us to know?</p> */}
+                <textarea id="message" name="message" placeholder="Anything you'd like us to know?" type="textarea" value={inputs.message} onChange={handleChange}></textarea>
                 <button className={sendClicked ? "home-contact-form-button-clicked" : "home-contact-form-button"} id="contact-button" onClick={() => setSendClicked(true)}>
                     <GoPaperAirplane style = {{transform: 'rotate(-45deg)' }} className="send2" aria-hidden="true" />
                     <p>Send</p>
                 </button>
             </form>
+            }
         </div>
     )
 }
