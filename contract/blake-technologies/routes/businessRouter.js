@@ -34,5 +34,18 @@ businessRouter.put('/:businessId', async (req,res, next) => {
         console.log(err)
     }
 })
+businessRouter.put('/:businessId/note', async (req,res, next) => {
+    try{
+        req.body.user = req.auth_id
+        const updatedBusiness = await Business.findOneAndUpdate(
+            {_id: req.params.businessId},
+            req.body,
+            {new: true}
+        ).exec();
+        res.status(201).send(updatedBusiness)
+    }catch(err){
+        console.log(err)
+    }
+})
 
 module.exports = businessRouter

@@ -4,9 +4,9 @@ import {Functionality} from '../context/Functionality'
 export default function EmployeeBusinessCard(props){
 
     const {business} = props
-    const {declined, underContract, processing, uncontacted, data, _id} = business
+    const {declined, underContract, processing, uncontacted, note, data, _id} = business
     const {name, email, phoneNumber, date, message} = data
-    const {handleBusDelete, editBusiness} = useContext(Functionality)
+    const {handleBusDelete, editBusiness, busInputs, setBusInputs, handleBusChange, handleBusSubmit} = useContext(Functionality)
     
 
 const initRadio = {
@@ -22,18 +22,32 @@ function handleChangeRadio(e){
         ...initRadio,
         [name]: value
     }))
-    
-    console.log(radio)
+}
+function handleSubmit(e){
+    e.preventDefault()
+    editBusiness(_id, busInputs)
 }
     
     return(
-        <div className={uncontacted ? "students-wrapper-uncontacted" : processing ? "students-wrapper-processing" : underContract ? "students-wrapper-enrolled" : declined && "students-wrapper-declined"}>
-            <h3 className="students-wrapper-namesCourse">{name}</h3>
-            <h4 className="students-wrapper-email">Email: {email}</h4>
-            <h4 className="students-wrapper-phone">Phone #: {phoneNumber}</h4>
-            <h4 className="students-wrapper-message">Message: {message}</h4>
-            <h4 className="students-wrapper-date">{date}</h4>
-            <form className="students-form">
+        <div className={uncontacted ? "businesses-wrapper-uncontacted" : processing ? "businesses-wrapper-processing" : underContract ? "businesses-wrapper-underContract" : declined && "businesses-wrapper-declined"}>
+            <h3 className="businesses-wrapper-name">Business: {name}</h3>
+            <h4 className="businesses-wrapper-email">Email: {email}</h4>
+            <h4 className="businesses-wrapper-phone">Phone #: {phoneNumber}</h4>
+            <h4 className="businesses-wrapper-message">Message: {message}</h4>
+            <h4 className="businesses-wrapper-date">Date: {date}</h4>
+            <h4 className="businesses-wrapper-note">Note: {note}</h4>
+            <form className="business-notesForm" onSubmit={handleSubmit}>
+                <textarea 
+                    className="business-notesForm-textarea"
+                    id="note"
+                    name="note"
+                    type="textarea"
+                    value={busInputs.note}
+                    onChange={handleBusChange}
+                ></textarea>
+                <button>Add Note</button>
+            </form>
+            <form className="businesses-form">
                 <div>
                    <label>Un
                     <input
@@ -79,8 +93,8 @@ function handleChangeRadio(e){
                 </label>
                 </div>
             </form>
-            <button className="students-delete" onClick={() => editBusiness(_id, radio)}>Transfer Business</button>
-            <button className="students-delete" onClick={() => handleBusDelete(_id)}>Remove Business</button>
+            <button className="businesses-delete" onClick={() => editBusiness(_id, radio)}>Transfer Business</button>
+            <button className="businesses-delete" onClick={() => handleBusDelete(_id)}>Remove Business</button>
         </div>
     )
 }

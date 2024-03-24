@@ -21,10 +21,10 @@ export default function EmployeeBusinessList(props){
 
     return(
         <div className="businessList-wrapper">
-            <div className="employeePortal-grid">
-                <h2 className="employeePortal-grid-uncontacted">Uncontacted({uncontactedNum})</h2><h2 className="employeePortal-grid-processing">Processing ({processingNum})</h2><h2 className="employeePortal-grid-accepted">Under Contract ({underContractNum})</h2><h2 className="employeePortal-grid-declined">Declined ({declinedNum})</h2>
+            <div className="businessList-grid">
+                <h2 className="businessList-grid-uncontacted">Uncontacted({uncontactedNum})</h2><h2 className="businessList-grid-processing">Processing ({processingNum})</h2><h2 className="businessList-grid-accepted">Under Contract ({underContractNum})</h2><h2 className="businessList-grid-declined">Declined ({declinedNum})</h2>
             </div>
-            <div className="employeePortal-studentList">
+            <div className="businessList-businessCard">
                 {business && business?.map(business => 
                     <BusinessCard business={business} key={business._id}/>    
                 )}

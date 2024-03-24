@@ -889,7 +889,97 @@ body {
   color: white;
   background-color: var(--mainColor);
 }
-/* ----- Employee Blog -----*/
+/* ----- Employee Business List ----- */
+.businessList-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+}
+.businessList-grid > h2 {
+  border: 1px solid black;
+  color: var(--mainColor);
+  margin-bottom: auto;
+  font-weight: 100;
+  min-width: 165px;
+}
+.businessList-businessCard{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-flow: column;
+  margin-top: 0;
+}
+/* ----- Employee Business Card ----- */
+.businesses-form{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--mainColor);
+  min-width: 150px;
+  margin: auto;
+}
+.businesses-form > label{
+
+}
+.businesses-form > div > label > input{
+  cursor: pointer;
+}
+.businesses-wrapper-uncontacted{
+  grid-column: 1/2;
+  border: 1px solid var(--mainColor);
+  padding: .5em;
+  color: var(--mainColor);
+  min-width: 152px;
+}
+.businesses-wrapper-processing{
+  grid-column: 2/3;
+  border: 1px solid var(--mainColor);
+  padding: .5em;
+  color: var(--mainColor);
+  min-width: 152px;
+}
+.businesses-wrapper-underContract{
+  grid-column: 3/4;
+  border: 1px solid var(--mainColor);
+  padding: .5em;
+  color: var(--mainColor);
+  min-width: 152px;
+}
+.businesses-wrapper-declined{
+  grid-column: 4/5;
+  border: 1px solid var(--mainColor);
+  padding: .5em;
+  color: var(--mainColor);
+  min-width: 152px;
+}
+.businesses-wrapper-name{
+  margin-top: 0;
+  text-decoration: underline;
+  font-weight: 100;
+}
+.businesses-wrapper-email{
+  font-weight: 100;
+
+}
+.businesses-wrapper-phone{
+  font-weight: 100;
+
+}
+.businesses-wrapper-message{
+  font-weight: 100;
+
+}
+.businesses-delete{
+  cursor: pointer;
+  color: var(--mainColor);
+  background-color: white;
+  border: none;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); 
+}
+.businesses-delete:hover{
+  color: white;
+  background-color: var(--mainColor);
+}
+/* ----- Employee Blog ----- */
 .employeeBlog-wrapper{
 
 }

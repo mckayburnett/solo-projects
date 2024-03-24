@@ -6,7 +6,7 @@ const studentSchema = new Schema({
         type: Object,
         required: true,
     },
-    notes: {
+    note: {
         type: String,
         required: false
     },

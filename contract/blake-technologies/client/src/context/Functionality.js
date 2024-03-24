@@ -110,6 +110,19 @@ export default function ContextProvider(props){
             console.log(err.response.data)
         }
     }
+    async function addNote(id, note){
+        try{
+            const res = await userAxios.put(`/api/business${id}/note`, note)
+            const updatedBusiness = res.data;
+            setBusinesses((prev) => ({
+            ...prev,
+            businesses: updatedBusiness
+            }))
+        }catch(err){
+            console.log(err.response.data)
+        }
+
+    }
     async function deleteBusiness(id){
         try{
             const res = userAxios.delete(`/api/business/${id}`)
@@ -204,7 +217,7 @@ export default function ContextProvider(props){
         phoneNumber: "",
         date: "",
         message: "Tell us a little about your business and expectations.",
-        notes: ""
+        note: "Add Employee Note"
     }
     const [busInputs, setBusInputs] = useState(initBusInputs)
     const initInputs = {
@@ -214,7 +227,8 @@ export default function ContextProvider(props){
         phoneNumber: "",
         course: "",
         date: "",
-        message: "Anything you'd like us to know?"
+        message: "Anything you'd like us to know?",
+        note: "Add Employee Note"
     }
     function handleBusChange(e){
         const {name, value} = e.target

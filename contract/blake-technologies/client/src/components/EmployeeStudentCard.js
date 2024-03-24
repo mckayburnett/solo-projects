@@ -4,9 +4,9 @@ import {Functionality} from '../context/Functionality'
 export default function EmployeeStudentCard(props){
 
     const {student} = props
-    const {accepted, declined, enrolled, processing, uncontacted, data, _id} = student
+    const {accepted, declined, enrolled, processing, uncontacted, note, data, _id} = student
     const {firstName, lastName, course, email, phoneNumber, date, message} = data
-    const {handleDelete, editStudent} = useContext(Functionality)
+    const {handleDelete, editStudent, inputs, handleChange} = useContext(Functionality)
 
     console.log(student)
     
@@ -28,6 +28,10 @@ function handleChangeRadio(e){
     
     console.log(radio)
 }
+function handleSubmit(e){
+    e.preventDefault()
+    editStudent(_id, inputs)
+}
     
     return(
         <div className={uncontacted ? "students-wrapper-uncontacted" : processing ? "students-wrapper-processing" : accepted ? "students-wrapper-accepted" : enrolled ? "students-wrapper-enrolled" : declined && "students-wrapper-declined"}>
@@ -35,7 +39,19 @@ function handleChangeRadio(e){
             <h4 className="students-wrapper-email">Email: {email}</h4>
             <h4 className="students-wrapper-phone">Phone #: {phoneNumber}</h4>
             <h4 className="students-wrapper-message">Message: {message}</h4>
-            <h4 className="students-wrapper-date">{date}</h4>
+            <h4 className="students-wrapper-date">Date: {date}</h4>
+            <h4 className="students-wrapper-note">Employee Note: {note}</h4>
+            <form className="students-notesForm" onSubmit={handleSubmit}>
+                <textarea 
+                    className="business-notesForm-textarea"
+                    id="note"
+                    name="note"
+                    type="textarea"
+                    value={inputs.note}
+                    onChange={handleChange}
+                ></textarea>
+                <button>Add Note</button>
+            </form>
             <form className="students-form">
                 <div>
                    <label>Un
